@@ -26,5 +26,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
             List<Resident> residents = new FileDataContext().ReadResidents();
             return residents;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="residents"></param>
+        /// <returns></returns>
+        public bool SaveResidents(List<Resident> residents)
+        {
+            return new FileDataContext().SaveResidents(residents);
+        }
     }
 }

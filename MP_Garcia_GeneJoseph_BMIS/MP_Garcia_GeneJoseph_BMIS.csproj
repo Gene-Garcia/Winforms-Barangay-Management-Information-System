@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\AuditTrail.cs" />
     <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\Family.cs" />
     <Compile Include="Models\Repository\FileDataContext.cs" />

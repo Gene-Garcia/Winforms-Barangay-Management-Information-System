@@ -1,0 +1,7 @@
+C:\Users\Gene Garcia\Desktop\Winforms-Barangay-Management-Information-System\MP_Garcia_GeneJoseph_BMIS\bin\Debug\MP_Garcia_GeneJoseph_BMIS.exe.config
+C:\Users\Gene Garcia\Desktop\Winforms-Barangay-Management-Information-System\MP_Garcia_GeneJoseph_BMIS\bin\Debug\MP_Garcia_GeneJoseph_BMIS.exe
+C:\Users\Gene Garcia\Desktop\Winforms-Barangay-Management-Information-System\MP_Garcia_GeneJoseph_BMIS\bin\Debug\MP_Garcia_GeneJoseph_BMIS.pdb
+C:\Users\Gene Garcia\Desktop\Winforms-Barangay-Management-Information-System\MP_Garcia_GeneJoseph_BMIS\obj\Debug\MP_Garcia_GeneJoseph_BMIS.csprojAssemblyReference.cache
+C:\Users\Gene Garcia\Desktop\Winforms-Barangay-Management-Information-System\MP_Garcia_GeneJoseph_BMIS\obj\Debug\MP_Garcia_GeneJoseph_BMIS.csproj.CoreCompileInputs.cache
+C:\Users\Gene Garcia\Desktop\Winforms-Barangay-Management-Information-System\MP_Garcia_GeneJoseph_BMIS\obj\Debug\MP_Garcia_GeneJoseph_BMIS.exe
+C:\Users\Gene Garcia\Desktop\Winforms-Barangay-Management-Information-System\MP_Garcia_GeneJoseph_BMIS\obj\Debug\MP_Garcia_GeneJoseph_BMIS.pdb

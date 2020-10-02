@@ -45,9 +45,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                         resident.ResidentId = int.Parse(data[0]);
                         resident.FirstName = data[1];
                         resident.LastName = data[2];
-                        resident.Birthdate = Convert.ToDateTime(data[3]);
-                        resident.Sex = data[4];
-                        resident.Address = data[5];
+                        resident.Sex = data[3];
+                        resident.Birthdate = Convert.ToDateTime(data[4]);
+                        resident.Status = data[5];
+                        resident.Address = data[6];
 
                         residents.Add(resident);
                     }
