@@ -91,9 +91,47 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
             if (residents.Count() < 1)
                 return false;
 
+            bool errorEncountered = false;
+            string errMessage = "";
 
+            try
+            {
+                // writing the model to the text file
+                StreamWriter writer = new StreamWriter(RESIDENTS);
 
-            return true;
+                string line;
+
+                foreach (var resident in residents)
+                {
+                    line = resident.ResidentId + "%20";
+                    line += resident.FirstName + "%20";
+                    line += resident.LastName + "%20";
+                    line += resident.Sex + "%20";
+                    line += resident.Birthdate + "%20";
+                    line += resident.Status + "%20";
+                    line += resident.Address;
+                    writer.WriteLine(line);
+                }
+
+                writer.Close();
+
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                errorEncountered = true;
+                errMessage = "Cannot connect to database. Please contact the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage);
+
+            return !errorEncountered;
         }
 
         // End Residents
