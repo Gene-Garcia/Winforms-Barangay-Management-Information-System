@@ -12,7 +12,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
     {
 
         private const string RESIDENTS = "residents.txt";
+        private const string FAMILIES = "families.txt";
         private const string ACCOUNTS = "accounts.txt";
+        private const string AUDIT_TRAILS = "audit_trails.txt";
+        private const string SUMMON = "summons.txt";
 
         // Residents
 

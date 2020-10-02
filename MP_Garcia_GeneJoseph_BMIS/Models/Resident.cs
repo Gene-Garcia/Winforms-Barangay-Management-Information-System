@@ -15,6 +15,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         public DateTime Birthdate { get; set; }
         public string Sex { get; set; }
         public string Address { get; set; }
+        public string Status { get; set; }
 
         /// <summary>
         /// 

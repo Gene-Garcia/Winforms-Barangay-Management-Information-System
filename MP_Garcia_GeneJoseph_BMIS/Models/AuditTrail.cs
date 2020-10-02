@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace MP_Garcia_GeneJoseph_BMIS.Models
 {
-    class Summon
+    class AuditTrail
     {
-        public int SummonId { get; set; }
-        public DateTime IncidentDate { get; set; }
-        public DateTime ReportedDate { get; set; }
-        public string Summary { get; set; }
+        public int TrailId { get; set; }
+        public string Message { get; set; }
+        public int AccountId { get; set; }
+        public DateTime ActionDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<Summon> Summons()
+        public List<AuditTrail> AuditTrails()
         {
             return null;
         }
