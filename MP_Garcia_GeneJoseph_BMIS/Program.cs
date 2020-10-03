@@ -23,21 +23,30 @@ namespace MP_Garcia_GeneJoseph_BMIS
                     Console.WriteLine("Sex: {0}", resident.Sex);
                     Console.WriteLine("Birthday: {0}", resident.Birthdate.ToLongDateString());
                     Console.WriteLine("Address: {0}", resident.Address);
-                    Console.WriteLine("Status: {0}", resident.Status);
+                    Console.WriteLine("Status: {0}\n", resident.Status);
                 }
 
-            residents.Add(new Resident()
-            {
-                ResidentId = residents.Count() + 1,
-                FirstName = "Gene",
-                LastName = "Garcia",
-                Birthdate = DateTime.Now,
-                Sex = "Male",
-                Status = "Alive",
-                Address = "Batangas"
-            }) ;
-
             new Resident().SaveResidents(residents);
+
+            Console.WriteLine("------------------------------------");
+
+            List<Account> accounts = new Account().Accounts();
+
+            if (accounts.Count < 1)
+                Console.WriteLine("Empty");
+            else
+                foreach (var account in accounts)
+                {
+                    Console.WriteLine("Id: {0}", account.AccountId);
+                    Console.WriteLine("Username: {0}", account.Username);
+                    Console.WriteLine("Password: {0}", account.Password);
+                    Console.WriteLine("Resident Id: {0}", account.ResidentId);
+                    Console.WriteLine("Date: {0}\n", account.RegisteredDate.ToLongDateString());
+                }
+
+            new Account().SaveAccounts(accounts);
+
+            Console.WriteLine("------------------------------------");
 
             Console.ReadKey();
         }
