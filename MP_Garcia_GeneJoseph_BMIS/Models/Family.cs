@@ -9,6 +9,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
 {
     class Family
     {
+        public int FamilyId { get; set; }
         public int ParentOneId { get; set; }
         public int ParentTwoId { get; set; }
         public int FamilyMembers { get; set; }

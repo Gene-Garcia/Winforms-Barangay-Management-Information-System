@@ -278,14 +278,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        // txt file contains: parentId, parentId, family numbers
+                        // txt file contains: famId, parentId, parentId, family numbers
                         string[] data = line.Split(new[] { "%20" }, StringSplitOptions.None);
 
                         // temp model
                         Family family = new Family();
-                        family.ParentOneId = int.Parse(data[0]);
-                        family.ParentTwoId = int.Parse(data[1]);
-                        family.FamilyMembers = int.Parse(data[2]);
+                        family.FamilyId = int.Parse(data[0]);
+                        family.ParentOneId = int.Parse(data[1]);
+                        family.ParentTwoId = int.Parse(data[2]);
+                        family.FamilyMembers = int.Parse(data[3]);
 
                         families.Add(family);
                     }
@@ -338,7 +339,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
 
                 foreach (var family in families)
                 {
-                    line = family.ParentOneId + "%20";
+                    line = family.FamilyId + "%20";
+                    line += family.ParentOneId + "%20";
                     line += family.ParentTwoId + "%20";
                     line += family.FamilyMembers;
                     writer.WriteLine(line);

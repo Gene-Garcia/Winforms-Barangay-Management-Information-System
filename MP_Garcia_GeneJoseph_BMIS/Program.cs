@@ -48,6 +48,29 @@ namespace MP_Garcia_GeneJoseph_BMIS
 
             Console.WriteLine("------------------------------------");
 
+            List<Family> families = new Family().Families();
+
+            if (families.Count < 1)
+                Console.WriteLine("Empty");
+            else
+                foreach (var family in families)
+                {
+                    Console.WriteLine("Id: {0}", family.FamilyId);
+                    Console.WriteLine("Parent 1: {0}", family.ParentOneId);
+                    Console.WriteLine("Parent 2: {0}", family.ParentTwoId);
+                    Console.WriteLine("Family Members: {0}\n", family.FamilyMembers);
+                }
+
+            families.Add( new Family() 
+            {
+                FamilyId = families.Count + 1,
+                ParentOneId = 5,
+                ParentTwoId = 10,
+                FamilyMembers = 10
+            });
+
+            new Family().SaveFamilies(families);
+
             Console.ReadKey();
         }
     }
