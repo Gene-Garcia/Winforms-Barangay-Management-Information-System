@@ -18,9 +18,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         public string Status { get; set; }
 
         /// <summary>
-        /// Uses the FileDataContext to retrieve records of registered residents
+        /// Uses the FileDataContext to retrieve records of registered residents. The calling class can 
+        /// just perform lambda expression to filter data.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of Resident model that contains the data in the text file.</returns>
         public List<Resident> Residents()
         {
             List<Resident> residents = new FileDataContext().ReadResidents();
@@ -28,10 +29,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         }
 
         /// <summary>
-        /// 
+        /// The calling class will save the current contains of the Resident model.
         /// </summary>
-        /// <param name="residents"></param>
-        /// <returns></returns>
+        /// <param name="residents">The list model that will be used to write to the file.</param>
+        /// <returns>True if the write action is a success, otherwise, false.</returns>
         public bool SaveResidents(List<Resident> residents)
         {
             return new FileDataContext().SaveResidents(residents);
