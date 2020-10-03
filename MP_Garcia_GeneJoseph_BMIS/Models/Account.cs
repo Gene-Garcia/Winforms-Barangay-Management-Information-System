@@ -27,7 +27,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         }
 
         /// <summary>
-        /// The calling class will save the current contains of the Account model.
+        /// The calling class will save the current data that is stored in Account model.
         /// </summary>
         /// <param name="accounts">The list model that will be used to write to the file.</param>
         /// <returns>True if the write action is a success, otherwise, false.</returns>

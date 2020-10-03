@@ -19,7 +19,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
         private const string AUDIT_TRAILS = "audit_trails.txt";
 
         // -1- Start Account Operations
-
+        /// <summary>
+        /// Reads the accounts.txt and adds it to a list object of Account
+        /// </summary>
+        /// <returns>Returns a list of Resident model that contains the record of the text file. 
+        /// If there are no record, an empty List of Accounts object is returned.</returns>
         public List<Account> ReadAccounts()
         {
             List<Account> accounts = new List<Account>();
@@ -77,7 +81,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
             
             return accounts;
         }
-
+        /// <summary>
+        /// Writes to account.txt using the list of Account models
+        /// </summary>
+        /// <param name="accounts">Holds the record of all registered accounts. The program could either have added, edited or removed a record.</param>
+        /// <returns>A successfull write action returns true, otherwise, false,</returns>
         public bool SaveAccounts(List<Account> accounts)
         {
             bool errorEncountered = false;
@@ -126,9 +134,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
 
         // -2- Start Resident Operations
         /// <summary>
-        /// Reads the Resident.txt and adds it to a list object of Resident
+        /// Reads the resident.txt and adds it to a list object of Resident
         /// </summary>
-        /// <returns>Returns a list of Resident model that contains the record of the text file. If there are no record, an empty List of Resident object is returned.</returns>
+        /// <returns>Returns a list of Resident model that contains the record of the text file. 
+        /// If there are no record, an empty List of Resident object is returned.</returns>
         public List<Resident> ReadResidents()
         {
             List<Resident> residents = new List<Resident>();
@@ -147,7 +156,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        // txt file contains:
+                        // txt file contains:id, fname, lname, sex, bdate, status, address
                         string[] data = line.Split(new[] { "%20" }, StringSplitOptions.None);
 
                         // temp resident model
@@ -164,11 +173,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                     }
                 }
             }
-            //catch (UnauthorizedAccessException e)
-            //{
-            //    errorEncountered = true;
-            //    errMessage = "Database access not granted. Please contact the IT immediately.";
-            //}
             catch (FormatException e)
             {
                 // for the contents of the text file, the data might be corrupted or invalid formats
@@ -191,10 +195,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
             if (errorEncountered)
                 MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return residents;
-        }
-        
+        }        
         /// <summary>
-        /// Writes to Resident.txt using the list of Resident models
+        /// Writes to resident.txt using the list of Resident models
         /// </summary>
         /// <param name="residents">Holds the record of all resident. The program could either have added, edited or removed a record.</param>
         /// <returns>A successfull write action returns true, otherwise, false,</returns>
@@ -252,7 +255,113 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
         // End Resident Operations
 
         // -3- Start Families Operations
+        /// <summary>
+        /// Reads the families.txt and adds it to a list object of Family
+        /// </summary>
+        /// <returns>Returns a list of Family model that contains the record of the text file. 
+        /// If there are no record, an empty List of Family object is returned.</returns>
+        public List<Family> ReadFamilies()
+        {
+            List<Family> families = new List<Family>();
 
+            // does not need to display anything, the program would only show empty list in views
+            if (!File.Exists(FAMILIES))
+                return families;
+
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(FAMILIES))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        // txt file contains: parentId, parentId, family numbers
+                        string[] data = line.Split(new[] { "%20" }, StringSplitOptions.None);
+
+                        // temp model
+                        Family family = new Family();
+                        family.ParentOneId = int.Parse(data[0]);
+                        family.ParentTwoId = int.Parse(data[1]);
+                        family.FamilyMembers = int.Parse(data[2]);
+
+                        families.Add(family);
+                    }
+                }
+            }
+            catch (FormatException e)
+            {
+                // for the contents of the text file, the data might be corrupted or invalid formats
+                errorEncountered = true;
+                errMessage = "Some data were not read succesfully. Report to the IT immediately.";
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                // for the contents of the text file, the data might be corrupted or invalid formats
+                errorEncountered = true;
+                errMessage = "Some data were not read succesfully. Report to the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return families;
+        }
+        /// <summary>
+        /// Writes to families.txt using the list of Family models
+        /// </summary>
+        /// <param name="families">Holds the record of all families. The program could either have added, edited or removed a record.</param>
+        /// <returns>A successfull write action returns true, otherwise, false,</returns>
+        public bool SaveFamilies(List<Family> families)
+        {
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            if (families == null)
+                return false;
+            if (families.Count() < 1)
+                return false;
+
+            try
+            {
+                // writing the model to the text file
+                StreamWriter writer = new StreamWriter(FAMILIES);
+                string line;
+
+                foreach (var family in families)
+                {
+                    line = family.ParentOneId + "%20";
+                    line += family.ParentTwoId + "%20";
+                    line += family.FamilyMembers;
+                    writer.WriteLine(line);
+                }
+                writer.Close();
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                errorEncountered = true;
+                errMessage = "Database access not granted. Please contact the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return !errorEncountered;
+        }
         // End Families Operations
 
         // -4- Start Summon Operations
