@@ -18,7 +18,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         public string Status { get; set; }
 
         /// <summary>
-        /// 
+        /// Uses the FileDataContext to retrieve records of registered residents
         /// </summary>
         /// <returns></returns>
         public List<Resident> Residents()
