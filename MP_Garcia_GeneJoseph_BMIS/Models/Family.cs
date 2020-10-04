@@ -11,6 +11,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
     {
         public int FamilyId { get; set; }
         public int ParentOneId { get; set; }
+        // if the program does not set a value to parenttwoid, C# automatically makes it 0
         public int ParentTwoId { get; set; }
         public int FamilyMembers { get; set; }
 

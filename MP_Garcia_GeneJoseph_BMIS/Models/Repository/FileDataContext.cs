@@ -341,7 +341,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                 {
                     line = family.FamilyId + "%20";
                     line += family.ParentOneId + "%20";
-                    line += family.ParentTwoId + "%20";
+                    line += family.ParentTwoId + "%20";// if the program does not set a value to parenttwoid, C# automatically makes it 0
                     line += family.FamilyMembers;
                     writer.WriteLine(line);
                 }
