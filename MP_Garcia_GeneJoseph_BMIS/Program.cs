@@ -65,6 +65,22 @@ namespace MP_Garcia_GeneJoseph_BMIS
 
             Console.WriteLine("------------------------------------");
 
+            List<Summon> summons = new Summon().Summons();
+
+            if (summons.Count < 1)
+                Console.WriteLine("Empty");
+            else
+                foreach (var summon in summons)
+                {
+                    Console.WriteLine("Id: {0}", summon.SummonId);
+                    Console.WriteLine("Incident: {0}", summon.IncidentDate.ToLongDateString());
+                    Console.WriteLine("Reported: {0}", summon.ReportedDate.ToLongDateString());
+                    Console.WriteLine("Summary: {0}", summon.Summary);
+                    Console.WriteLine("Account Id: {0}\n", summon.AccountId);
+                }
+
+            new Summon().SaveSummons(summons);
+
             Console.ReadKey();
         }
     }
