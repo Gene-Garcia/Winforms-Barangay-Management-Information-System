@@ -56,8 +56,9 @@ namespace MP_Garcia_GeneJoseph_BMIS
                 foreach (var family in families)
                 {
                     Console.WriteLine("Id: {0}", family.FamilyId);
-                    Console.WriteLine("Parent 1: {0}", family.ParentOneId);
-                    Console.WriteLine("Parent 2: {0}", family.ParentTwoId);
+                    Console.WriteLine("Parent 1 Name: {0}", family.ParentOne.FirstName + " " + family.ParentOne.LastName);
+                    if (family.ParentTwo != null)
+                        Console.WriteLine("Parent 2 Name: {0}", family.ParentTwo.FirstName + " " + family.ParentTwo.LastName);
                     Console.WriteLine("Family Members: {0}\n", family.FamilyMembers);
                 }
 
