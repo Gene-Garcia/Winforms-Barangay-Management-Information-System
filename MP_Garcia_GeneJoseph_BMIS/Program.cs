@@ -40,7 +40,7 @@ namespace MP_Garcia_GeneJoseph_BMIS
                     Console.WriteLine("Id: {0}", account.AccountId);
                     Console.WriteLine("Username: {0}", account.Username);
                     Console.WriteLine("Password: {0}", account.Password);
-                    Console.WriteLine("Resident Id: {0}", account.ResidentId);
+                    Console.WriteLine("Full Name: {0}", account.Resident.FirstName + " " + account.Resident.LastName);
                     Console.WriteLine("Date: {0}\n", account.RegisteredDate.ToLongDateString());
                 }
 

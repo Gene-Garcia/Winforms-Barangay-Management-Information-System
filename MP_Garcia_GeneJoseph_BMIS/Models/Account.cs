@@ -15,14 +15,38 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         public int ResidentId { get; set; }
         public DateTime RegisteredDate { get; set; }
 
+        // Foreign Table/Model/Reference
+        public Resident Resident { get; set; }
+
         /// <summary>
         /// Uses the FileDataContext to retrieve records of registered user accounts. The calling class can 
         /// just perform lambda expression to filter data.
+        /// Since an Account record has a foreign key reference of Resident model, then this method also handles the assignment
+        /// of the Resident record.
         /// </summary>
         /// <returns>List of Accounts model that contains the data in the text file.</returns>
         public List<Account> Accounts()
         {
             List<Account> accounts = new FileDataContext().ReadAccounts();
+            List<Resident> residents = new FileDataContext().ReadResidents();
+
+            List<Account> invalidAccounts = new List<Account>();
+            foreach (var account in accounts)
+            {
+                // the account is invalid if the Account does not have Resident record, then we remove it from the list
+                Resident userinfo = residents.Where(m => m.ResidentId == account.ResidentId).FirstOrDefault();
+                if (userinfo != null)
+                    account.Resident = userinfo;
+                else
+                    invalidAccounts.Add(account);
+            } 
+
+            // delete invalid account
+            foreach (var invalidAccount in invalidAccounts)
+            {
+                accounts.Remove(invalidAccount);
+            }
+
             return accounts;
         }
 
