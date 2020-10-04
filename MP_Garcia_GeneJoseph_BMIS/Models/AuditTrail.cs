@@ -13,15 +13,35 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         public string Message { get; set; }
         public int AccountId { get; set; }
         public DateTime ActionDate { get; set; }
+        // foreign table
+        public Account Account { get; set; }
 
         /// <summary>
         /// Uses the FileDataContext to retrieve records of recorded audit trails. The calling class can 
         /// just perform lambda expression to filter data.
+        /// Since a AuditTrail record has a foreign key reference of Account model, then this method also handles the assignment
+        /// of the Account record.
         /// </summary>
         /// <returns>List of AuditTrail model that contains the data in the text file.</returns>
         public List<AuditTrail> AuditTrails()
         {
             List<AuditTrail> auditTrails = new FileDataContext().ReadAuditTrails();
+            List<Account> accounts = new FileDataContext().ReadAccounts();
+
+            List<AuditTrail> invalidAuditTrails = new List<AuditTrail>();
+            foreach(var auditTrail in auditTrails)
+            {
+                Account accountInfo = accounts.Where(m => m.AccountId == auditTrail.AccountId).FirstOrDefault();
+                if (accountInfo != null)
+                    auditTrail.Account = accountInfo;
+                else
+                    invalidAuditTrails.Add(auditTrail);
+            }
+
+            // delete invalid audit trail
+            foreach (var invalidAuditTrail in invalidAuditTrails)
+                auditTrails.Remove(invalidAuditTrail);
+
             return auditTrails;
         }
 

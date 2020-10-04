@@ -9,6 +9,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
 {
     class Account
     {
+        // restriction, does not neccessarily remove the account, but set its type as ARCHIVED
         public int AccountId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }

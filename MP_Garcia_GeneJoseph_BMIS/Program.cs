@@ -94,7 +94,7 @@ namespace MP_Garcia_GeneJoseph_BMIS
                     Console.WriteLine("Id: {0}", auditTrail.TrailId);
                     Console.WriteLine("Message: {0}", auditTrail.Message);
                     Console.WriteLine("Date: {0}", auditTrail.ActionDate.ToLongDateString());
-                    Console.WriteLine("Account Id: {0}\n", auditTrail.AccountId);
+                    Console.WriteLine("Account Name: {0}\n", auditTrail.Account.Username);
                 }
 
             new AuditTrail().SaveAuditTrails(auditTrails);

@@ -20,6 +20,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         /// <summary>
         /// Uses the FileDataContext to retrieve records of recorded summon reports. The calling class can 
         /// just perform lambda expression to filter data.
+        /// Since an Summon record has a foreign key reference of Account model, then this method also handles the assignment
+        /// of the Account record.
         /// </summary>
         /// <returns>List of Resident model that contains the data in the text file.</returns>
         public List<Summon> Summons()
@@ -37,6 +39,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
                     invalidSummons.Add(summon);
             }
 
+            // delete
             foreach (var invalidSummon in invalidSummons)
                 summons.Remove(invalidSummon);
 
