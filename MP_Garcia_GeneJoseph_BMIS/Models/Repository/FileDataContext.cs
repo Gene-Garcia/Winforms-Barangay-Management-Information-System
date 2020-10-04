@@ -481,7 +481,115 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
         // End Summon Opeartions
 
         // -5- Start Audit Trails Operations
+        /// <summary>
+        /// Reads the audit_trail.txt and adds it to a list object of Audit Trail
+        /// </summary>
+        /// <returns>Returns a list of AuditTrail model that contains the record of the text file. 
+        /// If there are no record, an empty List of AuditTrail object is returned.</returns>
+        public List<AuditTrail> ReadAuditTrails()
+        {
+            List<AuditTrail> auditTrails = new List<AuditTrail>();
 
+            // does not need to display anything, the program would only show empty list in views
+            if (!File.Exists(AUDIT_TRAILS))
+                return auditTrails;
+
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(AUDIT_TRAILS))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        // txt file contains: trailId, message, date, accountId
+                        string[] data = line.Split(new[] { "%20" }, StringSplitOptions.None);
+
+                        // temp model
+                        AuditTrail auditTrail = new AuditTrail();
+                        auditTrail.TrailId = int.Parse(data[0]);
+                        auditTrail.Message = data[1];
+                        auditTrail.ActionDate = Convert.ToDateTime(data[2]);
+                        auditTrail.AccountId = int.Parse(data[3]);
+
+                        auditTrails.Add(auditTrail);
+                    }
+                }
+            }
+            catch (FormatException e)
+            {
+                // for the contents of the text file, the data might be corrupted or invalid formats
+                errorEncountered = true;
+                errMessage = "Some data were not read succesfully. Report to the IT immediately.";
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                // for the contents of the text file, the data might be corrupted or invalid formats
+                errorEncountered = true;
+                errMessage = "Some data were not read succesfully. Report to the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return auditTrails;
+        }
+        /// <summary>
+        /// Writes to audit_trails.txt using the list of Audit Trail models
+        /// </summary>
+        /// <param name="auditTrails">Holds the record of all AuditTrail. The program could either have added a record.</param>
+        /// <returns>A successfull write action returns true, otherwise, false,</returns>
+        public bool SaveAuditTrails(List<AuditTrail> auditTrails)
+        {
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            if (auditTrails == null)
+                return false;
+            if (auditTrails.Count() < 1)
+                return false;
+
+            try
+            {
+                // writing the model to the text file
+                StreamWriter writer = new StreamWriter(AUDIT_TRAILS);
+                string line;
+
+                foreach (var auditTrail in auditTrails)
+                {
+                    line = auditTrail.TrailId + "%20";
+                    line += auditTrail.Message + "%20";
+                    line += auditTrail.ActionDate + "%20";
+                    line += auditTrail.AccountId;
+                    writer.WriteLine(line);
+                }
+                writer.Close();
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                errorEncountered = true;
+                errMessage = "Database access not granted. Please contact the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return !errorEncountered;
+        }
         // End Audit Trails Operations
     }
 }
