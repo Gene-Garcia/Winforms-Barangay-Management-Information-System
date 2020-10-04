@@ -81,6 +81,23 @@ namespace MP_Garcia_GeneJoseph_BMIS
 
             new Summon().SaveSummons(summons);
 
+            Console.WriteLine("------------------------------------");
+
+            List<AuditTrail> auditTrails = new AuditTrail().AuditTrails();
+
+            if (auditTrails.Count < 1)
+                Console.WriteLine("Empty");
+            else
+                foreach (var auditTrail in auditTrails)
+                {
+                    Console.WriteLine("Id: {0}", auditTrail.TrailId);
+                    Console.WriteLine("Message: {0}", auditTrail.Message);
+                    Console.WriteLine("Date: {0}", auditTrail.ActionDate.ToLongDateString());
+                    Console.WriteLine("Account Id: {0}\n", auditTrail.AccountId);
+                }
+
+            new AuditTrail().SaveAuditTrails(auditTrails);
+
             Console.ReadKey();
         }
     }
