@@ -61,15 +61,9 @@ namespace MP_Garcia_GeneJoseph_BMIS
                     Console.WriteLine("Family Members: {0}\n", family.FamilyMembers);
                 }
 
-            families.Add( new Family() 
-            {
-                FamilyId = families.Count + 1,
-                ParentOneId = 5,
-                ParentTwoId = 10,
-                FamilyMembers = 10
-            });
-
             new Family().SaveFamilies(families);
+
+            Console.WriteLine("------------------------------------");
 
             Console.ReadKey();
         }

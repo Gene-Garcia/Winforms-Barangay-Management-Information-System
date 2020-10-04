@@ -367,7 +367,117 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
         // End Families Operations
 
         // -4- Start Summon Operations
+        /// <summary>
+        /// Reads the summons.txt and adds it to a list object of Summons
+        /// </summary>
+        /// <returns>Returns a list of Summon model that contains the record of the text file. 
+        /// If there are no record, an empty List of Summon object is returned.</returns>
+        public List<Summon> ReadSummons()
+        {
+            List<Summon> summons = new List<Summon>();
 
+            // does not need to display anything, the program would only show empty list in views
+            if (!File.Exists(SUMMON))
+                return summons;
+
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(SUMMON))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        // txt file contains: sumId, incidentDate, reportDate, summary, accId
+                        string[] data = line.Split(new[] { "%20" }, StringSplitOptions.None);
+
+                        // temp model
+                        Summon summon = new Summon();
+                        summon.SummonId = int.Parse(data[0]);
+                        summon.IncidentDate = Convert.ToDateTime(data[1]);
+                        summon.ReportedDate = Convert.ToDateTime(data[2]);
+                        summon.Summary = data[3];
+                        summon.AccountId = int.Parse(data[4]);
+
+                        summons.Add(summon);
+                    }
+                }
+            }
+            catch (FormatException e)
+            {
+                // for the contents of the text file, the data might be corrupted or invalid formats
+                errorEncountered = true;
+                errMessage = "Some data were not read succesfully. Report to the IT immediately.";
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                // for the contents of the text file, the data might be corrupted or invalid formats
+                errorEncountered = true;
+                errMessage = "Some data were not read succesfully. Report to the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return summons;
+        }
+        /// <summary>
+        /// Writes to summons.txt using the list of Summon models
+        /// </summary>
+        /// <param name="summons">Holds the record of all summons. The program could either have added or removed a record.</param>
+        /// <returns>A successfull write action returns true, otherwise, false,</returns>
+        public bool SaveSummons(List<Summon> summons)
+        {
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            if (summons == null)
+                return false;
+            if (summons.Count() < 1)
+                return false;
+
+            try
+            {
+                // writing the model to the text file
+                StreamWriter writer = new StreamWriter(SUMMON);
+                string line;
+
+                foreach (var summon in summons)
+                {
+                    line = summon.SummonId + "%20";
+                    line += summon.IncidentDate + "%20";
+                    line += summon.ReportedDate + "%20";
+                    line += summon.Summary + "%20";
+                    line += summon.AccountId;
+                    writer.WriteLine(line);
+                }
+                writer.Close();
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                errorEncountered = true;
+                errMessage = "Database access not granted. Please contact the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return !errorEncountered;
+        }
         // End Summon Opeartions
 
         // -5- Start Audit Trails Operations
