@@ -77,7 +77,7 @@ namespace MP_Garcia_GeneJoseph_BMIS
                     Console.WriteLine("Incident: {0}", summon.IncidentDate.ToLongDateString());
                     Console.WriteLine("Reported: {0}", summon.ReportedDate.ToLongDateString());
                     Console.WriteLine("Summary: {0}", summon.Summary);
-                    Console.WriteLine("Account Id: {0}\n", summon.AccountId);
+                    Console.WriteLine("Account Name: {0}\n", summon.Account.Username);
                 }
 
             new Summon().SaveSummons(summons);

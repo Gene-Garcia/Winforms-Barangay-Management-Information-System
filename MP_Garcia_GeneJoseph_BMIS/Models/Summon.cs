@@ -14,6 +14,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         public DateTime ReportedDate { get; set; }
         public string Summary { get; set; }
         public int AccountId { get; set; }
+        // Foreign Table
+        public Account Account { get; set; }
 
         /// <summary>
         /// Uses the FileDataContext to retrieve records of recorded summon reports. The calling class can 
@@ -23,6 +25,21 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         public List<Summon> Summons()
         {
             List<Summon> summons = new FileDataContext().ReadSummons();
+            List<Account> accounts = new FileDataContext().ReadAccounts();
+
+            List<Summon> invalidSummons = new List<Summon>();
+            foreach (var summon in summons)
+            {
+                Account accountInfo = accounts.Where(m => m.AccountId == summon.AccountId).FirstOrDefault();
+                if (accountInfo != null)
+                    summon.Account = accountInfo;
+                else
+                    invalidSummons.Add(summon);
+            }
+
+            foreach (var invalidSummon in invalidSummons)
+                summons.Remove(invalidSummon);
+
             return summons;
         }
 
