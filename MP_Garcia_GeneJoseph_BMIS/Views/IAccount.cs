@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MP_Garcia_GeneJoseph_BMIS.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views
 {
     interface IAccount
     {
-        IAccount Account { get; set; }
+        Account Account { get; set; }
     }
 }
