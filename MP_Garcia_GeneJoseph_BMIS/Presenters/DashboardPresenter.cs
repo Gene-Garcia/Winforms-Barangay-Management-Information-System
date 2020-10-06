@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 {
     class DashboardPresenter
     {
+        public void Index()
+        {
+            string input = MenuHelper.MenuInput();
+
+
+        }
     }
 }

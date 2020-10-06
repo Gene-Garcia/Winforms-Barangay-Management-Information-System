@@ -30,7 +30,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             Console.Write("\tPassword >>");
             account.Password = Console.ReadLine();
 
-            new AccountPresenter().Login(this);
+            new AccountPresenter().PostLogin(this);
         }
     }
 }

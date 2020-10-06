@@ -1,8 +1,6 @@
 ﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
 using MP_Garcia_GeneJoseph_BMIS.Models;
 using MP_Garcia_GeneJoseph_BMIS.Presenters;
-using MP_Garcia_GeneJoseph_BMIS.Views;
-using MP_Garcia_GeneJoseph_BMIS.Views.AccountView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -111,7 +109,7 @@ namespace MP_Garcia_GeneJoseph_BMIS
         {
 
             // run view
-            new LoginView().RunView();
+            new AccountPresenter().GetLogin();
 
             Console.ReadKey();
 

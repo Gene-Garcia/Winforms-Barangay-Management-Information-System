@@ -16,10 +16,18 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
     {
         private Entities dbEnt = new Entities();
 
+        /// <summary>
+        /// Handles only calls to display login view
+        /// </summary>
+        public void GetLogin()
+        {
+            new LoginView().RunView();
+        }
+
         /// <param name="loginCredentials">
         /// The values from the login view
         /// </param>
-        public void Login(IAccount loginCredentials)
+        public void PostLogin(IAccount loginCredentials)
         {
             LoginHelper.LoginUser
             (
@@ -32,15 +40,13 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             {
                 // load view again
                 MessageBox.Show("Invalid Login credentials.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                LoginView view = new LoginView();
-                view.Account = loginCredentials.Account; // reload login information
-                view.RunView();
+                new AccountPresenter().GetLogin();
             }
             else
             {
                 // load landing page, dashboard
                 MessageBox.Show("Login Success.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new DashboardView().RunView();
+                new DashboardPresenter().Index();
             }                
         }
 
