@@ -42,7 +42,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        // txt file contains:id, uname, pword, resId, date
+                        // txt file contains:id, uname, pword, resId, date, acc status
                         string[] data = line.Split(new[] { "%20" }, StringSplitOptions.None);
 
                         // temp model
@@ -52,6 +52,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                         account.Password = data[2];
                         account.ResidentId = int.Parse(data[3]);
                         account.RegisteredDate = Convert.ToDateTime(data[4]);
+                        account.AccountStatus = data[5];
 
                         accounts.Add(account);
                     }
@@ -108,7 +109,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                     line += account.Username + "%20";
                     line += account.Password + "%20";
                     line += account.ResidentId + "%20";
-                    line += account.RegisteredDate;
+                    line += account.RegisteredDate + "%20";
+                    line += account.AccountStatus;
                     writer.WriteLine(line);
                 }
                 writer.Close();

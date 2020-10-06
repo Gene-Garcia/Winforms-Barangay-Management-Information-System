@@ -15,6 +15,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         public string Password { get; set; }
         public int ResidentId { get; set; }
         public DateTime RegisteredDate { get; set; }
+        // ARCHIVED, ACTIVE
+        public string AccountStatus { get; set; }
 
         // Foreign Table/Model/Reference
         public Resident Resident { get; set; }
