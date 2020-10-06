@@ -8,10 +8,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
 {
     class Entities
     {
-        public Account Account { get; set; }
-        public Resident Resident { get; set; }
-        public Family Family { get; set; }
-        public AuditTrail AuditTrail { get; set; }
-        public Summon Summon { get; set; }
+        public Account Account          = new Account();
+        public Resident Resident        = new Resident();
+        public Family Family            = new Family();
+        public AuditTrail AuditTrail    = new AuditTrail();
+        public Summon Summon            = new Summon();
     }
 }

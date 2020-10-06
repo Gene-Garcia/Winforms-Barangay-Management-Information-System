@@ -10,11 +10,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 {
     class LoginHelper
     {
-        public static Account LoginUser(IAccount credentials, List<Account> activeAccounts)
+        public static void LoginUser(IAccount credentials, List<Account> activeAccounts)
         {
+            //credentials.Account.Password = HashSet(credentials.Account.Password);
+            Account user = activeAccounts.Where(m => m.Username == credentials.Account.Username && m.Password == credentials.Account.Password).FirstOrDefault();
             
-            
-            return null;
+            if (user != null)
+            {
+                // create user session
+                UserSession.User = user;
+                UserSession.LoggedIn = true;
+            }            
         } 
     }
 }

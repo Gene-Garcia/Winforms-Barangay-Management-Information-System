@@ -44,10 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\LoginHelper.cs" />
     <Compile Include="Helpers\UserSession.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AuditTrail.cs" />
     <Compile Include="Models\Dashboard.cs" />
+    <Compile Include="Models\Entities.cs" />
     <Compile Include="Models\Family.cs" />
     <Compile Include="Models\Repository\FileDataContext.cs" />
     <Compile Include="Models\Resident.cs" />
@@ -59,17 +61,17 @@
     <Compile Include="Presenters\SummonPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\AccountView\LoginView.cs" />
+    <Compile Include="Views\DashboardView\DashboardView.cs" />
     <Compile Include="Views\IAccount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Account\" />
-    <Folder Include="Views\Dashboard\" />
-    <Folder Include="Views\Family\" />
-    <Folder Include="Views\Resident\" />
-    <Folder Include="Views\Summon\" />
+    <Folder Include="Views\FamilyView\" />
+    <Folder Include="Views\ResidentView\" />
+    <Folder Include="Views\SummonView\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

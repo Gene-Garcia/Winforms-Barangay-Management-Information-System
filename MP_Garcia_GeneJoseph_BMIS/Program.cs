@@ -1,6 +1,8 @@
 ﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
 using MP_Garcia_GeneJoseph_BMIS.Models;
 using MP_Garcia_GeneJoseph_BMIS.Presenters;
+using MP_Garcia_GeneJoseph_BMIS.Views;
+using MP_Garcia_GeneJoseph_BMIS.Views.AccountView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,10 +109,9 @@ namespace MP_Garcia_GeneJoseph_BMIS
         */
         static void Main(string[] args)
         {
-            UserSession.User = new Account();
-            UserSession.User.Username = "Gene";
-            UserSession.User.Password = "123";
-            new AccountPresenter().Login(null);
+
+            // run view
+            new LoginView().RunView();
 
             Console.ReadKey();
 

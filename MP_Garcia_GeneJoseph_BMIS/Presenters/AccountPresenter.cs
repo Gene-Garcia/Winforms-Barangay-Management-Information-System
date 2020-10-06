@@ -1,6 +1,8 @@
 ﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
 using MP_Garcia_GeneJoseph_BMIS.Models;
 using MP_Garcia_GeneJoseph_BMIS.Views;
+using MP_Garcia_GeneJoseph_BMIS.Views.AccountView;
+using MP_Garcia_GeneJoseph_BMIS.Views.DashboardView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +17,18 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         public void Login(IAccount loginCredentials)
         {
-            Console.WriteLine("Logged User\n" + UserSession.User.Username);
-            Account loggedIn = LoginHelper.LoginUser
+            LoginHelper.LoginUser
                 (
                     loginCredentials, 
                     dbEnt.Account.Accounts().Where(m => m.AccountStatus.ToUpper() == "ACTIVE").ToList() // filter accounts, only active accounts
                 );
+
+            if (UserSession.LoggedIn == false)
+                new LoginView().RunView();
+            else
+                Console.WriteLine("Successfull login");
+
+            new DashboardView().RunView();
         }
 
     }

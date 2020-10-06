@@ -10,5 +10,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
     class UserSession
     {
         public static Account User { get; set; }
+        public static bool LoggedIn = false;
     }
 }
