@@ -39,7 +39,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             else
             {
                 // load landing page, dashboard
-                Console.WriteLine("Successfull login");
+                MessageBox.Show("Login Success.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 new DashboardView().RunView();
             }                
         }

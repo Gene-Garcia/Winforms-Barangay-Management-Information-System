@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Cryptography.cs" />
     <Compile Include="Helpers\LoginHelper.cs" />
     <Compile Include="Helpers\UserSession.cs" />
     <Compile Include="Models\Account.cs" />
