@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 {
@@ -24,11 +25,16 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 );
 
             if (UserSession.LoggedIn == false)
+            {
+                MessageBox.Show("Invalid Login credentials.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 new LoginView().RunView();
+            }
             else
+            {
                 Console.WriteLine("Successfull login");
-
-            new DashboardView().RunView();
+                new DashboardView().RunView();
+            }
+                
         }
 
     }
