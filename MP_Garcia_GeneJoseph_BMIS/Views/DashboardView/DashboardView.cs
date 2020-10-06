@@ -11,7 +11,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.DashboardView
     {
         public void RunView()
         {
-            Console.WriteLine("Welcome {0}!", UserSession.User.Username);
+            Console.WriteLine("\n\tWelcome {0}!", UserSession.User.Username);
         }
     }
 }

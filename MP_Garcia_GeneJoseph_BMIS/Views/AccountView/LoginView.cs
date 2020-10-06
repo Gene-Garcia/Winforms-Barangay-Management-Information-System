@@ -24,10 +24,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
         
         public void RunView()
         {
-            Console.WriteLine("\n\nLOGIN");
-            Console.Write("Username >>");
+            Console.WriteLine("\n\n\t\tLOGIN");
+            Console.Write("\tUsername >>");
             account.Username = Console.ReadLine();
-            Console.Write("Password >>");
+            Console.Write("\tPassword >>");
             account.Password = Console.ReadLine();
 
             new AccountPresenter().Login(this);
