@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
+using MP_Garcia_GeneJoseph_BMIS.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 {
     class AccountPresenter
     {
+
+        public void Login(IAccount login)
+        {
+            Console.WriteLine("Logged User\n" + UserSession.User.Username);
+        }
+
     }
 }
