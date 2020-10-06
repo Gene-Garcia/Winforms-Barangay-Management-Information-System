@@ -11,9 +11,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
     {
         public void Index()
         {
-            string input = MenuHelper.MenuInput();
-
-
+            MenuHelper.MenuInput();
         }
     }
 }

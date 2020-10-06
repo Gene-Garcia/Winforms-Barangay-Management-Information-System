@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Helpers\Cryptography.cs" />
     <Compile Include="Helpers\LoginHelper.cs" />
+    <Compile Include="Helpers\MenuHelper.cs" />
     <Compile Include="Helpers\UserSession.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AuditTrail.cs" />
@@ -63,8 +64,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\AccountView\LoginView.cs" />
+    <Compile Include="Views\AccountView\RegisterAccountView.cs" />
     <Compile Include="Views\DashboardView\DashboardView.cs" />
     <Compile Include="Views\IAccount.cs" />
+    <Compile Include="Views\IResident.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

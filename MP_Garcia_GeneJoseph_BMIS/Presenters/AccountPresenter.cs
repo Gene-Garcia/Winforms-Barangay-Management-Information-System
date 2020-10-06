@@ -1,5 +1,6 @@
 ﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
 using MP_Garcia_GeneJoseph_BMIS.Models;
+using MP_Garcia_GeneJoseph_BMIS.Models.Repository;
 using MP_Garcia_GeneJoseph_BMIS.Views;
 using MP_Garcia_GeneJoseph_BMIS.Views.AccountView;
 using MP_Garcia_GeneJoseph_BMIS.Views.DashboardView;
@@ -50,5 +51,32 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             }                
         }
 
+        /// <summary>
+        /// GET
+        /// </summary>
+        public void GetRegisterAccount()
+        {
+            RegisterAccountView view = new RegisterAccountView();
+            view.Residents = dbEnt.Resident.Residents();
+            view.RunView();
+        }
+
+        public void PostRegisterAccount(IResident selectedResident)
+        {
+            Account newAccount = new Account();
+            newAccount.AccountId = selectedResident.Residents.Count() + 1;
+            newAccount.Username = selectedResident.Resident.FirstName.ToLower() + "_" + selectedResident.Resident.LastName.ToLower();
+            newAccount.Password = "qwertypad360";
+            newAccount.ResidentId = selectedResident.Resident.ResidentId;
+            newAccount.RegisteredDate = DateTime.Now;
+            newAccount.AccountStatus = "ACTIVE";
+
+            // append to accounts
+            // stopped here -- implement in model entities to just append records in the text file
+            // save to text file
+
+            // go back to landing page
+            new DashboardPresenter().Index();
+        }
     }
 }
