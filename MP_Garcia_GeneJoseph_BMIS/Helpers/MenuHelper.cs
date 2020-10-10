@@ -19,10 +19,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
             {
                 Console.WriteLine("\n\t\tMENU");
                 Console.WriteLine("\tA. Register New Account");
+                Console.WriteLine("\tB. Logout");
                 Console.Write("\tSelection >>");
                 input = Console.ReadLine().Trim();
 
-                string[] options = { "A" };
+                string[] options = { "A", "B" };
 
                 if (options.Contains(input))
                     break;
@@ -33,6 +34,16 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
             if (input == "A")
             {
                 new AccountPresenter().GetRegisterAccount();
+            }
+            else if (input == "B")
+            {
+                // clear session
+                UserSession.LoggedIn = false;
+                UserSession.User = null;
+
+                /* Audit TRAIL RECORD and System PROMPT */
+
+                new AccountPresenter().GetLogin();
             }
         }
     }
