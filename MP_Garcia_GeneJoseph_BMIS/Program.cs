@@ -1,6 +1,4 @@
-﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
-using MP_Garcia_GeneJoseph_BMIS.Models;
-using MP_Garcia_GeneJoseph_BMIS.Presenters;
+﻿using MP_Garcia_GeneJoseph_BMIS.Presenters;
 using System;
 using System.Collections.Generic;
 using System.Linq;

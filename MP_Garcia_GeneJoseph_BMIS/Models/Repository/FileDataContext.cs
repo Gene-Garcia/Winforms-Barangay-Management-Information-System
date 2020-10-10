@@ -30,7 +30,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
 
             // does not need to display anything, the program would only show empty list in views
             if (!File.Exists(ACCOUNTS))
+            {   
+                // creates the text file
+                StreamWriter temp = File.CreateText(ACCOUNTS);
+                temp.Close();
                 return accounts;
+            }
 
             bool errorEncountered = false;
             string errMessage = "";
@@ -132,6 +137,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
 
             return !errorEncountered;
         }
+        public bool InsertAccount(Account newAccount)
+        {
+            StreamWriter w = File.CreateText("log.txt");
+            w.Close();
+            return true;
+        }
         // End Account Operations
 
         // -2- Start Resident Operations
@@ -146,7 +157,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
 
             // does not need to display anything, the program would only show empty list in views
             if (!File.Exists(RESIDENTS))
+            {
+                // creates the text file
+                StreamWriter temp = File.CreateText(RESIDENTS);
+                temp.Close();
                 return residents;
+            }
 
             bool errorEncountered = false;
             string errMessage = "";
@@ -268,7 +284,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
 
             // does not need to display anything, the program would only show empty list in views
             if (!File.Exists(FAMILIES))
+            {
+                // creates the text file
+                StreamWriter temp = File.CreateText(FAMILIES);
+                temp.Close();
                 return families;
+            }
 
             bool errorEncountered = false;
             string errMessage = "";
@@ -380,7 +401,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
 
             // does not need to display anything, the program would only show empty list in views
             if (!File.Exists(SUMMON))
+            {
+                // creates the text file
+                StreamWriter temp = File.CreateText(SUMMON);
+                temp.Close();
                 return summons;
+            }
 
             bool errorEncountered = false;
             string errMessage = "";
@@ -494,7 +520,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
 
             // does not need to display anything, the program would only show empty list in views
             if (!File.Exists(AUDIT_TRAILS))
+            {
+                // creates the text file
+                StreamWriter temp = File.CreateText(AUDIT_TRAILS);
+                temp.Close();
                 return auditTrails;
+            }
 
             bool errorEncountered = false;
             string errMessage = "";
