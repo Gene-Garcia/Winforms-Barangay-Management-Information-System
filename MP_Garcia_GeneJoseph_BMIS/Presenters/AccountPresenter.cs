@@ -47,6 +47,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             {
                 // load landing page, dashboard
                 MessageBox.Show("Login Success.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                /* Audit TRAIL RECORD and System PROMPT */
                 new DashboardPresenter().Index();
             }                
         }
@@ -57,24 +58,46 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         public void GetRegisterAccount()
         {
             RegisterAccountView view = new RegisterAccountView();
-            view.Residents = dbEnt.Resident.Residents();
+
+            var residents = dbEnt.Resident.Residents();
+            // filter resilts
+            // legal age and not deceased
+            residents = residents.Where(m => m.Status.ToUpper() == "ALIVE").ToList();
+            // not registered already
+            List<int> existingResidentIds = dbEnt.Account.Accounts().Select(m => m.ResidentId).ToList();
+            // the residents must NOT CONTAIN any id in the existingResidentIds
+            residents = residents.Where(m => !existingResidentIds.Contains(m.ResidentId) ).ToList();
+
+            view.Residents = residents;
             view.RunView();
         }
 
         public void PostRegisterAccount(IResident selectedResident)
         {
             Account newAccount = new Account();
-            newAccount.AccountId = selectedResident.Residents.Count() + 1;
+            newAccount.AccountId = dbEnt.Account.Accounts().Count + 1; // only gets the number of registered accounts
             newAccount.Username = selectedResident.Resident.FirstName.ToLower() + "_" + selectedResident.Resident.LastName.ToLower();
             newAccount.Password = "qwertypad360";
             newAccount.ResidentId = selectedResident.Resident.ResidentId;
             newAccount.RegisteredDate = DateTime.Now;
             newAccount.AccountStatus = "ACTIVE";
 
-            
+            bool status = dbEnt.Account.InsertAccount(newAccount);
 
-            // go back to landing page
-            new DashboardPresenter().Index();
+            if (status)
+            {
+                MessageBox.Show("Account for " + selectedResident.Resident.FirstName + " " + selectedResident.Resident.LastName + " was registered successfully.", "Register Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // go back to landing page
+                /* Audit TRAIL RECORD and System PROMPT */
+                new DashboardPresenter().Index();
+                
+            }
+            else
+            {
+                MessageBox.Show("Account for " + selectedResident.Resident.FirstName + " " + selectedResident.Resident.LastName + " was not registered. Please try again", "Register Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // reload resident selection for register
+                new AccountPresenter().GetRegisterAccount();
+            }                
         }
     }
 }

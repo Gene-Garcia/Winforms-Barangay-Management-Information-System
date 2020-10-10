@@ -14,7 +14,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
         private List<Resident> residents = new List<Resident>();
         public List<Resident> Residents 
         {
-            get => throw new NotImplementedException();
+            get
+            {
+                return residents;
+            }
             set 
             {
                 residents = value;
@@ -39,17 +42,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             Console.WriteLine("\n\n\t\tREGISTER NEW ACCOUNT");
             foreach (var resident in residents)
             {
-                Console.WriteLine("Id: {0}", resident.ResidentId);
-                Console.WriteLine("Name: {0}", resident.FirstName + " " + resident.LastName);
-                Console.WriteLine("Sex: {0}", resident.Sex);
-                Console.WriteLine("Birthday: {0}", resident.Birthdate.ToLongDateString());
-                Console.WriteLine("Address: {0}", resident.Address);
-                Console.WriteLine("Status: {0}\n", resident.Status);
+                Console.WriteLine("\tId: {0}", resident.ResidentId);
+                Console.WriteLine("\tName: {0}", resident.FirstName + " " + resident.LastName);
+                Console.WriteLine("\tSex: {0}", resident.Sex);
+                Console.WriteLine("\tBirthday: {0}", resident.Birthdate.ToLongDateString());
+                Console.WriteLine("\tAddress: {0}", resident.Address);
+                Console.WriteLine("\tStatus: {0}\n", resident.Status);
             }
 
             do
             {
-                Console.Write("Select a Resident >>");
+                Console.Write("\tSelect a Resident >>");
                 int residentId = int.Parse(Console.ReadLine());
 
                 // find the resident with the id from the list
