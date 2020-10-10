@@ -137,11 +137,51 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
 
             return !errorEncountered;
         }
+        /// <summary>
+        /// Saves a single record of a Model, not list. The method only appends to the text file
+        /// </summary>
+        /// <param name="newAccount">The new account to be recorded or appended to the text file</param>
+        /// <returns>True if there are no error encountered, otherwise, False</returns>
         public bool InsertAccount(Account newAccount)
         {
-            StreamWriter w = File.CreateText("log.txt");
-            w.Close();
-            return true;
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            if (newAccount == null)
+                return false;
+
+            try
+            {
+                // writing the model to the text file
+                StreamWriter writer = new StreamWriter(ACCOUNTS, true);
+
+                string line;
+                line = newAccount.AccountId + "%20";
+                line += newAccount.Username + "%20";
+                line += newAccount.Password + "%20";
+                line += newAccount.ResidentId + "%20";
+                line += newAccount.RegisteredDate + "%20";
+                line += newAccount.AccountStatus;
+
+                writer.WriteLine(line);
+                writer.Close();
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                errorEncountered = true;
+                errMessage = "Database access not granted. Please contact the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return !errorEncountered;
         }
         // End Account Operations
 
@@ -251,7 +291,53 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                 }
 
                 writer.Close();
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                errorEncountered = true;
+                errMessage = "Database access not granted. Please contact the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
 
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return !errorEncountered;
+        }
+        /// <summary>
+        /// Saves a single record of a Model, not list. The method only appends to the text file
+        /// </summary>
+        /// <param name="newResident">The new resident to be recorded or appended to the text file</param>
+        /// <returns>True if there are no error encountered, otherwise, False</returns>
+        public bool InsertResident(Resident newResident)
+        {
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            if (newResident == null)
+                return false;
+
+            try
+            {
+                // writing the model to the text file
+                StreamWriter writer = new StreamWriter(RESIDENTS, true);
+
+                string line;
+                line = newResident.ResidentId + "%20";
+                line += newResident.FirstName + "%20";
+                line += newResident.LastName + "%20";
+                line += newResident.Sex + "%20";
+                line += newResident.Birthdate + "%20";
+                line += newResident.Status + "%20";
+                line += newResident.Address;
+
+                writer.WriteLine(line);
+                writer.Close();
             }
             catch (UnauthorizedAccessException e)
             {
@@ -368,6 +454,50 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                     line += family.FamilyMembers;
                     writer.WriteLine(line);
                 }
+                writer.Close();
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                errorEncountered = true;
+                errMessage = "Database access not granted. Please contact the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return !errorEncountered;
+        }
+        /// <summary>
+        /// Saves a single record of a Model, not list. The method only appends to the text file
+        /// </summary>
+        /// <param name="newFamily">The new family to be recorded or appended to the text file</param>
+        /// <returns>True if there are no error encountered, otherwise, False</returns>
+        public bool InsertFamily(Family newFamily)
+        {
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            if (newFamily == null)
+                return false;
+
+            try
+            {
+                // writing the model to the text file
+                StreamWriter writer = new StreamWriter(FAMILIES, true);
+
+                string line;
+                line = newFamily.FamilyId + "%20";
+                line += newFamily.ParentOneId + "%20";
+                line += newFamily.ParentTwoId + "%20";// if the program does not set a value to parenttwoid, C# automatically makes it 0
+                line += newFamily.FamilyMembers;
+
+                writer.WriteLine(line);
                 writer.Close();
             }
             catch (UnauthorizedAccessException e)
@@ -506,6 +636,51 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
 
             return !errorEncountered;
         }
+        /// <summary>
+        /// Saves a single record of a Model, not list. The method only appends to the text file
+        /// </summary>
+        /// <param name="newSummon">The new summon to be recorded or appended to the text file</param>
+        /// <returns>True if there are no error encountered, otherwise, False</returns>
+        public bool InsertSummon(Summon newSummon)
+        {
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            if (newSummon == null)
+                return false;
+
+            try
+            {
+                // writing the model to the text file
+                StreamWriter writer = new StreamWriter(SUMMON, true);
+                string line;
+
+                line = newSummon.SummonId + "%20";
+                line += newSummon.IncidentDate + "%20";
+                line += newSummon.ReportedDate + "%20";
+                line += newSummon.Summary + "%20";
+                line += newSummon.AccountId;
+
+                writer.WriteLine(line);
+                writer.Close();
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                errorEncountered = true;
+                errMessage = "Database access not granted. Please contact the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return !errorEncountered;
+        }
         // End Summon Opeartions
 
         // -5- Start Audit Trails Operations
@@ -604,6 +779,50 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                     line += auditTrail.AccountId;
                     writer.WriteLine(line);
                 }
+                writer.Close();
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                errorEncountered = true;
+                errMessage = "Database access not granted. Please contact the IT immediately.";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                errorEncountered = true;
+                errMessage = "Something went wrong. Unable to retrieve records. Please contact the IT immediately.";
+            }
+
+            if (errorEncountered)
+                MessageBox.Show(errMessage, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            return !errorEncountered;
+        }
+        /// <summary>
+        /// Saves a single record of a Model, not list. The method only appends to the text file
+        /// </summary>
+        /// <param name="newAuditTrail">The new audit trail to be recorded or appended to the text file</param>
+        /// <returns>True if there are no error encountered, otherwise, False</returns>
+        public bool InsertAuditTrail(AuditTrail newAuditTrail)
+        {
+            bool errorEncountered = false;
+            string errMessage = "";
+
+            if (newAuditTrail == null)
+                return false;
+
+            try
+            {
+                // writing the model to the text file
+                StreamWriter writer = new StreamWriter(AUDIT_TRAILS, true);
+
+                string line;
+                line = newAuditTrail.TrailId + "%20";
+                line += newAuditTrail.Message + "%20";
+                line += newAuditTrail.ActionDate + "%20";
+                line += newAuditTrail.AccountId;
+
+                writer.WriteLine(line);
                 writer.Close();
             }
             catch (UnauthorizedAccessException e)
