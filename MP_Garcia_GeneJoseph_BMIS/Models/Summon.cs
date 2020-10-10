@@ -55,5 +55,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         {
             return new FileDataContext().SaveSummons(summons);
         }
+
+        /// <summary>
+        /// Appends the new Summon model into the text file
+        /// </summary>
+        /// <param name="newSummon">New summon record</param>
+        /// <returns>True if the append action is successfull, otherwise, false</returns>
+        public bool InsertSummon(Summon newSummon)
+        {
+            return new FileDataContext().InsertSummon(newSummon);
+        }
     }
 }

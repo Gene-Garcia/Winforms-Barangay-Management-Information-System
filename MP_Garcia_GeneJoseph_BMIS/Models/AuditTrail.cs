@@ -54,5 +54,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         {
             return new FileDataContext().SaveAuditTrails(auditTrails);
         }
+
+        /// <summary>
+        /// Appends the new Audit Trail model into the text file
+        /// </summary>
+        /// <param name="newAccount">New audit trail record</param>
+        /// <returns>True if the append action is successfull, otherwise, false</returns>
+        public bool InsertAuditTrail(AuditTrail newAuditTrail)
+        {
+            return new FileDataContext().InsertAuditTrail(newAuditTrail);
+        }
     }
 }

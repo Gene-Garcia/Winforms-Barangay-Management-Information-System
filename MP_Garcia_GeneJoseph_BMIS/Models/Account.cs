@@ -62,5 +62,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         {
             return new FileDataContext().SaveAccounts(accounts);
         }
+
+        /// <summary>
+        /// Appends the new Account model into the text file
+        /// </summary>
+        /// <param name="newAccount">New account record</param>
+        /// <returns>True if the append action is successfull, otherwise, false</returns>
+        public bool InsertAccount(Account newAccount)
+        {
+            return new FileDataContext().InsertAccount(newAccount);
+        }
     }
 }

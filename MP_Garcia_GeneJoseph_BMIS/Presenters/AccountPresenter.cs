@@ -71,9 +71,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             newAccount.RegisteredDate = DateTime.Now;
             newAccount.AccountStatus = "ACTIVE";
 
-            // append to accounts
-            // stopped here -- implement in model entities to just append records in the text file
-            // save to text file
+            
 
             // go back to landing page
             new DashboardPresenter().Index();

@@ -37,5 +37,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         {
             return new FileDataContext().SaveResidents(residents);
         }
+
+        /// <summary>
+        /// Appends the new Resident model into the text file
+        /// </summary>
+        /// <param name="newResident">New resident record</param>
+        /// <returns>True if the append action is successfull, otherwise, false</returns>
+        public bool InsertResident(Resident newResident)
+        {
+            return new FileDataContext().InsertResident(newResident);
+        }
     }
 }

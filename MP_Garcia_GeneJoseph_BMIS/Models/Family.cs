@@ -68,5 +68,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models
         {
             return new FileDataContext().SaveFamilies(families);
         }
+
+        /// <summary>
+        /// Appends the new Family model into the text file
+        /// </summary>
+        /// <param name="newFamily">New Family record</param>
+        /// <returns>True if the append action is successfull, otherwise, false</returns>
+        public bool InsertFamily(Family newFamily)
+        {
+            return new FileDataContext().InsertFamily(newFamily);
+        }
     }
 }
