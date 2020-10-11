@@ -136,6 +136,50 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             }
         }
 
-        // families
+        public void GetAddFamily()
+        {
+            List<Family> existingFamilies = dbEnt.Family.Families();
+            // obtain the resident Id of those that already have family records
+            List<int> idsP1 = existingFamilies.Select(m => m.ParentOneId).ToList();
+            List<int> idsP2 = existingFamilies.Select(m => m.ParentTwoId).ToList();
+
+            // filters the residents, does not display residents that already have family records
+            // ! Issue - duplicate residents choice on both data tables
+            List<Resident> parentChoices = dbEnt.Resident.Residents().Where(m=> !idsP1.Contains(m.ResidentId) && !idsP2.Contains(m.ResidentId)).ToList();
+
+            // RENDER VIEW
+            // the view will still inherit IResident
+        }
+
+        /// <param name="parentOneId"></param>
+        /// <param name="parentTwoId">Optional</param>
+        /// <param name="familyMembers"></param>
+        public void PostSaveFamily(int parentOneId, int parentTwoId, int familyMembers)
+        {
+            Family newFamily = new Family();
+            newFamily.FamilyId = dbEnt.Family.Families().Max(m=>m.FamilyId) + 1;
+            newFamily.FamilyMembers = familyMembers;
+            newFamily.ParentOneId = parentOneId;
+
+            if (parentTwoId != null || parentTwoId > 0)
+                newFamily.ParentTwoId = parentTwoId;
+
+            bool status = dbEnt.Family.InsertFamily(newFamily);
+
+            if (status)
+            {
+                MessageBox.Show("Family record was successfully created.", "New Family Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // go back to landing page
+                /* Audit TRAIL RECORD and System PROMPT */
+                new DashboardPresenter().Index();
+
+            }
+            else
+            {
+                MessageBox.Show("Unavailable to create new family record.", "New Family Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // reload view
+                new ResidentPresenter().GetAddFamily();
+            }
+        }
     }
 }
