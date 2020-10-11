@@ -11,22 +11,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
 {
     class DisplayAccounts : IAccount
     {
-        public Account Account { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        private Account account = new Account();
+        public Account Account{ get { return account; } set { account = value; } }
         private List<Account> accounts = new List<Account>();
-        public List<Account> Accounts
-        {
-            get
-            {
-                // get views text
-                return accounts;
-            }
-            set
-            {
-                accounts = value;
-                // set views text
-            }
-        }
+        public List<Account> Accounts { get { return accounts; } set { accounts = value; } }
 
         public void RunView()
         {
@@ -46,16 +34,16 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
                 toDeleteId = int.Parse(Console.ReadLine());
 
                 // the should also be active, to be archived
-                Account toDelete = this.accounts.Where(m => m.AccountId == toDeleteId && m.AccountStatus == SystemConstants.ACCOUNT_STATUS_ACTIVE).FirstOrDefault();
+                this.account = this.accounts.Where(m => m.AccountId == toDeleteId && m.AccountStatus == SystemConstants.ACCOUNT_STATUS_ACTIVE).FirstOrDefault();
 
-                if (toDelete != null)
+                if (this.account != null)
                     break;
                 else
                     Console.WriteLine("\tAccount not found or account is already archived.\n");
 
             } while (true);
 
-            new AccountPresenter().DeleteAccount(this, toDeleteId);
+            new AccountPresenter().DeleteAccount(this);
         }
     }
 }

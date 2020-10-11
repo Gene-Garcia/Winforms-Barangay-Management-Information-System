@@ -112,14 +112,34 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             view.RunView();
         }
 
-        /// <summary>
-        /// Removes the account model from the accounts using the accountId
-        /// </summary>
-        /// <param name="accounts">The current registered accounts</param>
-        /// <param name="accountId">The account id to be deleted</param>
-        public void DeleteAccount(IAccount accounts, int accountId)
-        {
 
+        /// <param name="view">Contains the current registered accounts, and the account to be deleted</param>
+        public void DeleteAccount(IAccount view)
+        {
+            // removes the old record
+            view.Accounts.Remove(view.Account);
+            // appends the current Logged user, because the view.Accounts does not have the record of the current logged user
+            view.Accounts.Add(UserSession.User);
+            // re-insert the modified account
+            view.Accounts.Add(view.Account);
+
+            // updates the account 
+            bool status = dbEnt.Account.SaveAccounts(view.Accounts);
+
+            if (status)
+            {
+                MessageBox.Show("Account was archived successfully.", "Delete/Archived Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // go back to landing page
+                /* Audit TRAIL RECORD and System PROMPT */
+                new DashboardPresenter().Index();
+
+            }
+            else
+            {
+                MessageBox.Show("Account was not able to be archived.", "Delete/Archived Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // reload resident selection for register
+                new AccountPresenter().GetDisplayAccounts();
+            }
         }
     }
 }
