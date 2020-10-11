@@ -43,6 +43,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
 
             } while (true);
 
+
+            this.account.AccountStatus = SystemConstants.ACCOUNT_STATUS_ARCHIVED;
             new AccountPresenter().DeleteAccount(this);
         }
     }

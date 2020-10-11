@@ -79,7 +79,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         public void PostRegisterAccount(IResident selectedResident)
         {
             Account newAccount = new Account();
-            newAccount.AccountId = dbEnt.Account.Accounts().Count + 1; // only gets the number of registered accounts
+            newAccount.AccountId = dbEnt.Account.Accounts().Max(m=>m.AccountId) + 1; // only gets the highest Id number for increment
             newAccount.Username = selectedResident.Resident.FirstName.ToLower() + "_" + selectedResident.Resident.LastName.ToLower();
             newAccount.Password = SystemConstants.ACCOUNT_DEFAULT_PASSWORD;
             newAccount.ResidentId = selectedResident.Resident.ResidentId;
