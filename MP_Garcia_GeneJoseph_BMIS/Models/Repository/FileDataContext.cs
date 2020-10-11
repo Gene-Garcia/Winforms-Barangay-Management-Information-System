@@ -214,18 +214,19 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                     string line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        // txt file contains:id, fname, lname, sex, bdate, status, address
+                        // txt file contains:id, fname, mname, lname, sex, bdate, status, address
                         string[] data = line.Split(new[] { "%20" }, StringSplitOptions.None);
 
                         // temp resident model
                         Resident resident = new Resident();
                         resident.ResidentId = int.Parse(data[0]);
                         resident.FirstName = data[1];
-                        resident.LastName = data[2];
-                        resident.Sex = data[3];
-                        resident.Birthdate = Convert.ToDateTime(data[4]);
-                        resident.Status = data[5];
-                        resident.Address = data[6];
+                        resident.MiddleName = data[2];
+                        resident.LastName = data[3];
+                        resident.Sex = data[4];
+                        resident.Birthdate = Convert.ToDateTime(data[5]);
+                        resident.Status = data[6];
+                        resident.Address = data[7];
 
                         residents.Add(resident);
                     }
@@ -282,6 +283,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                 {
                     line = resident.ResidentId + "%20";
                     line += resident.FirstName + "%20";
+                    line += resident.MiddleName + "%20";
                     line += resident.LastName + "%20";
                     line += resident.Sex + "%20";
                     line += resident.Birthdate + "%20";
@@ -330,6 +332,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Models.Repository
                 string line;
                 line = newResident.ResidentId + "%20";
                 line += newResident.FirstName + "%20";
+                line += newResident.MiddleName + "%20";
                 line += newResident.LastName + "%20";
                 line += newResident.Sex + "%20";
                 line += newResident.Birthdate + "%20";

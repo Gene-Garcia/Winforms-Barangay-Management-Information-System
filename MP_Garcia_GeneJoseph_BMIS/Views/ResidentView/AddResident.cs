@@ -24,6 +24,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             Console.Write("First Name >>");
             string firstName = Console.ReadLine();
 
+            Console.Write("Middle Name >>");
+            string middleName = Console.ReadLine();
+
             Console.Write("Last Name >>");
             string lastName = Console.ReadLine();
 
@@ -40,6 +43,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             string address = Console.ReadLine();
 
             resident.FirstName = firstName;
+            resident.MiddleName = middleName;
             resident.LastName = lastName;
             resident.Sex = sex;
             resident.Birthdate = Convert.ToDateTime(bDate);
