@@ -21,10 +21,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 Console.WriteLine("\tA. Register New Account");
                 Console.WriteLine("\tB. Logout");
                 Console.WriteLine("\tC. Display Accounts");
+                Console.WriteLine("\tD. Add Resident");
                 Console.Write("\tSelection >>");
                 input = Console.ReadLine().Trim();
 
-                string[] options = { "A", "B", "C" };
+                string[] options = { "A", "B", "C", "D" };
 
                 if (options.Contains(input))
                     break;
@@ -49,6 +50,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
             else if (input == "C")
             {
                 new AccountPresenter().GetDisplayAccounts();
+            }
+            else if (input == "D")
+            {
+                new ResidentPresenter().GetAddResident();
             }
         }
     }

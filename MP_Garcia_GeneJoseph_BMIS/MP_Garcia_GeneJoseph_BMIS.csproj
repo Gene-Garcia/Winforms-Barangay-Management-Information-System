@@ -70,13 +70,13 @@
     <Compile Include="Views\DashboardView\DashboardView.cs" />
     <Compile Include="Views\IAccount.cs" />
     <Compile Include="Views\IResident.cs" />
+    <Compile Include="Views\ResidentView\AddResident.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\FamilyView\" />
-    <Folder Include="Views\ResidentView\" />
     <Folder Include="Views\SummonView\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
