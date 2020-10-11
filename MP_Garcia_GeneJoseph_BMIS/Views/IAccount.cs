@@ -10,5 +10,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views
     interface IAccount
     {
         Account Account { get; set; }
+        List<Account> Accounts { get; set; }
     }
 }

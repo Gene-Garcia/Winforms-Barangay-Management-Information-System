@@ -103,5 +103,23 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 new AccountPresenter().GetRegisterAccount();
             }                
         }
+
+        public void GetDisplayAccounts()
+        {
+            DisplayAccounts view = new DisplayAccounts();
+            // the current logged in user will not be displayed
+            view.Accounts = dbEnt.Account.Accounts().Where(m=>m.AccountId != UserSession.User.AccountId).OrderBy(m => m.AccountStatus).ToList();
+            view.RunView();
+        }
+
+        /// <summary>
+        /// Removes the account model from the accounts using the accountId
+        /// </summary>
+        /// <param name="accounts">The current registered accounts</param>
+        /// <param name="accountId">The account id to be deleted</param>
+        public void DeleteAccount(IAccount accounts, int accountId)
+        {
+
+        }
     }
 }

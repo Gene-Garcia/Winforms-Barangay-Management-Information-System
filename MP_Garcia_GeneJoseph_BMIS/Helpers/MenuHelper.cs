@@ -20,10 +20,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 Console.WriteLine("\n\t\tMENU");
                 Console.WriteLine("\tA. Register New Account");
                 Console.WriteLine("\tB. Logout");
+                Console.WriteLine("\tC. Display Accounts");
                 Console.Write("\tSelection >>");
                 input = Console.ReadLine().Trim();
 
-                string[] options = { "A", "B" };
+                string[] options = { "A", "B", "C" };
 
                 if (options.Contains(input))
                     break;
@@ -44,6 +45,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 /* Audit TRAIL RECORD and System PROMPT */
 
                 new AccountPresenter().GetLogin();
+            }
+            else if (input == "C")
+            {
+                new AccountPresenter().GetDisplayAccounts();
             }
         }
     }

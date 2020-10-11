@@ -21,7 +21,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
                 // set views text
             }
         }
-        
+        public List<Account> Accounts { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public void RunView()
         {
             Console.WriteLine("\n\n\t\tLOGIN");
