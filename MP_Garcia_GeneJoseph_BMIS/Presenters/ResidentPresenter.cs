@@ -1,4 +1,5 @@
-﻿using MP_Garcia_GeneJoseph_BMIS.Models;
+﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
+using MP_Garcia_GeneJoseph_BMIS.Models;
 using MP_Garcia_GeneJoseph_BMIS.Views;
 using MP_Garcia_GeneJoseph_BMIS.Views.ResidentView;
 using System;
@@ -41,6 +42,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             }
         }
 
+        /// <summary>
+        /// The view dispays an action button to trigger GetViewResident(id), and PostToResidentDeceased(id)
+        /// </summary>
         public void GetDisplayResidents()
         {
             // DisplayResidents view = new DisplayResidents();
@@ -49,7 +53,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         }
 
         /// <summary>
-        /// Displays a specific resident
+        /// Displays a specific resident, the view allows the fields to be edited, including the status
         /// </summary>
         public void GetViewResident(int residentId)
         {
@@ -67,9 +71,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
         /// <param name="resident">Contains the updated resident model, and the list of currenet residents</param>
         public void PostUpdateResident(IResident resident)
         {
@@ -92,6 +93,44 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             else
             {
                 MessageBox.Show("Resident " + resident.Resident.FirstName + " " + resident.Resident.LastName + "'s record was not updated.", "Update Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // reload view
+                new ResidentPresenter().GetDisplayResidents();
+            }
+        }
+
+        public void PostToResidentDeceased(int residentId)
+        {
+            List<Resident> residents = dbEnt.Resident.Residents();
+            Resident toDeceased = residents.Where(m => m.ResidentId == residentId).FirstOrDefault();
+
+            if (toDeceased != null)
+            {
+                toDeceased.Status = SystemConstants.RESIDENT_STATUS_DECEASED;
+                // remove from list
+                residents.Remove(toDeceased);
+                // re-insert
+                residents.Add(toDeceased);
+                // update text file
+                bool status = dbEnt.Resident.SaveResidents(residents);
+
+                if (status)
+                {
+                    MessageBox.Show("Resident " + toDeceased.FirstName + " " + toDeceased.LastName + "'s status is set to as deceased.", "Deceased Resident", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // go back to landing page
+                    /* Audit TRAIL RECORD and System PROMPT */
+                    new DashboardPresenter().Index();
+
+                }
+                else
+                {
+                    MessageBox.Show("Resident " + toDeceased.FirstName + " " + toDeceased.LastName + "'s status was not able to be set to deceased.", "Deceased Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // reload view
+                    new ResidentPresenter().GetViewResident(toDeceased.ResidentId);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Resident cannot be found.", "Deceased Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 // reload view
                 new ResidentPresenter().GetDisplayResidents();
             }
