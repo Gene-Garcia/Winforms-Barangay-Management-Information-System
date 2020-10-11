@@ -30,7 +30,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
 
             do
             {
-                Console.Write("\tAccount to delete/archived >>");
+                Console.Write("\tAccount Id to delete/archived >>");
                 toDeleteId = int.Parse(Console.ReadLine());
 
                 // the should also be active, to be archived
@@ -42,7 +42,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
                     Console.WriteLine("\tAccount not found or account is already archived.\n");
 
             } while (true);
-
 
             this.account.AccountStatus = SystemConstants.ACCOUNT_STATUS_ARCHIVED;
             new AccountPresenter().DeleteAccount(this);

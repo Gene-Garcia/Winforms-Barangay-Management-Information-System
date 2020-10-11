@@ -12,30 +12,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
     {
 
         private List<Resident> residents = new List<Resident>();
-        public List<Resident> Residents 
-        {
-            get
-            {
-                return residents;
-            }
-            set 
-            {
-                residents = value;
-            }
-        }
+        public List<Resident> Residents { get { return residents; } set { residents = value; } }
 
         private Resident resident = new Resident();
-        public Resident Resident 
-        {
-            get
-            {
-                return resident;
-            }
-            set
-            {
-                resident = value;
-            }
-        }
+        public Resident Resident { get { return resident; } set { resident = value; } }
 
         public void RunView()
         {
