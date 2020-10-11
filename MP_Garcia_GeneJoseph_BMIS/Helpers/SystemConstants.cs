@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 {
-    class SystemConstants
+    public class SystemConstants
     {
         // Acount Constants
-        const string ACCOUNT_STATUS_ACTIVE = "ACTIVE";
-        const string ACCOUNT_STATUS_ARCHIVED = "ARCHIVED";
+        public const string ACCOUNT_STATUS_ACTIVE = "ACTIVE";
+        public const string ACCOUNT_STATUS_ARCHIVED = "ARCHIVED";
+        public const string ACCOUNT_DEFAULT_PASSWORD = "qwertypad360";
 
         // Resident Constants
-        const string RESIDENT_STATUS_ALIVE = "ALIVE";
-        const string RESIDENT_STATUS_DECEASED = "DECEASED";
+        public const string RESIDENT_STATUS_ALIVE = "ALIVE";
+        public const string RESIDENT_STATUS_DECEASED = "DECEASED";
+
+
     }
 }
