@@ -15,21 +15,23 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
         public static void MenuInput()
         {
             string input;
+            string[] options = { "R", "A", "S", "AT", "D", "L" };
+
             do
             {
-                Console.WriteLine("\n\t\tMENU");
-                Console.WriteLine("\tA. Register New Account");
-                Console.WriteLine("\tB. Logout");
-                Console.WriteLine("\tC. Display Accounts");
-                Console.WriteLine("\tD. Add Resident");
+                Console.WriteLine("\n\t\tMain Menu");
+                Console.WriteLine("\t R. Resident Module");
+                Console.WriteLine("\t A. Account Module");
+                Console.WriteLine("\t S. Summon Module");
+                Console.WriteLine("\tAT. Audit Trail Module");
+                Console.WriteLine("\t D. Dashboard");
+                Console.WriteLine("\t L. Logout");
                 Console.Write("\tSelection >>");
                 input = Console.ReadLine().Trim();
 
-                string[] options = { "A", "B", "C", "D" };
-
                 if (options.Contains(input))
                     break;
-                Console.WriteLine("\tInvalid selection.");
+                Console.WriteLine("\tInvalid input selection.");
 
             } while (true);   
             
@@ -37,7 +39,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
             {
                 new AccountPresenter().GetRegisterAccount();
             }
-            else if (input == "B")
+            else if (input == "L")
             {
                 // clear session
                 UserSession.LoggedIn = false;
@@ -47,14 +49,135 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 
                 new AccountPresenter().GetLogin();
             }
-            else if (input == "C")
+        }
+
+        private static void ResidentMenu()
+        {
+            string input;
+            string[] options = { "R1", "R2", "R3", "R4", "R5" };
+
+            do
             {
-                new AccountPresenter().GetDisplayAccounts();
+                Console.WriteLine("\n\t\tResident Menu");
+                Console.WriteLine("\tR1. Display Residents");
+                Console.WriteLine("\tR2. Search A Resident");
+                Console.WriteLine("\tR3. Record New Resident");
+                Console.WriteLine("\tR4. Display Family Records");
+                Console.WriteLine("\tR5. Create New Family Record");
+
+                Console.Write("\tSelection >>");
+                input = Console.ReadLine().Trim();
+
+                if (options.Contains(input))
+                    break;
+                Console.WriteLine("\tInvalid input selection.");
+            } while (true);
+
+            if (input == "R1")
+            {
+                new ResidentPresenter().GetDisplayResidents();
             }
-            else if (input == "D")
+            else if (input == "R2")
+            {
+                new ResidentPresenter().GetSearchResident();
+            }
+            else if (input == "R3")
             {
                 new ResidentPresenter().GetAddResident();
             }
+            else if (input == "R4")
+            {
+                new ResidentPresenter().GetDisplayFamilies();
+            }
+            else if (input == "R5")
+            {
+                new ResidentPresenter().GetAddFamily();
+            }
         }
+
+        private static void AccountMenu()
+        {
+            string input;
+            string[] options = { "" };
+
+            do
+            {
+                Console.WriteLine("\n\t\tAccount Menu");
+                Console.WriteLine("\t R. Resident Module");
+
+                Console.Write("\tSelection >>");
+                input = Console.ReadLine().Trim();
+
+                if (options.Contains(input))
+                    break;
+                Console.WriteLine("\tInvalid input selection.");
+            } while (true);
+
+            if (input == " ")
+            {
+
+            }
+            else if (input == "")
+            {
+
+            }
+        }
+
+        private static void SummonMenu()
+        {
+            string input;
+            string[] options = { "" };
+
+            do
+            {
+                Console.WriteLine("\n\t\tSummon Menu");
+                Console.WriteLine("\t R. Resident Module");
+
+                Console.Write("\tSelection >>");
+                input = Console.ReadLine().Trim();
+
+                if (options.Contains(input))
+                    break;
+                Console.WriteLine("\tInvalid input selection.");
+            } while (true);
+
+            if (input == " ")
+            {
+
+            }
+            else if (input == "")
+            {
+
+            }
+        }
+
+        private static void AuditTrailMenu()
+        {
+            string input;
+            string[] options = { "" };
+
+            do
+            {
+                Console.WriteLine("\n\t\tAudit Trail Menu");
+                Console.WriteLine("\t R. Resident Module");
+
+                Console.Write("\tSelection >>");
+                input = Console.ReadLine().Trim();
+
+                if (options.Contains(input))
+                    break;
+                Console.WriteLine("\tInvalid input selection.");
+            } while (true);
+
+            if (input == " ")
+            {
+
+            }
+            else if (input == "")
+            {
+
+            }
+        }
+
     }
 }

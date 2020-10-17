@@ -80,7 +80,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         public void GetDisplayResidents()
         {
             // DisplayResidents view = new DisplayResidents();
-            // view.Residents = dbEnt.
+            //view.Residents = dbEnt.Resident.Residents();
             // view.RunView();
         }
 
@@ -107,9 +107,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         public void PostUpdateResident(IResident view)
         {
             // remove the old version resident from residents
-            view.Residents.Remove( view.Residents.Where(m=>m.ResidentId == view.Resident.ResidentId).FirstOrDefault() );
+            view.Residents.Remove(view.Residents.Where(m => m.ResidentId == view.Resident.ResidentId).FirstOrDefault());
             // re-insert the new version of resident to list
-            view.Residents.Add( view.Resident );
+            view.Residents.Add(view.Resident);
             // update text file
 
             bool status = dbEnt.Resident.SaveResidents(view.Residents);
@@ -166,6 +166,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 // reload view
                 new ResidentPresenter().GetDisplayResidents();
             }
+        }
+
+        public void GetDisplayFamilies()
+        {
+            List<Family> families = dbEnt.Family.Families();
+            // render view
         }
 
         public void GetAddFamily()
