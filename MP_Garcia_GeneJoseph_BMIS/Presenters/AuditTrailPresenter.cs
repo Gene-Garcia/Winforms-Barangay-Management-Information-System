@@ -13,7 +13,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         public void DisplayAuditTrails()
         {
-            
+            List<AuditTrail> auditTrails = dbEnt.AuditTrail.AuditTrails();
+            // render view
         }
     }
 }
