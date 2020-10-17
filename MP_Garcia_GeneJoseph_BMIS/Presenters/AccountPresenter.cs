@@ -48,7 +48,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 // load landing page, dashboard
                 MessageBox.Show("Login Success.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 /* Audit TRAIL RECORD and System PROMPT */
-                new DashboardPresenter().Index();
+                MenuHelper.MenuInput();
             }                
         }
 
@@ -93,8 +93,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 MessageBox.Show("Account for " + selectedResident.Resident.FirstName + " " + selectedResident.Resident.LastName + " was registered successfully.", "Register Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
-                new DashboardPresenter().Index();
-                
+                MenuHelper.MenuInput();
+
             }
             else
             {
@@ -131,7 +131,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 MessageBox.Show("Account was archived successfully.", "Delete/Archived Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
-                new DashboardPresenter().Index();
+                MenuHelper.MenuInput();
 
             }
             else

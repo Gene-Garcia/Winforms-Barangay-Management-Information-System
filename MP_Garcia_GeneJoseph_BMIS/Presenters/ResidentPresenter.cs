@@ -31,7 +31,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 MessageBox.Show("Resident " + newResident.Resident.FirstName + " " + newResident.Resident.LastName + " was successfully added.", "New Resident Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
-                new DashboardPresenter().Index();
+                MenuHelper.MenuInput();
 
             }
             else
@@ -119,7 +119,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 MessageBox.Show("Resident " + view.Resident.FirstName + " " + view.Resident.LastName + "'s record was updated successfully.", "Update Resident", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
-                new DashboardPresenter().Index();
+                MenuHelper.MenuInput();
 
             }
             else
@@ -150,7 +150,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                     MessageBox.Show("Resident " + toDeceased.FirstName + " " + toDeceased.LastName + "'s status is set to as deceased.", "Deceased Resident", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // go back to landing page
                     /* Audit TRAIL RECORD and System PROMPT */
-                    new DashboardPresenter().Index();
+                    MenuHelper.MenuInput();
 
                 }
                 else
@@ -209,7 +209,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 MessageBox.Show("Family record was successfully created.", "New Family Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
-                new DashboardPresenter().Index();
+                MenuHelper.MenuInput();
 
             }
             else

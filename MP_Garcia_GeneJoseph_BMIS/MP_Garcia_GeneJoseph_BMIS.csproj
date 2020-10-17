@@ -58,6 +58,7 @@
     <Compile Include="Models\Resident.cs" />
     <Compile Include="Models\Summon.cs" />
     <Compile Include="Presenters\AccountPresenter.cs" />
+    <Compile Include="Presenters\AuditTrailPresenter.cs" />
     <Compile Include="Presenters\DashboardPresenter.cs" />
     <Compile Include="Presenters\FamilyPresenter.cs" />
     <Compile Include="Presenters\ResidentPresenter.cs" />
