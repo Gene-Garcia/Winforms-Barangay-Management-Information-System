@@ -68,6 +68,7 @@
     <Compile Include="Views\AccountView\LoginView.cs" />
     <Compile Include="Views\AccountView\RegisterAccountView.cs" />
     <Compile Include="Views\DashboardView\DashboardView.cs" />
+    <Compile Include="Views\IFamilies.cs" />
     <Compile Include="Views\IAccount.cs" />
     <Compile Include="Views\IResident.cs" />
     <Compile Include="Views\ResidentView\AddResident.cs" />

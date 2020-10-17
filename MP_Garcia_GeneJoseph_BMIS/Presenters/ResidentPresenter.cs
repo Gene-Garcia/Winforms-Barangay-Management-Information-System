@@ -43,6 +43,38 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         }
 
         /// <summary>
+        /// basically renders the view where the user a resident by its name
+        /// </summary>
+        public void GetSearchResident()
+        {
+            // render view
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="search">Contains the search parameters to find a resident record</param>
+        public void PostSearchResident(IResident searchView)
+        {
+            Resident searched = dbEnt.Resident.Residents().
+                Where(m => 
+                m.FirstName.ToUpper() == searchView.Resident.FirstName.ToUpper() &&
+                m.MiddleName.ToUpper() == searchView.Resident.MiddleName.ToUpper() &&
+                m.LastName.ToUpper() == searchView.Resident.LastName.ToUpper())
+                .FirstOrDefault();
+
+            if (searched != null)
+            {
+                new ResidentPresenter().GetViewResident(searched.ResidentId);
+            }
+            else
+            {
+                MessageBox.Show("Resident cannot be found", "View Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new ResidentPresenter().GetDisplayResidents();
+            }
+        }
+
+        /// <summary>
         /// The view dispays an action button to trigger GetViewResident(id), and PostToResidentDeceased(id)
         /// </summary>
         public void GetDisplayResidents()
@@ -71,20 +103,20 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         }
 
-        /// <param name="resident">Contains the updated resident model, and the list of currenet residents</param>
-        public void PostUpdateResident(IResident resident)
+        /// <param name="view">Contains the updated resident model, and the list of currenet residents</param>
+        public void PostUpdateResident(IResident view)
         {
             // remove the old version resident from residents
-            resident.Residents.Remove( resident.Resident );
+            view.Residents.Remove( view.Residents.Where(m=>m.ResidentId == view.Resident.ResidentId).FirstOrDefault() );
             // re-insert the new version of resident to list
-            resident.Residents.Add( resident.Resident );
+            view.Residents.Add( view.Resident );
             // update text file
 
-            bool status = dbEnt.Resident.SaveResidents(resident.Residents);
+            bool status = dbEnt.Resident.SaveResidents(view.Residents);
 
             if (status)
             {
-                MessageBox.Show("Resident " + resident.Resident.FirstName + " " + resident.Resident.LastName + "'s record was updated successfully.", "Update Resident", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Resident " + view.Resident.FirstName + " " + view.Resident.LastName + "'s record was updated successfully.", "Update Resident", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
                 new DashboardPresenter().Index();
@@ -92,7 +124,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             }
             else
             {
-                MessageBox.Show("Resident " + resident.Resident.FirstName + " " + resident.Resident.LastName + "'s record was not updated.", "Update Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Resident " + view.Resident.FirstName + " " + view.Resident.LastName + "'s record was not updated.", "Update Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 // reload view
                 new ResidentPresenter().GetDisplayResidents();
             }

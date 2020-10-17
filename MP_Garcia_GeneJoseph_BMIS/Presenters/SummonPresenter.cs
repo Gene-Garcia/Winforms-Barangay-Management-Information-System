@@ -8,5 +8,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 {
     class SummonPresenter
     {
+        // display all summon
+        // add new summon
+        // search id
     }
 }
