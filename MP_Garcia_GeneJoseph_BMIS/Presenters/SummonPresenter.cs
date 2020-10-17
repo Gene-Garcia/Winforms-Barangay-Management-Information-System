@@ -48,12 +48,30 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         public void GetDisplaySummons()
         {
-            
+            List<Summon> summons = dbEnt.Summon.Summons();
+            // render view
         }
 
         public void GetSearchSummon()
         {
-            
+            // render view
+            // the view will trigger GetDisplaySummon(id)
         }
+
+        public void GetDisplaySummon(int summonId)
+        {
+            Summon summon = dbEnt.Summon.Summons().Where(m => m.SummonId == summonId).FirstOrDefault();
+
+            if (summon != null)
+            {
+                // render view
+            }
+            else
+            {
+                MessageBox.Show("Summon report cannot be found.", "Search Summon", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new SummonPresenter().GetSearchSummon();
+            }
+        }
+
     }
 }
