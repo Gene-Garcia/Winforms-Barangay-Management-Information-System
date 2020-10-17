@@ -127,12 +127,14 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
         private static void SummonMenu()
         {
             string input;
-            string[] options = { "" };
+            string[] options = { "S1", "S2", "S3" };
 
             do
             {
                 Console.WriteLine("\n\t\tSummon Menu");
-                Console.WriteLine("\t R. Resident Module");
+                Console.WriteLine("\tS1. Create Summon Report");
+                Console.WriteLine("\tS2. Display Summon Reports");
+                Console.WriteLine("\tS3. Search Summon Reports");
 
                 Console.Write("\tSelection >>");
                 input = Console.ReadLine().Trim();
@@ -144,11 +146,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 
             if (input == " ")
             {
-
+                new SummonPresenter().GetCreateSummon();
             }
             else if (input == "")
             {
-
+                new SummonPresenter().GetDisplaySummons();
+            }
+            else if (input == "")
+            {
+                new SummonPresenter().GetSearchSummon();
             }
         }
 

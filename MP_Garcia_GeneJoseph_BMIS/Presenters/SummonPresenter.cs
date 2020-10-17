@@ -11,5 +11,19 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         // display all summon
         // add new summon
         // search id
+        public void GetCreateSummon()
+        {
+            
+        }
+
+        public void GetDisplaySummons()
+        {
+            
+        }
+
+        public void GetSearchSummon()
+        {
+            
+        }
     }
 }
