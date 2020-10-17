@@ -109,7 +109,6 @@ namespace MP_Garcia_GeneJoseph_BMIS
 
             // run view
             new AccountPresenter().GetLogin();
-            
             Console.ReadKey();
 
         }

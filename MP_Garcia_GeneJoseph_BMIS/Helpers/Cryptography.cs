@@ -4,18 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * CEASAR CIPHER
+ */
+
 namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 {
     class Cryptography
     {
+        private const int KEY = 5;
         /// <summary>
         /// 
         /// </summary>
         /// <param name="password"></param>
         /// <returns>Encrypted password</returns>
-        public static string Encrypt(string password)
+        public string Encrypt(string password)
         {
-            return "";
+            string hashed = "";
+            foreach (char character in password.ToArray())
+            {
+                char tempChar = (char)(character + KEY);
+                hashed += tempChar;
+            }
+            return hashed;
         }
 
         /// <summary>
@@ -23,9 +34,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
         /// </summary>
         /// <param name="hashedPassword"></param>
         /// <returns>Returns the original text of the hashed password</returns>
-        public static string Decrypt(string hashedPassword)
+        public string Decrypt(string hashedPassword)
         {
-            return "";
+            string password = "";
+            foreach (char character in hashedPassword.ToArray())
+            {
+                char tempChar = (char)(character- KEY);
+                password += tempChar;
+            }
+            return password;
         }
     }
 }
