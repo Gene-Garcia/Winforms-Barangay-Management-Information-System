@@ -98,12 +98,13 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
         private static void AccountMenu()
         {
             string input;
-            string[] options = { "" };
+            string[] options = { "A1", "A2" };
 
             do
             {
                 Console.WriteLine("\n\t\tAccount Menu");
-                Console.WriteLine("\t R. Resident Module");
+                Console.WriteLine("\tA1. Display Registered Accounts");
+                Console.WriteLine("\tA2. Register New Account");
 
                 Console.Write("\tSelection >>");
                 input = Console.ReadLine().Trim();
@@ -113,13 +114,13 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 Console.WriteLine("\tInvalid input selection.");
             } while (true);
 
-            if (input == " ")
+            if (input == "A1")
             {
-
+                new AccountPresenter().GetDisplayAccounts();
             }
-            else if (input == "")
+            else if (input == "A2")
             {
-
+                new AccountPresenter().GetRegisterAccount();
             }
         }
 
