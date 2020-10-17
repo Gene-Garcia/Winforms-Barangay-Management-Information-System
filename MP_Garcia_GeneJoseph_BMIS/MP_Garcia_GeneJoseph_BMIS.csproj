@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\AuditTrailHelper.cs" />
     <Compile Include="Helpers\Cryptography.cs" />
     <Compile Include="Helpers\LoginHelper.cs" />
     <Compile Include="Helpers\MenuHelper.cs" />
@@ -60,7 +61,6 @@
     <Compile Include="Presenters\AccountPresenter.cs" />
     <Compile Include="Presenters\AuditTrailPresenter.cs" />
     <Compile Include="Presenters\DashboardPresenter.cs" />
-    <Compile Include="Presenters\FamilyPresenter.cs" />
     <Compile Include="Presenters\ResidentPresenter.cs" />
     <Compile Include="Presenters\SummonPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -72,13 +72,13 @@
     <Compile Include="Views\IFamilies.cs" />
     <Compile Include="Views\IAccount.cs" />
     <Compile Include="Views\IResident.cs" />
+    <Compile Include="Views\ISummon.cs" />
     <Compile Include="Views\ResidentView\AddResident.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\FamilyView\" />
     <Folder Include="Views\SummonView\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

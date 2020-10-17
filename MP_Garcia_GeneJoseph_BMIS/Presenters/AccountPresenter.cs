@@ -48,6 +48,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 // load landing page, dashboard
                 MessageBox.Show("Login Success.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 /* Audit TRAIL RECORD and System PROMPT */
+                AuditTrailHelper.RecordAction("User logged in.");
                 MenuHelper.MenuInput();
             }                
         }
