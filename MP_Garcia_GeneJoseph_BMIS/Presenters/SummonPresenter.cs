@@ -14,9 +14,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
     {
         private Entities dbEnt = new Entities();
         
-        // display all summon
-        // add new summon
-        // search id
         public void GetCreateSummon()
         {
             // render view
