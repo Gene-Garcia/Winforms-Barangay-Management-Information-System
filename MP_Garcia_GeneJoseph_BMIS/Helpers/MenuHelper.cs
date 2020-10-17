@@ -35,9 +35,25 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 
             } while (true);   
             
-            if (input == "A")
+            if (input == "R")
             {
-                new AccountPresenter().GetRegisterAccount();
+                ResidentMenu();
+            }
+            else if (input == "A")
+            {
+                AccountMenu();
+            }
+            else if (input == "S")
+            {
+                SummonMenu();
+            }
+            else if (input == "AT")
+            {
+                AuditTrailMenu();
+            }
+            else if (input == "D")
+            {
+                // Dashbaord new asdfasdf
             }
             else if (input == "L")
             {
@@ -144,15 +160,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 Console.WriteLine("\tInvalid input selection.");
             } while (true);
 
-            if (input == " ")
+            if (input == "S1")
             {
                 new SummonPresenter().GetCreateSummon();
             }
-            else if (input == "")
+            else if (input == "S2")
             {
                 new SummonPresenter().GetDisplaySummons();
             }
-            else if (input == "")
+            else if (input == "S3")
             {
                 new SummonPresenter().GetSearchSummon();
             }
@@ -161,12 +177,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
         private static void AuditTrailMenu()
         {
             string input;
-            string[] options = { "" };
+            string[] options = { "A1" };
 
             do
             {
                 Console.WriteLine("\n\t\tAudit Trail Menu");
-                Console.WriteLine("\t R. Resident Module");
+                Console.WriteLine("\tA1. Display Audit Trail");
 
                 Console.Write("\tSelection >>");
                 input = Console.ReadLine().Trim();
@@ -176,13 +192,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 Console.WriteLine("\tInvalid input selection.");
             } while (true);
 
-            if (input == " ")
+            if (input == "A1")
             {
-
-            }
-            else if (input == "")
-            {
-
+                new AuditTrailPresenter().DisplayAuditTrails();
             }
         }
 
