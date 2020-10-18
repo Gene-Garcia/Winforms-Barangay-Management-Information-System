@@ -22,8 +22,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// </summary>
         public void GetLogin()
         {
-            Helpers.ViewContext.ActiveForm = new LoginView();
-            Helpers.ViewContext.ActiveForm.ShowDialog();
+            ViewContext.ActiveForm = new LoginView();
+            ViewContext.ActiveForm.ShowDialog();
         }
 
         /// <param name="loginCredentials">
@@ -31,7 +31,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// </param>
         public void PostLogin(IAccount loginCredentials)
         {
-            Helpers.ViewContext.ActiveForm.Dispose();
+            Helpers.ViewContext.Dispose();
 
             LoginHelper.LoginUser
             (
@@ -44,8 +44,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             {
                 // load view again
                 MessageBox.Show("Invalid Login credentials.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                Helpers.ViewContext.ActiveForm = new LoginView();
-                Helpers.ViewContext.ActiveForm.ShowDialog();
+                ViewContext.ActiveForm = new LoginView();
+                ViewContext.ActiveForm.ShowDialog();
             }
             else
             {

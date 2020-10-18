@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\ApplicationContext.cs" />
+    <Compile Include="Helpers\ViewContext.cs" />
     <Compile Include="Helpers\AuditTrailHelper.cs" />
     <Compile Include="Helpers\Cryptography.cs" />
     <Compile Include="Helpers\LoginHelper.cs" />

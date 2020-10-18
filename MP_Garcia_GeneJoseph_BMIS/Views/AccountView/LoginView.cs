@@ -20,17 +20,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
         public Account Account { get { return account; } set { account = value; } }
         public List<Account> Accounts { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public void RunView()
-        {
-            Console.WriteLine("\n\n\t\tLOGIN");
-            Console.Write("\tUsername >>");
-            account.Username = Console.ReadLine();
-            Console.Write("\tPassword >>");
-            account.Password = Console.ReadLine();
-
-            new AccountPresenter().PostLogin(this);
-        }
-
         private void TextToModel()
         {
             this.account.Username = this.txtUsername.Text;
@@ -161,6 +150,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "LoginView";
             this.Text = "Login";
