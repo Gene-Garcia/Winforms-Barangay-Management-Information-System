@@ -93,6 +93,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtUsername.Size = new System.Drawing.Size(320, 20);
             this.txtUsername.TabIndex = 3;
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUsername.Text = "gene_garcia";
 
             // Label for Password
             this.lblPassword.AutoSize = true;
@@ -116,6 +117,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtPassword.Size = new System.Drawing.Size(320, 20);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.Text = "qwertypad360";
 
 
             // Button for Login

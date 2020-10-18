@@ -44,8 +44,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             {
                 // load view again
                 MessageBox.Show("Invalid Login credentials.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                ViewContext.ActiveForm = new LoginView();
-                ViewContext.ActiveForm.ShowDialog();
+                new AccountPresenter().GetLogin();
             }
             else
             {
@@ -111,25 +110,33 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         public void GetDisplayAccounts()
         {
+            ViewContext.Dispose();
+
             DisplayAccounts view = new DisplayAccounts();
             // the current logged in user will not be displayed
             view.Accounts = dbEnt.Account.Accounts().Where(m=>m.AccountId != UserSession.User.AccountId).OrderBy(m => m.AccountStatus).ToList();
-            view.RunView();
+            ViewContext.ActiveForm = view;
+            view.PopulateDataList();
+            view.ShowDialog();
         }
 
 
-        /// <param name="view">Contains the current registered accounts, and the account to be deleted</param>
-        public void DeleteAccount(IAccount view)
+        /// <param name="accountId">The account Id of the user that will be archived</param>
+        public void DeleteAccount(int accountId)
         {
+            ViewContext.Dispose();
+
+            Account toDelete = dbEnt.Account.Accounts().Where(m => m.AccountId == accountId).FirstOrDefault();
+            List<Account> accounts = dbEnt.Account.Accounts();
+
             // removes the old record
-            view.Accounts.Remove(view.Account);
-            // appends the current Logged user, because the view.Accounts does not have the record of the current logged user
-            view.Accounts.Add(UserSession.User);
+            accounts.Remove( accounts.Where(m=>m.AccountId == toDelete.AccountId).FirstOrDefault() );
             // re-insert the modified account
-            view.Accounts.Add(view.Account);
+            toDelete.AccountStatus = SystemConstants.ACCOUNT_STATUS_ARCHIVED;
+            accounts.Add(toDelete);
 
             // updates the account 
-            bool status = dbEnt.Account.SaveAccounts(view.Accounts);
+            bool status = dbEnt.Account.SaveAccounts(accounts);
 
             if (status)
             {
