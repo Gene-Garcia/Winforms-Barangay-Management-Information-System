@@ -10,6 +10,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
     // Handles the disposing of the current running form
     class ApplicationContext
     {
-        public static Form FormContaxt { get; set; }
+        public static Form FormCtx { get; set; }
     }
 }
