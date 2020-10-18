@@ -8,8 +8,12 @@ using System.Windows.Forms;
 namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 {
     // Handles the disposing of the current running form
-    class ApplicationContext
+    class ViewContext
     {
-        public static Form FormCtx { get; set; }
+        public static Form ActiveForm { get; set; }
+        public static void Dispose()
+        {
+            ViewContext.ActiveForm.Dispose();
+        }
     }
 }
