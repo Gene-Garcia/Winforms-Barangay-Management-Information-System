@@ -11,16 +11,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
     class LoginView : IAccount
     {
         private Account account = new Account();
-        public Account Account { 
-            get {
-                // get views text
-                return account;
-            }
-            set {
-                account = value;
-                // set views text
-            }
-        }
+        public Account Account { get { return account; } set { account = value; } }
         public List<Account> Accounts { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void RunView()
