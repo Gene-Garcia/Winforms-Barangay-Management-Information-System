@@ -101,11 +101,16 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// </summary>
         public void GetViewResident(int residentId)
         {
+            ViewContext.Dispose();
+
             Resident resident = dbEnt.Resident.Residents().Where(m => m.ResidentId == residentId).FirstOrDefault();
 
             if (resident != null)
             {
-                // render view
+                ViewResidentView view = new ViewResidentView();
+                view.Resident = resident;
+                ViewContext.ActiveForm = view;
+                ViewContext.ActiveForm.ShowDialog();
             }
             else
             {
@@ -115,22 +120,25 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         }
 
-        /// <param name="view">Contains the updated resident model, and the list of currenet residents</param>
+        /// <param name="view">Contains the updated resident model</param>
         public void PostUpdateResident(IResident view)
         {
+            List<Resident> residents = dbEnt.Resident.Residents();
             // remove the old version resident from residents
-            view.Residents.Remove(view.Residents.Where(m => m.ResidentId == view.Resident.ResidentId).FirstOrDefault());
+            residents.Remove(residents.Where(m => m.ResidentId == view.Resident.ResidentId).FirstOrDefault());
             // re-insert the new version of resident to list
-            view.Residents.Add(view.Resident);
+            residents.Add(view.Resident);
             // update text file
 
-            bool status = dbEnt.Resident.SaveResidents(view.Residents);
+            bool status = dbEnt.Resident.SaveResidents(residents);
 
             if (status)
             {
                 MessageBox.Show("Resident " + view.Resident.FirstName + " " + view.Resident.LastName + "'s record was updated successfully.", "Update Resident", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
+                AuditTrailHelper.RecordAction("Resident information updated with name: " + view.Resident.FirstName + " " + view.Resident.LastName);
+                ViewContext.Dispose();
                 MenuHelper.MenuInput();
 
             }
@@ -138,6 +146,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             {
                 MessageBox.Show("Resident " + view.Resident.FirstName + " " + view.Resident.LastName + "'s record was not updated.", "Update Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 // reload view
+                ViewContext.Dispose();
                 new ResidentPresenter().GetDisplayResidents();
             }
         }

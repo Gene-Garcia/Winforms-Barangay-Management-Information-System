@@ -18,3 +18,11 @@
 18%20User logged in.%2010/19/2020 10:57:18 PM%202
 19%20User logged in.%2010/19/2020 10:58:31 PM%202
 20%20User logged in.%2010/19/2020 10:59:07 PM%202
+21%20User logged in.%2010/19/2020 11:07:52 PM%202
+22%20User logged in.%2010/19/2020 11:10:29 PM%202
+23%20User logged in.%2010/19/2020 11:13:13 PM%202
+24%20Resident information updated with name: Big Sheldon Cooper%2010/19/2020 11:13:42 PM%202
+25%20User logged in.%2010/19/2020 11:14:26 PM%202
+26%20User logged in.%2010/19/2020 11:15:14 PM%202
+27%20Resident information updated with name: Sheldonn Cooperr%2010/19/2020 11:15:39 PM%202
+28%20Resident information updated with name: Sheldonn Cooperr%2010/19/2020 11:15:49 PM%202

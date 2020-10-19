@@ -33,6 +33,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
                 // there is resident, which means action is to edit resident
                 this.btnAction.Text = "Save";
                 this.Text = "Edit Resident Record";
+                // model to fields
+                this.ModelToFields();
             }
             else
             {
@@ -42,6 +44,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             }
         }
 
+        private void ModelToFields()
+        {
+            this.txtFirstName.Text = this.resident.FirstName;
+            this.txtMiddleName.Text = this.resident.MiddleName;
+            this.txtLastName.Text = this.resident.LastName;
+            this.txtAddress.Text = this.resident.Address;
+            this.pickerBirthdate.Value = this.resident.Birthdate;
+
+            this.comboStatus.SelectedItem = this.resident.Status;
+            this.comboSex.SelectedItem = this.resident.Sex;
+        }
         private bool FieldToModel()
         {
             bool valid = true;
@@ -100,7 +113,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             if (this.FieldToModel())
                 if (this.resident.ResidentId > 0)
                 {
-                    // edit/view
+                    new ResidentPresenter().PostUpdateResident(this);
 
                 }
                 else
