@@ -41,7 +41,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
         // Listeners
         private void DeleteAccountClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 string strId = this.dataList.Rows[e.RowIndex].Cells[1].Value.ToString();
                 int id = 0;
