@@ -15,7 +15,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
             Entities dbEnt = new Entities();
 
             AuditTrail trail = new AuditTrail();
-            trail.TrailId = dbEnt.Account.Accounts().Max(m => m.AccountId) + 1;
+            trail.TrailId = dbEnt.AuditTrail.AuditTrails().Max(m => m.TrailId) + 1;
             trail.AccountId = UserSession.User.AccountId;
             trail.Message = message;
             trail.ActionDate = DateTime.Now;
