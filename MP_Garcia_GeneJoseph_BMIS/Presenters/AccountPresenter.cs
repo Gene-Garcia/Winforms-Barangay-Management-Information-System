@@ -31,8 +31,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// </param>
         public void PostLogin(IAccount loginCredentials)
         {
-            Helpers.ViewContext.Dispose();
-
             LoginHelper.LoginUser
             (
                 loginCredentials, 
@@ -44,12 +42,14 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             {
                 // load view again
                 MessageBox.Show("Invalid Login credentials.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                ViewContext.Dispose();
                 new AccountPresenter().GetLogin();
             }
             else
             {
                 // load landing page, dashboard
                 MessageBox.Show("Login Success.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewContext.Dispose();
                 /* Audit TRAIL RECORD and System PROMPT */
                 AuditTrailHelper.RecordAction("User logged in.");
                 MenuHelper.MenuInput();
@@ -61,6 +61,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// </summary>
         public void GetRegisterAccount()
         {
+            ViewContext.Dispose();
+
             RegisterAccountView view = new RegisterAccountView();
 
             var residents = dbEnt.Resident.Residents();
@@ -73,7 +75,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             residents = residents.Where(m => !existingResidentIds.Contains(m.ResidentId) ).ToList();
 
             view.Residents = residents;
-            view.RunView();
+            view.PopulateDataList();
+            ViewContext.ActiveForm = view;
+            ViewContext.ActiveForm.ShowDialog();
         }
 
         /// <summary>
@@ -95,6 +99,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             if (status)
             {
                 MessageBox.Show("Account for " + selectedResident.Resident.FirstName + " " + selectedResident.Resident.LastName + " was registered successfully.", "Register Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewContext.Dispose();
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
                 MenuHelper.MenuInput();
@@ -103,6 +108,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             else
             {
                 MessageBox.Show("Account for " + selectedResident.Resident.FirstName + " " + selectedResident.Resident.LastName + " was not registered. Please try again", "Register Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ViewContext.Dispose();
                 // reload resident selection for register
                 new AccountPresenter().GetRegisterAccount();
             }                
@@ -124,8 +130,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// <param name="accountId">The account Id of the user that will be archived</param>
         public void DeleteAccount(int accountId)
         {
-            ViewContext.Dispose();
-
             Account toDelete = dbEnt.Account.Accounts().Where(m => m.AccountId == accountId).FirstOrDefault();
             List<Account> accounts = dbEnt.Account.Accounts();
 
@@ -141,7 +145,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             if (status)
             {
                 MessageBox.Show("Account was archived successfully.", "Delete/Archived Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // go back to landing page
+                ViewContext.Dispose();
                 /* Audit TRAIL RECORD and System PROMPT */
                 MenuHelper.MenuInput();
 
@@ -149,6 +153,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             else
             {
                 MessageBox.Show("Account was not able to be archived.", "Delete/Archived Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ViewContext.Dispose();
                 // reload resident selection for register
                 new AccountPresenter().GetDisplayAccounts();
             }

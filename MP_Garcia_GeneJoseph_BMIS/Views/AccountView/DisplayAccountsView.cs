@@ -157,7 +157,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.ClientSize = new Size(884, 561);
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
-            this.Name = "DisplayAccountView";
+            this.Name = "DisplayAccountsView";
             this.Text = "Registered Accounts";
 
             // Load Components to Form
