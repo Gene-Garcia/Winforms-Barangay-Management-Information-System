@@ -1,4 +1,5 @@
 ﻿using MP_Garcia_GeneJoseph_BMIS.Models;
+using MP_Garcia_GeneJoseph_BMIS.Presenters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,11 +79,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             {
                 // append to model
                 this.resident.FirstName = fName;
-                this.resident.MiddleName = fName;
-                this.resident.LastName = fName;
+                this.resident.MiddleName = mName;
+                this.resident.LastName = lName;
                 this.resident.Birthdate = birthdate;
-                this.resident.Status = fName;
-                this.resident.Address = fName;
+                this.resident.Status = status;
+                this.resident.Address = address;
                 this.resident.Sex = sex;
             }
 
@@ -104,7 +105,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
                 }
                 else
                 {
-                    // add
+                    new ResidentPresenter().PostAddResident(this);
                 }
             else
                 MessageBox.Show("Fields cannot be empty.", "Resident", MessageBoxButtons.OK, MessageBoxIcon.Warning);

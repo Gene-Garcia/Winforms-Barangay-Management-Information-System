@@ -10,3 +10,7 @@
 10%20User logged in.%2010/19/2020 10:45:18 PM%202
 11%20User logged in.%2010/19/2020 10:46:28 PM%202
 12%20User logged in.%2010/19/2020 10:49:57 PM%202
+13%20User logged in.%2010/19/2020 10:52:38 PM%202
+14%20New resident record with name: Jose Mari Jose Mari%2010/19/2020 10:53:00 PM%202
+15%20User logged in.%2010/19/2020 10:54:07 PM%202
+16%20New resident record with name: Jose Mari Viceral%2010/19/2020 10:54:41 PM%202

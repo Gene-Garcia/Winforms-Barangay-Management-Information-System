@@ -34,14 +34,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             if (status)
             {
                 MessageBox.Show("Resident " + newResident.Resident.FirstName + " " + newResident.Resident.LastName + " was successfully added.", "New Resident Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewContext.Dispose();
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
+                AuditTrailHelper.RecordAction("New resident record with name: " + newResident.Resident.FirstName + " " + newResident.Resident.LastName);
                 MenuHelper.MenuInput();
 
             }
             else
             {
                 MessageBox.Show("Resident was not added.", "New Resident Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ViewContext.Dispose();
                 // reload view
                 new ResidentPresenter().GetAddResident();
             }
