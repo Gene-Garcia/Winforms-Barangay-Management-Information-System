@@ -102,6 +102,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 ViewContext.Dispose();
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
+                AuditTrailHelper.RecordAction("Registered new account with username: " + newAccount.Username);
                 MenuHelper.MenuInput();
 
             }
@@ -144,15 +145,16 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
             if (status)
             {
-                MessageBox.Show("Account was archived successfully.", "Delete/Archived Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Account was deleted successfully.", "Delete Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ViewContext.Dispose();
                 /* Audit TRAIL RECORD and System PROMPT */
+                AuditTrailHelper.RecordAction("Account was deleted with username: " + toDelete.Username);
                 MenuHelper.MenuInput();
 
             }
             else
             {
-                MessageBox.Show("Account was not able to be archived.", "Delete/Archived Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Account was not able to be archived.", "Delete Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ViewContext.Dispose();
                 // reload resident selection for register
                 new AccountPresenter().GetDisplayAccounts();
