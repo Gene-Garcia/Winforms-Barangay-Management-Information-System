@@ -37,7 +37,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             else
             {
                 // new resident, add a new resident
-                this.btnAction.Text = "Resident";
+                this.btnAction.Text = "Record";
                 this.Text = "Record New Resident";
             }
         }
@@ -174,7 +174,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.lblMiddleName.Location = new System.Drawing.Point(361, 146);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new System.Drawing.Size(102, 22);
-            this.lblMiddleName.TabIndex = 10;
             this.lblMiddleName.Text = "Middle Name";
 
             // Textbox : Middle Name
@@ -187,22 +186,22 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.txtMiddleName.TabIndex = 2;
 
             // Label : Last name
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblLastName.Location = new System.Drawing.Point(70, 249);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(83, 22);            
+            this.lblLastName.Text = "Last Name";
+
+            // Textbox : Last Name
             this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLastName.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastName.Location = new System.Drawing.Point(70, 285);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(528, 21);
-
-            // Textbox : Last Name
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
-            this.lblLastName.Location = new System.Drawing.Point(70, 249);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(83, 22);
-            this.lblLastName.TabIndex = 3;
-            this.lblLastName.Text = "Last Name";
+            this.txtLastName.TabIndex = 3;
 
             // Label : Birthday
             this.lblBirthdate.AutoSize = true;
@@ -221,6 +220,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.pickerBirthdate.MaxDate = System.DateTime.Now;
             this.pickerBirthdate.Name = "pickerBirthdate";
             this.pickerBirthdate.Size = new System.Drawing.Size(175, 27);
+            this.pickerBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.pickerBirthdate.TabIndex = 4;
             this.pickerBirthdate.Value = new System.DateTime(2020, 10, 19, 0, 0, 0, 0);
 
@@ -254,7 +254,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.lblSex.Location = new System.Drawing.Point(457, 363);
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(35, 22);
-            this.lblSex.TabIndex = 27;
             this.lblSex.Text = "Sex";
 
             // ComboBox : Sex
@@ -268,7 +267,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.comboSex.Location = new System.Drawing.Point(461, 397);
             this.comboSex.Name = "comboSex";
             this.comboSex.Size = new System.Drawing.Size(137, 27);
-            this.comboSex.TabIndex = 26;
+            this.comboSex.TabIndex = 6;
             this.comboSex.Text = "Select sex...";
 
             // Label : Address
@@ -287,7 +286,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.txtAddress.Location = new System.Drawing.Point(74, 504);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(528, 21);
-            this.txtAddress.TabIndex = 6;
+            this.txtAddress.TabIndex = 7;
 
             // Button
             this.btnAction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
@@ -297,7 +296,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.btnAction.Location = new System.Drawing.Point(501, 575);
             this.btnAction.Name = "btnAction";
             this.btnAction.Size = new System.Drawing.Size(97, 37);
-            this.btnAction.TabIndex = 7;
+            this.btnAction.TabIndex = 8;
             this.btnAction.Text = "Action";
             this.btnAction.UseVisualStyleBackColor = false;
             this.btnAction.Click += new EventHandler(this.ActionOnClick);
@@ -310,7 +309,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dsnLlbl.Location = new System.Drawing.Point(10, 11);
             this.dsnLlbl.Name = "dsnLlbl";
             this.dsnLlbl.Size = new System.Drawing.Size(372, 24);
-            this.dsnLlbl.TabIndex = 5;
             this.dsnLlbl.Text = "Barangay Management Information System";
             this.dsnBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
             this.dsnBox.Location = new System.Drawing.Point(-2, -2);
@@ -351,7 +349,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dsnLine7.Location = new System.Drawing.Point(461, 423);
             this.dsnLine7.Name = "dsnLine7";
             this.dsnLine7.Size = new System.Drawing.Size(137, 3);
-            this.dsnLine7.TabIndex = 28;
             this.dsnLine7.TabStop = false;
 
 
