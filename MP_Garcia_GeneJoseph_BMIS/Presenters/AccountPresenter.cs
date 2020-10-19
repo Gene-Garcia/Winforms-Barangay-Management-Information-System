@@ -112,7 +112,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         {
             ViewContext.Dispose();
 
-            DisplayAccounts view = new DisplayAccounts();
+            DisplayAccountsView view = new DisplayAccountsView();
             // the current logged in user will not be displayed
             view.Accounts = dbEnt.Account.Accounts().Where(m=>m.AccountId != UserSession.User.AccountId).OrderBy(m => m.AccountStatus).ToList();
             ViewContext.ActiveForm = view;
