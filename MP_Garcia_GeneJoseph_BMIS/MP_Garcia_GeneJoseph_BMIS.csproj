@@ -83,6 +83,9 @@
     <Compile Include="Views\ResidentView\DisplayResidentsView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\ResidentView\ViewResidentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

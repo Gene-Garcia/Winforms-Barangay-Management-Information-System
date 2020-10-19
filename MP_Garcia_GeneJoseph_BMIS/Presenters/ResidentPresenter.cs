@@ -16,7 +16,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         private Entities dbEnt = new Entities();
         public void GetAddResident()
         {
-            new AddResident().RunView();
+            ViewContext.Dispose();
+
+            ViewResidentView view = new ViewResidentView();
+
+            ViewContext.ActiveForm = view;
+            ViewContext.ActiveForm.ShowDialog();
         }
 
         /// <param name="newResident">Contains the complete information of the new resident, except for an residentId/param>
