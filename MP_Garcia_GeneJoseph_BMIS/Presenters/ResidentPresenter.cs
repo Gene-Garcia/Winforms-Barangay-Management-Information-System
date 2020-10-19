@@ -79,9 +79,13 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// </summary>
         public void GetDisplayResidents()
         {
-            // DisplayResidents view = new DisplayResidents();
-            //view.Residents = dbEnt.Resident.Residents();
-            // view.RunView();
+            ViewContext.Dispose();
+
+            DisplayResidentsView view = new DisplayResidentsView();
+            view.Residents = dbEnt.Resident.Residents().OrderBy(m=>m.Status).ToList();
+            view.PopulateDataList();
+            ViewContext.ActiveForm = view;
+            ViewContext.ActiveForm.ShowDialog();
         }
 
         /// <summary>

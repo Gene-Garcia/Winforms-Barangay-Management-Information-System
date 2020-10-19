@@ -80,6 +80,9 @@
     <Compile Include="Views\IResident.cs" />
     <Compile Include="Views\ISummon.cs" />
     <Compile Include="Views\ResidentView\AddResident.cs" />
+    <Compile Include="Views\ResidentView\DisplayResidentsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
