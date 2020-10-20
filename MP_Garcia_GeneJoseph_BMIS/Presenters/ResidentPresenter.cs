@@ -164,10 +164,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
             if (toDeceased != null)
             {
-                toDeceased.Status = SystemConstants.RESIDENT_STATUS_DECEASED;
                 // remove from list
                 residents.Remove(toDeceased);
                 // re-insert
+                toDeceased.Status = SystemConstants.RESIDENT_STATUS_DECEASED;
                 residents.Add(toDeceased);
                 // update text file
                 bool status = dbEnt.Resident.SaveResidents(residents);
@@ -176,13 +176,16 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 {
                     MessageBox.Show("Resident " + toDeceased.FirstName + " " + toDeceased.LastName + "'s status is set to as deceased.", "Deceased Resident", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // go back to landing page
+                    ViewContext.Dispose();
                     /* Audit TRAIL RECORD and System PROMPT */
+                    AuditTrailHelper.RecordAction("Resident " + toDeceased.FirstName + " " + toDeceased.LastName + " is set to deceased.");
                     MenuHelper.MenuInput();
 
                 }
                 else
                 {
                     MessageBox.Show("Resident " + toDeceased.FirstName + " " + toDeceased.LastName + "'s status was not able to be set to deceased.", "Deceased Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ViewContext.Dispose();
                     // reload view
                     new ResidentPresenter().GetViewResident(toDeceased.ResidentId);
                 }
@@ -190,6 +193,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             else
             {
                 MessageBox.Show("Resident cannot be found.", "Deceased Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ViewContext.Dispose();
                 // reload view
                 new ResidentPresenter().GetDisplayResidents();
             }

@@ -33,3 +33,9 @@
 33%20User logged in.%2010/20/2020 9:34:08 PM%202
 34%20Resident information updated with name: Sheldon Cooperr%2010/20/2020 9:34:41 PM%202
 35%20Resident information updated with name: Gene Garcia%2010/20/2020 9:35:07 PM%202
+36%20User logged in.%2010/20/2020 9:40:38 PM%202
+37%20User logged in.%2010/20/2020 9:42:30 PM%202
+38%20User logged in.%2010/20/2020 9:43:01 PM%202
+39%20User logged in.%2010/20/2020 9:48:25 PM%202
+40%20Resident information updated with name: John Doe%2010/20/2020 9:48:33 PM%202
+41%20Resident Jane Garcia is set to deceased.%2010/20/2020 9:48:40 PM%202

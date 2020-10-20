@@ -31,22 +31,31 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dataList.Columns["Birthdate"].Visible = false;
             this.dataList.Columns["Address"].Visible = false;
 
-            // button
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            // button view and edit
+            DataGridViewButtonColumn viewEditBtn = new DataGridViewButtonColumn();
 
-            this.dataList.Columns.Add(btn);
-            btn.HeaderText = "View & Edit Record";
-            btn.Text = "Select";
-            btn.Name = "btnSelect";
-            btn.UseColumnTextForButtonValue = true;
+            this.dataList.Columns.Add(viewEditBtn);
+            viewEditBtn.HeaderText = "View & Edit Record";
+            viewEditBtn.Text = "Select";
+            viewEditBtn.Name = "btnSelect";
+            viewEditBtn.UseColumnTextForButtonValue = true;
+
+            DataGridViewButtonColumn setDeceasedBtn = new DataGridViewButtonColumn();
+
+            this.dataList.Columns.Add(setDeceasedBtn);
+            setDeceasedBtn.HeaderText = "Set as Deceased";
+            setDeceasedBtn.Text = "Select";
+            setDeceasedBtn.Name = "btnDeceased";
+            setDeceasedBtn.UseColumnTextForButtonValue = true;
         }
 
         // Listeners
         private void RegisterResidentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // view and edit
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
-                string strId = this.dataList.Rows[e.RowIndex].Cells[1].Value.ToString();
+                string strId = this.dataList.Rows[e.RowIndex].Cells[2].Value.ToString();
                 int id = 0;
 
                 if (int.TryParse(strId, out id))
@@ -55,6 +64,21 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
                     if (this.resident != null)
                         new ResidentPresenter().GetViewResident(resident.ResidentId);
+
+                }
+            }
+            // set deceased
+            else if (e.ColumnIndex == 1 && e.RowIndex >= 0)
+            {
+                string strId = this.dataList.Rows[e.RowIndex].Cells[2].Value.ToString();
+                int id = 0;
+
+                if (int.TryParse(strId, out id))
+                {
+                    this.resident = this.residents.Where(m => m.ResidentId == id).FirstOrDefault();
+
+                    if (this.resident != null)
+                        new ResidentPresenter().PostToResidentDeceased(resident.ResidentId);
 
                 }
             }
