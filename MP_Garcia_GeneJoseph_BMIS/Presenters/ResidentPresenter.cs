@@ -55,7 +55,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// </summary>
         public void GetSearchResident()
         {
-            // render view
+            ViewContext.Dispose();
+
+            SearchResidentView view = new SearchResidentView();
+            ViewContext.ActiveForm = view;
+            ViewContext.ActiveForm.ShowDialog();
         }
 
         /// <summary>
@@ -73,11 +77,13 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
             if (searched != null)
             {
+                ViewContext.Dispose();
                 new ResidentPresenter().GetViewResident(searched.ResidentId);
             }
             else
             {
                 MessageBox.Show("Resident cannot be found", "View Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ViewContext.Dispose();
                 new ResidentPresenter().GetDisplayResidents();
             }
         }
