@@ -24,15 +24,36 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
         public void PopulateFirstDataList()
         {
-
+            this.dataListPrnt1.DataSource = this.residents;
+            this.dataListPrnt1.Columns["ResidentId"].Visible = false;
+            this.dataListPrnt1.Columns["Sex"].Visible = false;
+            this.dataListPrnt1.Columns["Birthdate"].Visible = false;
+            this.dataListPrnt1.Columns["Address"].Visible = false;
+            this.dataListPrnt1.Columns["Status"].Visible = false;
         }
 
-        public void PopulateSecondDataList()
+        public void PopulateSecondDataList(int toExclude)
         {
 
+            this.dataListPrnt2.DataSource = this.residents.Where(m=>m.ResidentId != toExclude).ToList();
+            this.dataListPrnt2.Columns["ResidentId"].Visible = false;
+            this.dataListPrnt2.Columns["Sex"].Visible = false;
+            this.dataListPrnt2.Columns["Birthdate"].Visible = false;
+            this.dataListPrnt2.Columns["Address"].Visible = false;
+            this.dataListPrnt2.Columns["Status"].Visible = false;
         }
 
         // listeners
+        private void data1(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.dataListPrnt1.SelectedRows)
+            {
+                string strId = row.Cells[0].Value.ToString();
+                int id = int.Parse(strId);
+                this.PopulateSecondDataList(id);
+
+            }
+        }
         // list 1 selection onclick populate next list
         // btn onclick
 
@@ -130,6 +151,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dataListPrnt1.RowTemplate.Resizable = DataGridViewTriState.False;
             this.dataListPrnt1.Size = new Size(376, 423);
             this.dataListPrnt1.TabIndex = 1;
+            this.dataListPrnt1.SelectionChanged += new EventHandler(this.data1);
 
             // Label : Second Parent
             this.lblParent2.AutoSize = true;
