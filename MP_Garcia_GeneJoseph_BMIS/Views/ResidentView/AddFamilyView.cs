@@ -54,11 +54,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dataListPrnt2 = new DataGridView();
             this.btnCreate = new Button();
             this.dsnLine = new PictureBox();
-            this.lblFirstName = new Label();
+            this.lblFamilyMembers = new Label();
             this.numFamilyMember = new NumericUpDown();
             this.lblParent1 = new Label();
             this.lblParent2 = new Label();
-            this.lblFamilyMembers = new Label();
 
             // Label : Resident
             this.lblResidents.AutoSize = true;
@@ -197,13 +196,13 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
 
             // Label : Family Members
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
-            this.lblFirstName.Location = new Point(49, 626);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new Size(124, 22);
-            this.lblFirstName.Text = "Family Members";
+            this.lblFamilyMembers.AutoSize = true;
+            this.lblFamilyMembers.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.lblFamilyMembers.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblFamilyMembers.Location = new Point(49, 626);
+            this.lblFamilyMembers.Name = "lblFirstName";
+            this.lblFamilyMembers.Size = new Size(124, 22);
+            this.lblFamilyMembers.Text = "Family Members";
 
             // Number : Family Members 
             this.numFamilyMember.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
@@ -249,20 +248,22 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.AutoScaleMode = AutoScaleMode.Font;
             this.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new Size(884, 713);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.MaximizeBox = false;
             this.Name = "AddFamilyView";
             this.Text = "AddFamilyView";
 
             // Load Control into Form
             this.Controls.Add(this.lblParent2);
-            this.Controls.Add(this.lblFamilyMembers);
             this.Controls.Add(this.lblParent1);
             this.Controls.Add(this.numFamilyMember);
             this.Controls.Add(this.dsnLine);
-            this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dataListPrnt2);
             this.Controls.Add(this.dataListPrnt1);
             this.Controls.Add(this.lblResidents);
+            this.Controls.Add(this.lblFamilyMembers);
             this.Controls.Add(this.dsnLlbl);
             this.Controls.Add(this.dsnBox);
         }
@@ -274,11 +275,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
         private DataGridView dataListPrnt2;
         private Button btnCreate;
         private PictureBox dsnLine;
-        private Label lblFirstName;
+        private Label lblFamilyMembers;
         private NumericUpDown numFamilyMember;
         private Label lblParent1;
         private Label lblParent2;
-        private Label lblFamilyMembers;
 
     }
 }

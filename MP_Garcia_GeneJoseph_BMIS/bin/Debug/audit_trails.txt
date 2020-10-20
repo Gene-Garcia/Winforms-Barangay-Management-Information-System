@@ -39,3 +39,9 @@
 39%20User logged in.%2010/20/2020 9:48:25 PM%202
 40%20Resident information updated with name: John Doe%2010/20/2020 9:48:33 PM%202
 41%20Resident Jane Garcia is set to deceased.%2010/20/2020 9:48:40 PM%202
+42%20User logged in.%2010/20/2020 10:31:24 PM%202
+43%20User logged in.%2010/20/2020 10:33:09 PM%202
+44%20User logged in.%2010/20/2020 10:34:52 PM%202
+45%20User logged in.%2010/20/2020 10:35:19 PM%202
+46%20User logged in.%2010/20/2020 10:36:18 PM%202
+47%20User logged in.%2010/20/2020 10:37:46 PM%202

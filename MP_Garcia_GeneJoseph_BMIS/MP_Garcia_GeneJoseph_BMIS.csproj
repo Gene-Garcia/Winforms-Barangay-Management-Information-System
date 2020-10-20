@@ -79,6 +79,9 @@
     <Compile Include="Views\IAccount.cs" />
     <Compile Include="Views\IResident.cs" />
     <Compile Include="Views\ISummon.cs" />
+    <Compile Include="Views\ResidentView\AddFamilyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\ResidentView\AddResident.cs" />
     <Compile Include="Views\ResidentView\DisplayResidentsView.cs">
       <SubType>Form</SubType>
