@@ -1,4 +1,5 @@
 ﻿using MP_Garcia_GeneJoseph_BMIS.Models;
+using MP_Garcia_GeneJoseph_BMIS.Presenters;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -22,6 +23,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
         private Resident resident = new Resident();
         public Resident Resident { get { return resident; } set { resident = value; } }
 
+        private int parentOneId;
+        private int parentTwoId;
+
         public void PopulateFirstDataList()
         {
             this.dataListPrnt1.DataSource = this.residents;
@@ -44,7 +48,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
         }
 
         // listeners
-        private void data1(object sender, EventArgs e)
+        private void DataListOnSelectionChanged(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in this.dataListPrnt1.SelectedRows)
             {
@@ -54,8 +58,40 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             }
         }
-        // list 1 selection onclick populate next list
-        // btn onclick
+        private void CreateOnClick(object sender, EventArgs e)
+        {
+            int familyMembers = 0;
+            bool valid = true;
+
+            if (this.dataListPrnt1.SelectedRows.Count == 1)
+                foreach (DataGridViewRow row in this.dataListPrnt1.SelectedRows)
+                {
+                    string strId = row.Cells[0].Value.ToString();
+                    parentOneId = int.Parse(strId);
+                }
+            else
+                valid = false;
+
+            if (valid)
+                if (this.dataListPrnt2.SelectedRows.Count == 1)
+                    foreach (DataGridViewRow row in this.dataListPrnt2.SelectedRows)
+                    {
+                        string strId = row.Cells[0].Value.ToString();
+                        parentTwoId = int.Parse(strId);
+                    }
+
+            familyMembers = int.Parse(this.numFamilyMember.Value.ToString());
+
+            if (valid)
+            {
+                new ResidentPresenter().PostSaveFamily(parentOneId, parentTwoId, familyMembers);
+            }
+            else
+            {
+                MessageBox.Show("First parent is required, and the second parent is optional for single-parents.", "Add Family", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
 
         private void InitComponents()
         {
@@ -151,7 +187,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dataListPrnt1.RowTemplate.Resizable = DataGridViewTriState.False;
             this.dataListPrnt1.Size = new Size(376, 423);
             this.dataListPrnt1.TabIndex = 1;
-            this.dataListPrnt1.SelectionChanged += new EventHandler(this.data1);
+            this.dataListPrnt1.SelectionChanged += new EventHandler(this.DataListOnSelectionChanged);
 
             // Label : Second Parent
             this.lblParent2.AutoSize = true;
@@ -234,6 +270,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.numFamilyMember.Name = "numFamilyMember";
             this.numFamilyMember.Size = new Size(156, 24);
             this.numFamilyMember.TabIndex = 3;
+            this.numFamilyMember.Value = 0;
 
             // Button
             this.btnCreate.BackColor = Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
@@ -246,6 +283,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.btnCreate.TabIndex = 4;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new EventHandler(this.CreateOnClick);
 
             // Design Components
             this.dsnLlbl.AutoSize = true;

@@ -241,8 +241,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             if (status)
             {
                 MessageBox.Show("Family record was successfully created.", "New Family Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewContext.Dispose();
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
+                AuditTrailHelper.RecordAction("New family recorded.");
                 MenuHelper.MenuInput();
 
             }
