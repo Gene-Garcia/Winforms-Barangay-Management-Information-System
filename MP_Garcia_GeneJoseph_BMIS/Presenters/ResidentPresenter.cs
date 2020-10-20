@@ -62,9 +62,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             ViewContext.ActiveForm.ShowDialog();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+
         /// <param name="search">Contains the search parameters to find a resident record</param>
         public void PostSearchResident(IResident searchView)
         {
@@ -207,17 +205,22 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         public void GetAddFamily()
         {
+            ViewContext.Dispose();
+
             List<Family> existingFamilies = dbEnt.Family.Families();
             // obtain the resident Id of those that already have family records
             List<int> idsP1 = existingFamilies.Select(m => m.ParentOneId).ToList();
             List<int> idsP2 = existingFamilies.Select(m => m.ParentTwoId).ToList();
 
             // filters the residents, does not display residents that already have family records
-            // ! Issue - duplicate residents choice on both data tables
             List<Resident> parentChoices = dbEnt.Resident.Residents().Where(m=> !idsP1.Contains(m.ResidentId) && !idsP2.Contains(m.ResidentId)).ToList();
 
             // RENDER VIEW
-            // the view will still inherit IResident
+            AddFamilyView view = new AddFamilyView();
+            view.Residents = parentChoices;
+            view.PopulateFirstDataList();
+            ViewContext.ActiveForm = view;
+            ViewContext.ActiveForm.ShowDialog();
         }
 
         /// <param name="parentOneId"></param>
