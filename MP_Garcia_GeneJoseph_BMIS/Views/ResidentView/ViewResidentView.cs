@@ -374,6 +374,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddEditResident";
             this.Text = "Resident";
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormLoad);
 
             // Load Controls

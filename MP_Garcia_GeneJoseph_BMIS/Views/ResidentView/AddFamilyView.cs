@@ -248,8 +248,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.AutoScaleMode = AutoScaleMode.Font;
             this.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new Size(884, 713);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false;
             this.Name = "AddFamilyView";
             this.Text = "AddFamilyView";

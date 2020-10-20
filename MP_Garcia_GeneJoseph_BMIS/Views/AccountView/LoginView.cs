@@ -154,6 +154,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Name = "LoginView";
             this.Text = "Login";
 

@@ -159,6 +159,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.ClientSize = new Size(884, 561);
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Name = "RegisterAccountView";
             this.Text = "Register an Account";
 
