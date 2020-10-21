@@ -71,3 +71,16 @@
 71%20User logged in.%2010/21/2020 9:34:01 PM%202
 72%20Family record's family size change with primary parent Gene Garcia%2010/21/2020 9:34:17 PM%202
 73%20User logged in.%2010/21/2020 9:34:31 PM%202
+74%20User logged in.%2010/21/2020 9:35:01 PM%202
+75%20Family record's family size change with primary parent Joey Friends%2010/21/2020 9:35:19 PM%202
+76%20User logged in.%2010/21/2020 9:56:52 PM%202
+77%20User logged in.%2010/21/2020 9:57:42 PM%202
+78%20Resident John Doe is set to deceased.%2010/21/2020 9:57:53 PM%202
+79%20User logged in.%2010/21/2020 9:58:53 PM%202
+80%20User logged in.%2010/21/2020 10:00:26 PM%202
+81%20User logged in.%2010/21/2020 10:02:12 PM%202
+82%20User logged in.%2010/21/2020 10:02:50 PM%202
+83%20User logged in.%2010/21/2020 10:05:47 PM%202
+84%20User logged in.%2010/21/2020 10:06:40 PM%202
+85%20User logged in.%2010/21/2020 10:07:01 PM%202
+86%20User logged in.%2010/21/2020 10:07:26 PM%202

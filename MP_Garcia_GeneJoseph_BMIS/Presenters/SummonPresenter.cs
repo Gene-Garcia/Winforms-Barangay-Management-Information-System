@@ -1,6 +1,7 @@
 ﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
 using MP_Garcia_GeneJoseph_BMIS.Models;
 using MP_Garcia_GeneJoseph_BMIS.Views;
+using MP_Garcia_GeneJoseph_BMIS.Views.SummonView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,8 +46,18 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         public void GetDisplaySummons()
         {
-            List<Summon> summons = dbEnt.Summon.Summons();
+            ViewContext.Dispose();
+
+            List<Summon> summons = dbEnt.Summon.Summons().OrderBy(m => m.ReportedDate).ToList();
+
+            DisplaySummonsView view = new DisplaySummonsView();
+            view.Summons = summons;
+            view.PopulateDataList();
+            ViewContext.ActiveForm = view;
+
             // render view
+            ViewContext.ActiveForm.ShowDialog();
+
         }
 
         public void GetSearchSummon()
