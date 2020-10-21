@@ -83,6 +83,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\ResidentView\AddResident.cs" />
+    <Compile Include="Views\ResidentView\DisplayFamiliesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\ResidentView\DisplayResidentsView.cs">
       <SubType>Form</SubType>
     </Compile>

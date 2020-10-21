@@ -199,8 +199,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         public void GetDisplayFamilies()
         {
-            List<Family> families = dbEnt.Family.Families();
+            ViewContext.Dispose();
+
+            List<Family> families = dbEnt.Family.Families().OrderBy(m=>m.FamilyMembers).ToList();
+            DisplayFamiliesView view = new DisplayFamiliesView();
+            view.Families = families;
+            view.PopulateDataList();
             // render view
+            ViewContext.ActiveForm = view;
+            ViewContext.ActiveForm.ShowDialog();
         }
 
         public void GetAddFamily()
