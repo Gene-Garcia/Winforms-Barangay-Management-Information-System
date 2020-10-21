@@ -257,10 +257,42 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             }
             else
             {
-                MessageBox.Show("Unavailable to create new family record.", "New Family Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Unable to create new family record.", "New Family Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 // reload view
                 new ResidentPresenter().GetAddFamily();
             }
+        }
+
+        public void PostChangeFamilySize(int familyId, int newFamilySize)
+        {
+            List<Family> families = dbEnt.Family.Families();
+            Family family = families.Where(m => m.FamilyId == familyId).FirstOrDefault();
+            // remove old record from the list
+            families.Remove(family);
+            // update family members
+            family.FamilyMembers = newFamilySize;
+            // reinsert
+            families.Add(family);
+            // upload to text file
+
+            bool status = dbEnt.Family.SaveFamilies(families);
+            if (status)
+            {
+                MessageBox.Show("Family record's family size update with primary parent " + family.ParentOne.FirstName + " " + family.ParentOne.LastName, "Change Family Size", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewContext.Dispose();
+                // go back to landing page
+                /* Audit TRAIL RECORD and System PROMPT */
+                AuditTrailHelper.RecordAction("Family record's family size change with primary parent " + family.ParentOne.FirstName + " " + family.ParentOne.LastName);
+                MenuHelper.MenuInput();
+
+            }
+            else
+            {
+                MessageBox.Show("Unable update family size.", "Family Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // reload view
+                new ResidentPresenter().GetDisplayFamilies();
+            }
+
         }
     }
 }

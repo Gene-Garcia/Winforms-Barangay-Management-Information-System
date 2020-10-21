@@ -1,4 +1,5 @@
 ﻿using MP_Garcia_GeneJoseph_BMIS.Models;
+using MP_Garcia_GeneJoseph_BMIS.Presenters;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -59,10 +60,44 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             viewEditBtn.UseColumnTextForButtonValue = true;
         }
 
+        private int GetFamilySize()
+        {
+            int newFamSize;
+            bool valid = false;
+
+            MessageBox.Show("Enter new family size in the Command Line.");
+
+            do
+            {
+                Console.Write("\n\tNew family size >>");
+                valid = int.TryParse(Console.ReadLine(), out newFamSize);
+
+                if (!valid)
+                    Console.WriteLine("\tNumeric input only.");
+            } while (!valid);         
+
+            return newFamSize;
+        }
+
         // listeners
         private void DataListOnClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if (e.RowIndex >= 0 && e.ColumnIndex == 4)
+            {
+                string strId = this.dataList.Rows[e.RowIndex].Cells[0].Value.ToString();
+                int id = 0;
+
+                if (int.TryParse(strId, out id))
+                {
+                    this.family = this.families.Where(m => m.FamilyId == id).FirstOrDefault();
+
+                    if (this.family != null)
+                    {
+                        int famSize = this.GetFamilySize();
+                        new ResidentPresenter().PostChangeFamilySize(family.FamilyId, famSize);
+                    }
+                }
+            }
         }
 
         private void InitComponents()

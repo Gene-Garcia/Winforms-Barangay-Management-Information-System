@@ -65,3 +65,9 @@
 65%20User logged in.%2010/21/2020 8:59:02 PM%202
 66%20User logged in.%2010/21/2020 9:01:20 PM%202
 67%20User logged in.%2010/21/2020 9:04:29 PM%202
+68%20User logged in.%2010/21/2020 9:06:25 PM%202
+69%20User logged in.%2010/21/2020 9:11:14 PM%202
+70%20Resident Jane Garcia is set to deceased.%2010/21/2020 9:11:38 PM%202
+71%20User logged in.%2010/21/2020 9:34:01 PM%202
+72%20Family record's family size change with primary parent Gene Garcia%2010/21/2020 9:34:17 PM%202
+73%20User logged in.%2010/21/2020 9:34:31 PM%202
