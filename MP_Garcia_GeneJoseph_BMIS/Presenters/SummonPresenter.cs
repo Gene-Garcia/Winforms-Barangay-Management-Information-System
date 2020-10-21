@@ -17,22 +17,32 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         
         public void GetCreateSummon()
         {
+            ViewContext.Dispose();
+
+            CreateSummonView view = new CreateSummonView();
+            ViewContext.ActiveForm = view;
             // render view
+            ViewContext.ActiveForm.ShowDialog();
         }
 
         public void PostCreateSummon(ISummon newSummon)
         {
             Summon summon = newSummon.Summon;
-            summon.ReportedDate = DateTime.Now;
-            summon.SummonId = dbEnt.Summon.Summons().Max(m => m.SummonId) + 1;
+            summon.ReportedDate = DateTime.Now.Date;
+
+            List<Summon> summons = dbEnt.Summon.Summons();
+            summon.SummonId = summons.Count > 0 ? summons.Max(m=>m.SummonId) : 1;
+            summon.AccountId = UserSession.User.AccountId;
 
             bool status = dbEnt.Summon.InsertSummon(summon);
 
             if (status)
             {
                 MessageBox.Show("New summon report created successfully.", "New Summon Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewContext.Dispose();
                 // go back to landing page
                 /* Audit TRAIL RECORD and System PROMPT */
+                AuditTrailHelper.RecordAction("New summon created with Id " + summon.SummonId);
                 MenuHelper.MenuInput();
 
             }
