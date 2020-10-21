@@ -41,8 +41,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
         // listeners
         private void DataListOnClick(object sender, DataGridViewCellEventArgs e)
         {
-            Console.WriteLine(e.ColumnIndex + "C R" + e.RowIndex);
-
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
                 string strId = this.dataList.Rows[e.RowIndex].Cells[1].Value.ToString();

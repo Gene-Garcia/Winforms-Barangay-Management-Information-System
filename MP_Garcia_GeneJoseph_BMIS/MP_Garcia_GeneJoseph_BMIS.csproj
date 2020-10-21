@@ -101,6 +101,9 @@
     <Compile Include="Views\SummonView\DisplaySummonsView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Views\SummonView\ViewSummonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

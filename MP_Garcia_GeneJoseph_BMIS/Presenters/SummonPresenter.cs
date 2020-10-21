@@ -78,11 +78,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         public void GetDisplaySummon(int summonId)
         {
+            ViewContext.Dispose();
             Summon summon = dbEnt.Summon.Summons().Where(m => m.SummonId == summonId).FirstOrDefault();
 
             if (summon != null)
             {
+                ViewSummonView view = new ViewSummonView();
+                view.Summon = summon;
+                view.ModelToFields();
+                ViewContext.ActiveForm = view;
                 // render view
+                ViewContext.ActiveForm.ShowDialog();
             }
             else
             {
