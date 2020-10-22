@@ -72,8 +72,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         public void GetSearchSummon()
         {
-            // render view
-            // the view will trigger GetDisplaySummon(id)
+            ViewContext.Dispose();
+
+            SearchSummonView view = new SearchSummonView();
+            ViewContext.ActiveForm = view;
+            ViewContext.ActiveForm.ShowDialog();
         }
 
         public void GetDisplaySummon(int summonId)
@@ -93,7 +96,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             else
             {
                 MessageBox.Show("Summon report cannot be found.", "Search Summon", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                new SummonPresenter().GetSearchSummon();
+                MenuHelper.MenuInput();
             }
         }
 
