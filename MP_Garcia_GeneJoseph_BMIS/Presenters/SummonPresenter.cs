@@ -31,7 +31,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             summon.ReportedDate = DateTime.Now.Date;
 
             List<Summon> summons = dbEnt.Summon.Summons();
-            summon.SummonId = summons.Count > 0 ? summons.Max(m=>m.SummonId) : 1;
+            summon.SummonId = summons.Count > 0 ? summons.Max(m=>m.SummonId) + 1 : 1;
             summon.AccountId = UserSession.User.AccountId;
 
             bool status = dbEnt.Summon.InsertSummon(summon);
