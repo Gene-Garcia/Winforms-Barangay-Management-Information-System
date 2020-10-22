@@ -76,7 +76,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.lblSummons.Location = new Point(18, 79);
             this.lblSummons.Name = "lblSummons";
             this.lblSummons.Size = new Size(137, 24);
-            this.lblSummons.Text = "Family Records";
+            this.lblSummons.Text = "Summon Reports";
 
             // DataList : Summons
             this.dataList.AllowUserToAddRows = false;
