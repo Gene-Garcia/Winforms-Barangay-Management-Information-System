@@ -1,4 +1,6 @@
-﻿using MP_Garcia_GeneJoseph_BMIS.Models;
+﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
+using MP_Garcia_GeneJoseph_BMIS.Models;
+using MP_Garcia_GeneJoseph_BMIS.Views.AuditTrailView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +15,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
         public void DisplayAuditTrails()
         {
+            ViewContext.Dispose();
             List<AuditTrail> auditTrails = dbEnt.AuditTrail.AuditTrails().OrderBy(m=>m.ActionDate).ToList();
+
+            DisplayAuditTrailView view = new DisplayAuditTrailView();
+            view.AuditTrails = auditTrails;
+            view.PopulateDataList();
+            ViewContext.ActiveForm = view;
             // render view
+            ViewContext.ActiveForm.ShowDialog();
         }
     }
 }

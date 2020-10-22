@@ -74,7 +74,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\AccountView\RegisterAccountView.cs" />
+    <Compile Include="Views\AuditTrailView\DisplayAuditTrailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Views\DashboardView\DashboardView.cs" />
+    <Compile Include="Views\IAuditTrail.cs" />
     <Compile Include="Views\IFamilies.cs" />
     <Compile Include="Views\IAccount.cs" />
     <Compile Include="Views\IResident.cs" />
@@ -82,7 +86,6 @@
     <Compile Include="Views\ResidentView\AddFamilyView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ResidentView\AddResident.cs" />
     <Compile Include="Views\ResidentView\DisplayFamiliesView.cs">
       <SubType>Form</SubType>
     </Compile>

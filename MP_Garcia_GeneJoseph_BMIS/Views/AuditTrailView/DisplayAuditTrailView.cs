@@ -23,7 +23,22 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AuditTrailView
 
         public void PopulateDataList()
         {
+            this.dataList.ColumnCount = 3;
+            this.dataList.Columns[0].Name = "Username";
+            this.dataList.Columns[1].Name = "Action";
+            this.dataList.Columns[2].Name = "Date Action";
 
+            string[] row;
+            foreach (var trail in this.auditTrails)
+            {
+                row = new string[]
+                {
+                    trail.Account.Username,
+                    trail.Message,
+                    trail.ActionDate.ToShortDateString()
+                };
+                this.dataList.Rows.Add(row);
+            }
         }
 
         private void InitComponents()
