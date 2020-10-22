@@ -18,7 +18,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         private Entities dbEnt = new Entities();
 
         /// <summary>
-        /// Handles only calls to display login view
+        /// Renders the login view
         /// </summary>
         public void GetLogin()
         {
@@ -26,9 +26,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             ViewContext.ActiveForm.ShowDialog();
         }
 
-        /// <param name="loginCredentials">
-        /// The values from the login view
-        /// </param>
+
+        /// <summary>
+        /// Action that handles the login, accepts the login credentials
+        /// </summary>
+        /// <param name="loginCredentials">The values from the login view</param>
         public void PostLogin(IAccount loginCredentials)
         {
             LoginHelper.LoginUser
@@ -57,7 +59,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         }
 
         /// <summary>
-        /// GET
+        /// Renders the view where legal-aged and alive residents are displayed 
+        /// for the selection of the account to be registered
         /// </summary>
         public void GetRegisterAccount()
         {
@@ -104,7 +107,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 /* Audit TRAIL RECORD and System PROMPT */
                 AuditTrailHelper.RecordAction("Registered new account with username: " + newAccount.Username);
                 MenuHelper.MenuInput();
-
             }
             else
             {
@@ -115,6 +117,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             }                
         }
 
+        /// <summary>
+        /// Renders the view where all the registered accounts will be displayed
+        /// </summary>
         public void GetDisplayAccounts()
         {
             ViewContext.Dispose();
@@ -128,6 +133,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         }
 
 
+        /// <summary>
+        /// Sets the accounts record with the accountId, and set its status as ARCHIVED
+        /// </summary>
         /// <param name="accountId">The account Id of the user that will be archived</param>
         public void DeleteAccount(int accountId)
         {
@@ -150,7 +158,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 /* Audit TRAIL RECORD and System PROMPT */
                 AuditTrailHelper.RecordAction("Account was deleted with username: " + toDelete.Username);
                 MenuHelper.MenuInput();
-
             }
             else
             {
