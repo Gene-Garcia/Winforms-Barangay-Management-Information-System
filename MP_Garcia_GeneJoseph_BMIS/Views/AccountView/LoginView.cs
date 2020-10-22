@@ -2,6 +2,7 @@
 using MP_Garcia_GeneJoseph_BMIS.Presenters;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
 
         private Account account = new Account();
         public Account Account { get { return account; } set { account = value; } }
-        public List<Account> Accounts { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private List<Account> accounts = new List<Account>();
+        public List<Account> Accounts { get { return accounts; } set { accounts = value; } }
 
         private void TextToModel()
         {
@@ -51,133 +53,129 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
         private void InitComponents()
         {
             // Instantiate components
-            this.dsnBox         = new PictureBox();
-            this.dsnLine = new PictureBox();
-            this.dsnLine1 = new PictureBox();
-
             this.lblLogin       = new Label();
             this.lblUsername    = new Label();
             this.txtUsername    = new TextBox();
             this.lblPassword    = new Label();
             this.txtPassword    = new TextBox();
             this.btnLogin       = new Button();
+            this.dsnBox         = new PictureBox();
+            this.dsnLine        = new PictureBox();
+            this.dsnLine1       = new PictureBox();
 
             // Main Label
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Trebuchet MS", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
-            this.lblLogin.Location = new System.Drawing.Point(126, 31);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(115, 27);
-            this.lblLogin.TabIndex = 1;
+            this.lblLogin.Font = new Font("Trebuchet MS", 16F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblLogin.Location = new Point(126, 31);
+            this.lblLogin.Size = new Size(115, 27);
             this.lblLogin.Text = "User Login";
+            this.lblLogin.Name = "lblLogin";
 
             // Label for Username
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
-            this.lblUsername.Location = new System.Drawing.Point(33, 123);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(84, 22);
-            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblUsername.Location = new Point(33, 123);
+            this.lblUsername.Size = new Size(84, 22);
             this.lblUsername.Text = "Username";
+            this.lblUsername.Name = "lblUsername";
 
             // Textboc for Username
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Trebuchet MS", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.Black;
-            this.txtUsername.Location = new System.Drawing.Point(32, 158);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(5);
+            this.txtUsername.BackColor = Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.txtUsername.BorderStyle = BorderStyle.None;
+            this.txtUsername.Font = new Font("Trebuchet MS", 12.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = Color.Black;
+            this.txtUsername.Location = new Point(32, 158);
+            this.txtUsername.Margin = new Padding(5);
+            this.txtUsername.Size = new Size(320, 20);
+            this.txtUsername.TextAlign = HorizontalAlignment.Center;
+            this.txtUsername.TabIndex = 1;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(320, 20);
-            this.txtUsername.TabIndex = 3;
-            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtUsername.Text = "gene_garcia";
 
             // Label for Password
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
-            this.lblPassword.Location = new System.Drawing.Point(33, 242);
+            this.lblPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblPassword.Location = new Point(33, 242);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(75, 22);
-            this.lblPassword.TabIndex = 5;
+            this.lblPassword.Size = new Size(75, 22);
             this.lblPassword.Text = "Password";
 
             // Textbox for Password
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Trebuchet MS", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(32, 277);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(5);
-            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.BackColor = Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.txtPassword.BorderStyle = BorderStyle.None;
+            this.txtPassword.Font = new Font("Trebuchet MS", 12.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = Color.Black;
+            this.txtPassword.Location = new Point(32, 277);
+            this.txtPassword.Margin = new Padding(5);
+            this.txtPassword.Size = new Size(320, 20);
+            this.txtPassword.TextAlign = HorizontalAlignment.Center;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.PasswordChar = '•';
-            this.txtPassword.Size = new System.Drawing.Size(320, 20);
-            this.txtPassword.TabIndex = 6;
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.Text = "qwertypad360";
+            this.txtPassword.Name = "txtPassword";
 
 
             // Button for Login
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.btnLogin.Location = new System.Drawing.Point(32, 355);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(97, 37);
-            this.btnLogin.TabIndex = 8;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.BackColor = Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
+            this.btnLogin.FlatStyle = FlatStyle.Flat;
+            this.btnLogin.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnLogin.Location = new Point(32, 355);
+            this.btnLogin.Size = new Size(97, 37);
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.LoginClick);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Click += new EventHandler(this.LoginClick);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Text = "Login";
 
-            // Components for Aesthetics
-            this.dsnBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
-            this.dsnBox.Location = new System.Drawing.Point(384, 1);
+
+            // Design
+            this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnBox.Location = new Point(384, 1);
+            this.dsnBox.Size = new Size(400, 460);
             this.dsnBox.Name = "dsnBox";
-            this.dsnBox.Size = new System.Drawing.Size(400, 460);
-            this.dsnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
-            this.dsnLine.Location = new System.Drawing.Point(32, 182);
+            this.dsnLine.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine.Location = new Point(32, 182);
+            this.dsnLine.Size = new Size(320, 3);
             this.dsnLine.Name = "dsnLine";
-            this.dsnLine.Size = new System.Drawing.Size(320, 3);
-            this.dsnLine1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
-            this.dsnLine1.Location = new System.Drawing.Point(32, 301);
+            this.dsnLine1.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine1.Location = new Point(32, 301);
+            this.dsnLine1.Size = new Size(320, 3);
             this.dsnLine1.Name = "dsnLine1";
-            this.dsnLine1.Size = new System.Drawing.Size(320, 3);
 
             // Actual Form
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(784, 461);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MaximizeBox = false;
+            this.AutoScaleDimensions = new SizeF(6F, 13F);
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.BackColor = Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.ClientSize = new Size(784, 461);
+            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.MaximizeBox = false;
             this.Name = "LoginView";
             this.Text = "Login";
 
             // Load Components to Form
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.dsnLine1);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.dsnLine);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblLogin);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.dsnLine);
             this.Controls.Add(this.dsnBox);
+            this.Controls.Add(this.dsnLine1);
         }
 
         /* Components */
         private Label lblLogin;
         private Label lblUsername;
         private TextBox txtUsername;
-        private TextBox txtPassword;
         private Label lblPassword;
+        private TextBox txtPassword;
         private Button btnLogin;
-
         private PictureBox dsnBox;
         private PictureBox dsnLine;
         private PictureBox dsnLine1;

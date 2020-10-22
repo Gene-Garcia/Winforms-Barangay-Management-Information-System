@@ -33,7 +33,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
 
             // button
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-
             this.dataList.Columns.Add(btn);
             btn.HeaderText = "Register Account";
             btn.Text = "Register";
@@ -55,102 +54,100 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
 
                     if (this.resident != null)
                         new AccountPresenter().PostRegisterAccount(this);
-
                 }
             }
         }
 
         private void InitComponents()
         {
-            // init
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            this.dsnBox = new PictureBox();
-            this.dsnLlbl = new Label();
-            this.lblResidents = new Label();
-            this.dataList = new DataGridView();
+            // init            
+            this.lblResidents   = new Label();
+            this.dataList       = new DataGridView();
+            this.dsnBox         = new PictureBox();
+            this.dsnLlbl        = new Label();
 
             // Label for Accounts
-            this.lblResidents.AutoSize = true;
             this.lblResidents.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.lblResidents.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
             this.lblResidents.Location = new Point(18, 79);
-            this.lblResidents.Name = "lblResidents";
             this.lblResidents.Size = new Size(179, 24);
             this.lblResidents.Text = "Legal-aged Residents";
+            this.lblResidents.Name = "lblResidents";
 
             // DataGridView for Registered Accounts
-            this.dataList.AllowUserToAddRows = false;
-            this.dataList.AllowUserToDeleteRows = false;
-            this.dataList.AllowUserToResizeColumns = false;
-            this.dataList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle1.Font = new Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            this.dataList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DataGridViewCellStyle dgvcs1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dgvcs2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dgvcs3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dgvcs4 = new DataGridViewCellStyle();
+            dgvcs1.BackColor = Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            dgvcs1.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            dgvcs1.ForeColor = Color.Black;            
+            dgvcs2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvcs2.BackColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            dgvcs2.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            dgvcs2.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            dgvcs2.SelectionBackColor = Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            dgvcs2.SelectionForeColor = SystemColors.Desktop;
+            dgvcs2.WrapMode = DataGridViewTriState.True;            
+            dgvcs3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvcs3.BackColor = Color.White;
+            dgvcs3.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            dgvcs3.ForeColor = Color.Black;
+            dgvcs3.SelectionBackColor = Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(241)))));
+            dgvcs3.SelectionForeColor = Color.Black;
+            dgvcs3.WrapMode = DataGridViewTriState.False;
+            dgvcs4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvcs4.BackColor = Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(164)))), ((int)(((byte)(180)))));
+            dgvcs4.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            dgvcs4.ForeColor = SystemColors.WindowText;
+            dgvcs4.SelectionBackColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            dgvcs4.SelectionForeColor = SystemColors.HighlightText;
+            dgvcs4.WrapMode = DataGridViewTriState.True;            
+            this.dataList.AlternatingRowsDefaultCellStyle = dgvcs1;
             this.dataList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.dataList.BackgroundColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.dataList.BorderStyle = BorderStyle.None;
             this.dataList.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dataList.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             this.dataList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle2.Font = new Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            this.dataList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataList.ColumnHeadersDefaultCellStyle = dgvcs2;
             this.dataList.ColumnHeadersHeight = 40;
             this.dataList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            this.dataList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataList.DefaultCellStyle = dgvcs3;
             this.dataList.GridColor = Color.Black;
             this.dataList.Location = new Point(15, 125);
-            this.dataList.MultiSelect = false;
-            this.dataList.Name = "dataList";
-            this.dataList.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(164)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            this.dataList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataList.RowHeadersDefaultCellStyle = dgvcs4;
             this.dataList.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataList.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataList.RowTemplate.DefaultCellStyle.BackColor = Color.Empty;
             this.dataList.RowTemplate.DefaultCellStyle.ForeColor = Color.Empty;
             this.dataList.RowTemplate.Height = 40;
-            this.dataList.RowTemplate.ReadOnly = true;
             this.dataList.RowTemplate.Resizable = DataGridViewTriState.False;
             this.dataList.Size = new Size(857, 436);
-            this.dataList.TabIndex = 4;
+            this.dataList.RowTemplate.ReadOnly = true;
+            this.dataList.MultiSelect = false;
+            this.dataList.ReadOnly = true;
+            this.dataList.AllowUserToAddRows = false;
+            this.dataList.AllowUserToDeleteRows = false;
+            this.dataList.AllowUserToResizeColumns = false;
+            this.dataList.AllowUserToResizeRows = false;
+            this.dataList.TabIndex = 1;
             this.dataList.CellClick += new DataGridViewCellEventHandler(this.RegisterResidentClick);
+            this.dataList.Name = "dataList";
 
             // Design Components
             this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
             this.dsnBox.Location = new Point(-2, 0);
-            this.dsnBox.Name = "dsnBox";
             this.dsnBox.Size = new Size(888, 51);
+            this.dsnBox.Name = "dsnBox";
             this.dsnLlbl.AutoSize = true;
             this.dsnLlbl.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
             this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.dsnLlbl.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.dsnLlbl.Location = new Point(10, 13);
-            this.dsnLlbl.Name = "dsnLlbl";
             this.dsnLlbl.Size = new Size(372, 24);
             this.dsnLlbl.Text = "Barangay Management Information System";
+            this.dsnLlbl.Name = "dsnLlbl";
 
             // Actual Form
             this.AutoScaleDimensions = new SizeF(6F, 13F);
@@ -158,22 +155,22 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new Size(884, 561);
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            this.MaximizeBox = false;
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.MaximizeBox = false;
             this.Name = "RegisterAccountView";
             this.Text = "Register an Account";
 
             // Load Components to Form
-            this.Controls.Add(this.dataList);
             this.Controls.Add(this.lblResidents);
-            this.Controls.Add(this.dsnLlbl);
+            this.Controls.Add(this.dataList);
             this.Controls.Add(this.dsnBox);
+            this.Controls.Add(this.dsnLlbl);
         }
-
-        private PictureBox dsnBox;
-        private Label dsnLlbl;
+        
         private Label lblResidents;
         private DataGridView dataList;
+        private PictureBox dsnBox;
+        private Label dsnLlbl;
 
     }
 }
