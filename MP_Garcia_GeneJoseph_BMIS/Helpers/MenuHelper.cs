@@ -53,7 +53,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
             }
             else if (input == "D")
             {
-                // Dashbaord new asdfasdf
+                new DashboardPresenter().Index();
             }
             else if (input == "L")
             {
