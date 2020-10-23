@@ -22,7 +22,26 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.DashboardView
 
         public void PopulateBoxes()
         {
+            // row 1
+            this.lblTotalResData.Text = this.dashboard.TotalResidents.ToString();
+            this.lblMaleData.Text = this.dashboard.MaleResidentCount.ToString();
+            this.lblFemaleData.Text = this.dashboard.FemaleResidentCount.ToString();
+            this.lblAliveData.Text = this.dashboard.AliveResidents.ToString();
+            this.lblDeceasedData.Text = this.dashboard.DeceasedResidents.ToString();
 
+            // row 2
+            this.lblAverageAgeData.Text = this.dashboard.AverageAge.ToString();
+            this.lblAgeCateg1Data.Text = this.dashboard.AgeRangeCateg1.ToString();
+            this.lblAgeCateg2Data.Text = this.dashboard.AgeRangeCateg2.ToString();
+            this.lblAgeCateg3Data.Text = this.dashboard.AgeRangeCateg3.ToString();
+            this.lblAgeCateg4Data.Text = this.dashboard.AgeRangeCateg4.ToString();
+
+            // row 3
+            this.lblFamiliesData.Text = this.dashboard.RegisteredFamilies.ToString();
+            this.lblFamCateg1Data.Text = this.dashboard.FamilyMemberCateg1.ToString();
+            this.lblFamCateg2Data.Text = this.dashboard.FamilyMemberCateg2.ToString();
+            this.lblFamCateg3Data.Text = this.dashboard.FamilyMemberCateg3.ToString();
+            this.lblFamCateg4Data.Text = this.dashboard.FamilyMemberCateg4.ToString();
         }
 
         private void InitComponents()
