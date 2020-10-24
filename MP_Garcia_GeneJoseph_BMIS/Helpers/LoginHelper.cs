@@ -12,8 +12,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
     {
         public static void LoginUser(IAccount credentials, List<Account> activeAccounts)
         {
+            Cryptography ceasar = new Cryptography();
+
             //credentials.Account.Password = HashSet(credentials.Account.Password);
-            Account user = activeAccounts.Where(m => m.Username == credentials.Account.Username && m.Password == credentials.Account.Password).FirstOrDefault();
+            Account user = activeAccounts.Where(m => m.Username == credentials.Account.Username && m.Password == ceasar.Encrypt(credentials.Account.Password)).FirstOrDefault();
             
             if (user != null)
             {

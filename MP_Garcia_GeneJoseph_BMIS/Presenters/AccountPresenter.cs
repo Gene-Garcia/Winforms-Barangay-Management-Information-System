@@ -90,10 +90,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// <param name="selectedResident">Obtains the Resident model which contains the selected resident to be registered</param>
         public void PostRegisterAccount(IResident selectedResident)
         {
+            Cryptography ceaser = new Cryptography();
+
             Account newAccount = new Account();
             newAccount.AccountId = dbEnt.Account.Accounts().Max(m=>m.AccountId) + 1; // only gets the highest Id number for increment
             newAccount.Username = selectedResident.Resident.FirstName.ToLower() + "_" + selectedResident.Resident.LastName.ToLower();
-            newAccount.Password = SystemConstants.ACCOUNT_DEFAULT_PASSWORD;
+            newAccount.Password =  ceaser.Encrypt(SystemConstants.ACCOUNT_DEFAULT_PASSWORD);
             newAccount.ResidentId = selectedResident.Resident.ResidentId;
             newAccount.RegisteredDate = DateTime.Now;
             newAccount.AccountStatus = SystemConstants.ACCOUNT_STATUS_ACTIVE;
