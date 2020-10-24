@@ -168,5 +168,47 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 new AccountPresenter().GetDisplayAccounts();
             }
         }
+
+        /// <summary>
+        /// Renders the view to allow the user to view its information and change password
+        /// </summary>
+        public void GetDisplayMyAccount()
+        {
+
+        }
+
+        /// <summary>
+        /// Handles the changing of the current logged users password
+        /// </summary>
+        /// <param name="password">The new uncrypred password of the logged user</param>
+        public void PostUpdatePassword(string password)
+        {
+            //if (PasswordHelper.Check(password))
+            //rerender view
+
+            Cryptography ceasar = new Cryptography();
+
+            List<Account> accounts = dbEnt.Account.Accounts();
+            accounts.Remove( accounts.Where(m=>m.AccountId == UserSession.User.AccountId).FirstOrDefault() );
+            UserSession.User.Password = ceasar.Encrypt(password);
+            accounts.Add(UserSession.User);
+
+            bool status = dbEnt.Account.SaveAccounts(accounts);
+
+            if (status)
+            {
+                MessageBox.Show("Your password was succesffully changed.", "My Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ViewContext.Dispose();
+                // go back to landing page
+                MenuHelper.MenuInput();
+            }
+            else
+            {
+                MessageBox.Show("Your password cannot be changed.", "My Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ViewContext.Dispose();
+                // reload resident selection for register
+                new AccountPresenter().GetDisplayMyAccount();
+            }
+        }
     }
 }
