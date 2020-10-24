@@ -14,7 +14,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
     class SummonPresenter
     {
         private Entities dbEnt = new Entities();
-        
+
+        /// <summary>
+        /// Renders the view where the user can input information to create a summon report
+        /// </summary>
         public void GetCreateSummon()
         {
             ViewContext.Dispose();
@@ -25,6 +28,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             ViewContext.ActiveForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Handles the creation of a summon report using the field text from the view
+        /// </summary>
+        /// <param name="newSummon">Contains the report information given by the user</param>
         public void PostCreateSummon(ISummon newSummon)
         {
             Summon summon = newSummon.Summon;
@@ -44,7 +51,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 /* Audit TRAIL RECORD and System PROMPT */
                 AuditTrailHelper.RecordAction("New summon created with Id " + summon.SummonId);
                 MenuHelper.MenuInput();
-
             }
             else
             {
@@ -54,6 +60,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             }
         }
 
+        /// <summary>
+        /// Renders the view where all the summon reports will be displayed
+        /// </summary>
         public void GetDisplaySummons()
         {
             ViewContext.Dispose();
@@ -67,9 +76,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
             // render view
             ViewContext.ActiveForm.ShowDialog();
-
         }
 
+        /// <summary>
+        /// Renders the view where the user can search a summon by summon id
+        /// </summary>
         public void GetSearchSummon()
         {
             ViewContext.Dispose();
@@ -79,6 +90,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             ViewContext.ActiveForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Renders the view where a detailed information of the summary report using the summonId. 
+        /// Calls can either be from the DisplaySummons and SearchView
+        /// </summary>
+        /// <param name="summonId">The summon id of the summon report to be displayed</param>
         public void GetDisplaySummon(int summonId)
         {
             ViewContext.Dispose();

@@ -26,7 +26,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             ViewContext.ActiveForm.ShowDialog();
         }
 
-
         /// <summary>
         /// Action that handles the login, accepts the login credentials
         /// </summary>
@@ -134,7 +133,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             view.PopulateDataList();
             view.ShowDialog();
         }
-
 
         /// <summary>
         /// Sets the accounts record with the accountId, and set its status as ARCHIVED

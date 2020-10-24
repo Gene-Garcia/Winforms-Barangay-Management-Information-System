@@ -12,7 +12,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
     class DashboardPresenter
     {
         /// <summary>
-        /// 
+        /// Obtains all the data that will be displayed in the rendered view
         /// </summary>
         public void Index()
         {
@@ -31,16 +31,13 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
 
             // Categ 1 0 to 16
             DateTime below16 = new DateTime(DateTime.Now.Year - 16, DateTime.Now.Month, DateTime.Now.Day);
-
             // Categ 2 17 to 21
             DateTime seventeen = new DateTime(DateTime.Now.Year - 17, DateTime.Now.Month, DateTime.Now.Day);
             DateTime twentyone = new DateTime(DateTime.Now.Year - 21, DateTime.Now.Month, DateTime.Now.Day);
-
             // Categ 3 22 to 59
             DateTime twentytwo = new DateTime(DateTime.Now.Year - 22, DateTime.Now.Month, DateTime.Now.Day);
             DateTime fiftynine = new DateTime(DateTime.Now.Year - 59, DateTime.Now.Month, DateTime.Now.Day);
-
-            // CAteg 4 Above 60
+            // Categ 4 Above 60
             DateTime over60 = new DateTime(DateTime.Now.Year - 60, DateTime.Now.Month, DateTime.Now.Day);
 
             data.AgeRangeCateg1 = residents.Where(m=>m.Birthdate >= below16).Count();

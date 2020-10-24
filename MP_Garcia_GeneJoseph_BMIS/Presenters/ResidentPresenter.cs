@@ -14,6 +14,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
     class ResidentPresenter
     {
         private Entities dbEnt = new Entities();
+
+        /// <summary>
+        /// Renders the view to display the view that allows the user to create a resident record
+        /// </summary>
         public void GetAddResident()
         {
             ViewContext.Dispose();
@@ -24,10 +28,14 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             ViewContext.ActiveForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Handles the view call, and process the resident information from the view, and inserts it to the text file
+        /// </summary>
         /// <param name="newResident">Contains the complete information of the new resident, except for an residentId/param>
         public void PostAddResident(IResident newResident)
         {
-            newResident.Resident.ResidentId = dbEnt.Resident.Residents().Max(m => m.ResidentId) + 1;
+            List<Resident> residents = dbEnt.Resident.Residents();
+            newResident.Resident.ResidentId = residents.Count > 0 ? residents.Max(m => m.ResidentId) + 1 : 1;
 
             bool status = dbEnt.Resident.InsertResident(newResident.Resident);
 
@@ -51,7 +59,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         }
 
         /// <summary>
-        /// basically renders the view where the user a resident by its name
+        /// Renders the view where the user can search a resident by its name
         /// </summary>
         public void GetSearchResident()
         {
@@ -62,8 +70,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             ViewContext.ActiveForm.ShowDialog();
         }
 
-
-        /// <param name="search">Contains the search parameters to find a resident record</param>
+        /// <summary>
+        /// Receives the search paremeters from the view and search for the resident, then displays the found resident
+        /// </summary>
+        /// <param name="searchView">Contains the search parameters to find a resident record</param>
         public void PostSearchResident(IResident searchView)
         {
             Resident searched = dbEnt.Resident.Residents().
@@ -121,9 +131,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 MessageBox.Show("Resident cannot be found", "View Resident", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 new ResidentPresenter().GetDisplayResidents();
             }
-
         }
 
+        /// <summary>
+        /// Recieves the data from the view that contains the resident information that were changed, and saves it
+        /// to the text file
+        /// </summary>
         /// <param name="view">Contains the updated resident model</param>
         public void PostUpdateResident(IResident view)
         {
@@ -155,6 +168,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             }
         }
 
+        /// <summary>
+        /// Receives the residentId of the resident that status' will be set to deceased
+        /// </summary>
+        /// <param name="residentId">The id of the resident that is deceased</param>
         public void PostToResidentDeceased(int residentId)
         {
             List<Resident> residents = dbEnt.Resident.Residents();
@@ -178,7 +195,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                     /* Audit TRAIL RECORD and System PROMPT */
                     AuditTrailHelper.RecordAction("Resident " + toDeceased.FirstName + " " + toDeceased.LastName + " is set to deceased.");
                     MenuHelper.MenuInput();
-
                 }
                 else
                 {
@@ -197,6 +213,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             }
         }
 
+        /// <summary>
+        /// Renders the view to display all the family record
+        /// </summary>
         public void GetDisplayFamilies()
         {
             ViewContext.Dispose();
@@ -210,6 +229,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             ViewContext.ActiveForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Renders the view where the user can select residents and creates a family record
+        /// </summary>
         public void GetAddFamily()
         {
             ViewContext.Dispose();
@@ -230,13 +252,18 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             ViewContext.ActiveForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Receives the parameters from the view and finds the residents using the resident ids to create a family record
+        /// </summary>
         /// <param name="parentOneId"></param>
         /// <param name="parentTwoId">Optional</param>
         /// <param name="familyMembers"></param>
         public void PostSaveFamily(int parentOneId, int parentTwoId, int familyMembers)
         {
+            List<Family> families = dbEnt.Family.Families();
+
             Family newFamily = new Family();
-            newFamily.FamilyId = dbEnt.Family.Families().Max(m=>m.FamilyId) + 1;
+            newFamily.FamilyId =  families.Count > 0 ? families.Max(m=>m.FamilyId) + 1 : 1;
             newFamily.FamilyMembers = familyMembers;
             newFamily.ParentOneId = parentOneId;
 
@@ -253,7 +280,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 /* Audit TRAIL RECORD and System PROMPT */
                 AuditTrailHelper.RecordAction("New family recorded.");
                 MenuHelper.MenuInput();
-
             }
             else
             {
@@ -263,6 +289,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             }
         }
 
+        /// <summary>
+        /// Handles the change of the a certain family record's family size
+        /// </summary>
+        /// <param name="familyId"></param>
+        /// <param name="newFamilySize"></param>
         public void PostChangeFamilySize(int familyId, int newFamilySize)
         {
             List<Family> families = dbEnt.Family.Families();
@@ -284,7 +315,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 /* Audit TRAIL RECORD and System PROMPT */
                 AuditTrailHelper.RecordAction("Family record's family size change with primary parent " + family.ParentOne.FirstName + " " + family.ParentOne.LastName);
                 MenuHelper.MenuInput();
-
             }
             else
             {
@@ -292,7 +322,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
                 // reload view
                 new ResidentPresenter().GetDisplayFamilies();
             }
-
         }
     }
 }

@@ -13,6 +13,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
     {
         private Entities dbEnt = new Entities();
 
+        /// <summary>
+        /// Renders the view to display all the audit trails
+        /// </summary>
         public void DisplayAuditTrails()
         {
             ViewContext.Dispose();
