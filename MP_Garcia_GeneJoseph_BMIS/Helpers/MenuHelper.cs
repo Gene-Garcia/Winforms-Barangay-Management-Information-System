@@ -15,11 +15,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
         public static void MenuInput()
         {
             string input;
-            string[] options = { "R", "A", "S", "AT", "D", "L" };
+            string[] options = { "M", "R", "A", "S", "AT", "D", "L" };
 
             do
             {
                 Console.WriteLine("\n\t\tMain Menu");
+                Console.WriteLine("\t M. My Account");
                 Console.WriteLine("\t R. Resident Module");
                 Console.WriteLine("\t A. Account Module");
                 Console.WriteLine("\t S. Summon Module");
@@ -35,7 +36,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 
             } while (true);
 
-            if (input == "R")
+            if (input == "M")
+            {
+                //
+            }
+            else if (input == "R")
             {
                 ResidentMenu();
             }
@@ -49,7 +54,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
             }
             else if (input == "AT")
             {
-                AuditTrailMenu();
+                new AuditTrailPresenter().DisplayAuditTrails();
             }
             else if (input == "D")
             {
@@ -63,7 +68,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 UserSession.User = null;
 
                 /* Audit TRAIL RECORD and System PROMPT */
-
                 new AccountPresenter().GetLogin();
             }
         }
@@ -180,32 +184,5 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 new SummonPresenter().GetSearchSummon();
             }
         }
-
-        private static void AuditTrailMenu()
-        {
-            string input;
-            string[] options = { "A1" };
-
-            do
-            {
-                Console.WriteLine("\n\t\tAudit Trail Menu");
-                Console.WriteLine("\tA1. Display Audit Trail");
-
-                Console.Write("\tSelection >>");
-                input = Console.ReadLine().Trim().ToUpper();
-
-                if (options.Contains(input))
-                    break;
-                Console.WriteLine("\tInvalid input selection.");
-            } while (true);
-
-            Console.Clear();
-
-            if (input == "A1")
-            {
-                new AuditTrailPresenter().DisplayAuditTrails();
-            }
-        }
-
     }
 }
