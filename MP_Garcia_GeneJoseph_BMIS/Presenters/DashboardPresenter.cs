@@ -33,21 +33,23 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             DateTime below16 = new DateTime(DateTime.Now.Year - 16, DateTime.Now.Month, DateTime.Now.Day);
 
             // Categ 2 17 to 21
-            DateTime fifteen = new DateTime(DateTime.Now.Year - 17, DateTime.Now.Month, DateTime.Now.Day);
+            DateTime seventeen = new DateTime(DateTime.Now.Year - 17, DateTime.Now.Month, DateTime.Now.Day);
             DateTime twentyone = new DateTime(DateTime.Now.Year - 21, DateTime.Now.Month, DateTime.Now.Day);
 
             // Categ 3 22 to 59
-            DateTime twenttwo = new DateTime(DateTime.Now.Year - 22, DateTime.Now.Month, DateTime.Now.Day);
+            DateTime twentytwo = new DateTime(DateTime.Now.Year - 22, DateTime.Now.Month, DateTime.Now.Day);
             DateTime fiftynine = new DateTime(DateTime.Now.Year - 59, DateTime.Now.Month, DateTime.Now.Day);
 
             // CAteg 4 Above 60
             DateTime over60 = new DateTime(DateTime.Now.Year - 60, DateTime.Now.Month, DateTime.Now.Day);
 
-            data.AgeRangeCateg1 = residents.Where(m=>m.Birthdate <= below16).Count();
-            data.AgeRangeCateg2 = residents.Where(m => m.Birthdate >= fifteen && m.Birthdate <= twentyone).Count();
-            data.AgeRangeCateg3 = residents.Where(m => m.Birthdate >= twentyone && m.Birthdate <= fiftynine).Count();
-            data.AgeRangeCateg4 = residents.Where(m => m.Birthdate >= over60).Count();
-            data.AverageAge = (data.AgeRangeCateg4 + data.AgeRangeCateg3 + data.AgeRangeCateg2 + data.AgeRangeCateg1) / (residents.Count() != 0 ? residents.Count() : 1);
+            data.AgeRangeCateg1 = residents.Where(m=>m.Birthdate >= below16).Count();
+            data.AgeRangeCateg2 = residents.Where(m => m.Birthdate <= seventeen && m.Birthdate >= twentyone).Count();
+            data.AgeRangeCateg3 = residents.Where(m => m.Birthdate <= twentytwo && m.Birthdate >= fiftynine).Count();
+            data.AgeRangeCateg4 = residents.Where(m => m.Birthdate <= over60).Count();
+            data.AverageAge = (residents.Count() != 0 ? 
+                ((data.AgeRangeCateg1 + data.AgeRangeCateg2 + data.AgeRangeCateg3 + data.AgeRangeCateg4) / residents.Count)
+                : 0);
 
             List<Family> families = new Entities().Family.Families();
 
