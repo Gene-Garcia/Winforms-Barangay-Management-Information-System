@@ -61,15 +61,16 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             // Initialize Components            
             this.lblAccounts = new Label();
             this.dataList = new DataGridView();
+
             this.dsnBox = new PictureBox();
             this.dsnLlbl = new Label();
 
             // Label for Accounts
-            this.lblAccounts.AutoSize = true;
             this.lblAccounts.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.lblAccounts.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
             this.lblAccounts.Location = new Point(18, 79);
             this.lblAccounts.Size = new Size(179, 24);
+            this.lblAccounts.AutoSize = true;
             this.lblAccounts.Name = "lblAccounts";
             this.lblAccounts.Text = "Registered Accounts";
 
@@ -78,7 +79,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             DataGridViewCellStyle dgvcs2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dgvcs3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dgvcs4 = new DataGridViewCellStyle();
-            
             dgvcs1.BackColor = Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             dgvcs1.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             dgvcs1.ForeColor = Color.Black;            
@@ -131,8 +131,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.dataList.RowTemplate.ReadOnly = true;
             this.dataList.MultiSelect = false;
             this.dataList.ReadOnly = true;
-            this.dataList.CellClick += new DataGridViewCellEventHandler(this.DeleteAccountClick);
             this.dataList.Name = "dataList";
+            this.dataList.CellClick += new DataGridViewCellEventHandler(this.DeleteAccountClick);
 
             // Design Components
             this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
@@ -158,16 +158,19 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.MaximizeBox = false;
             this.Name = "DisplayAccountsView";
             this.Text = "Registered Accounts";
+            this.FormClosed += new FormClosedEventHandler(ViewContext.FormOnClose);
 
             // Load Components to Form
             this.Controls.Add(this.lblAccounts);
             this.Controls.Add(this.dataList);
+
             this.Controls.Add(this.dsnLlbl);
             this.Controls.Add(this.dsnBox);
         }
 
         private Label lblAccounts;
         private DataGridView dataList;
+
         private PictureBox dsnBox;
         private Label dsnLlbl;
     }

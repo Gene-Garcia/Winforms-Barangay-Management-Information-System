@@ -109,6 +109,7 @@ namespace MP_Garcia_GeneJoseph_BMIS
 
             // run view
             new AccountPresenter().GetLogin();
+            Console.WriteLine("\n\tPress any key to terminate the program...");
             Console.ReadKey();
 
         }

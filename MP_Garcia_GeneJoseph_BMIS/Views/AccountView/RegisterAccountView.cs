@@ -60,18 +60,19 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
 
         private void InitComponents()
         {
-            // init            
+            // init components
             this.lblResidents = new Label();
             this.dataList = new DataGridView();
+
             this.dsnBox = new PictureBox();
             this.dsnLlbl = new Label();
 
             // Label for Accounts
-            this.lblResidents.AutoSize = true;
             this.lblResidents.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.lblResidents.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
             this.lblResidents.Location = new Point(18, 79);
             this.lblResidents.Size = new Size(179, 24);
+            this.lblResidents.AutoSize = true;
             this.lblResidents.Text = "Legal-aged Residents";
             this.lblResidents.Name = "lblResidents";
 
@@ -132,20 +133,20 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.dataList.AllowUserToDeleteRows = false;
             this.dataList.AllowUserToResizeColumns = false;
             this.dataList.AllowUserToResizeRows = false;
-            this.dataList.CellClick += new DataGridViewCellEventHandler(this.RegisterResidentClick);
             this.dataList.Name = "dataList";
+            this.dataList.CellClick += new DataGridViewCellEventHandler(this.RegisterResidentClick);
 
             // Design Components
             this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
             this.dsnBox.Location = new Point(-2, 0);
             this.dsnBox.Size = new Size(888, 51);
             this.dsnBox.Name = "dsnBox";
-            this.dsnLlbl.AutoSize = true;
             this.dsnLlbl.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
             this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.dsnLlbl.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.dsnLlbl.Location = new Point(10, 13);
             this.dsnLlbl.Size = new Size(372, 24);
+            this.dsnLlbl.AutoSize = true;
             this.dsnLlbl.Text = "Barangay Management Information System";
             this.dsnLlbl.Name = "dsnLlbl";
 
@@ -159,16 +160,20 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.MaximizeBox = false;
             this.Name = "RegisterAccountView";
             this.Text = "Register an Account";
+            this.FormClosed += new FormClosedEventHandler(ViewContext.FormOnClose);
 
             // Load Components to Form
             this.Controls.Add(this.lblResidents);
             this.Controls.Add(this.dataList);
+
             this.Controls.Add(this.dsnLlbl);
             this.Controls.Add(this.dsnBox);
         }
         
+        /* Components */
         private Label lblResidents;
         private DataGridView dataList;
+
         private PictureBox dsnBox;
         private Label dsnLlbl;
 

@@ -54,34 +54,38 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
         {
             // Instantiate components
             this.lblLogin = new Label();
+
             this.lblUsername = new Label();
             this.txtUsername = new TextBox();
+
             this.lblPassword = new Label();
             this.txtPassword = new TextBox();
+
             this.btnLogin = new Button();
+
             this.dsnBox = new PictureBox();
             this.dsnLine = new PictureBox();
             this.dsnLine1 = new PictureBox();
 
             // Main Label
-            this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new Font("Trebuchet MS", 16F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.lblLogin.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
             this.lblLogin.Location = new Point(126, 31);
             this.lblLogin.Size = new Size(115, 27);
+            this.lblLogin.AutoSize = true;
             this.lblLogin.Text = "User Login";
             this.lblLogin.Name = "lblLogin";
 
             // Label for Username
-            this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
             this.lblUsername.Location = new Point(33, 123);
             this.lblUsername.Size = new Size(84, 22);
+            this.lblUsername.AutoSize = true;
             this.lblUsername.Text = "Username";
             this.lblUsername.Name = "lblUsername";
 
-            // Textboc for Username
+            // Textbox for Username
             this.txtUsername.BackColor = Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.txtUsername.BorderStyle = BorderStyle.None;
             this.txtUsername.Font = new Font("Trebuchet MS", 12.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
@@ -95,12 +99,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtUsername.Text = "gene_garcia";
 
             // Label for Password
-            this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
             this.lblPassword.Location = new Point(33, 242);
-            this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new Size(75, 22);
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Name = "lblPassword";
             this.lblPassword.Text = "Password";
 
             // Textbox for Password
@@ -127,10 +131,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.btnLogin.Size = new Size(97, 37);
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.TabIndex = 3;
-            this.btnLogin.Click += new EventHandler(this.LoginClick);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Text = "Login";
-
+            this.btnLogin.Click += new EventHandler(this.LoginClick);
 
             // Design
             this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
@@ -159,23 +162,31 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
 
             // Load Components to Form
             this.Controls.Add(this.lblLogin);
+
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtUsername);
+
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtPassword);
+
             this.Controls.Add(this.btnLogin);
+
             this.Controls.Add(this.dsnLine);
-            this.Controls.Add(this.dsnBox);
             this.Controls.Add(this.dsnLine1);
+            this.Controls.Add(this.dsnBox);
         }
 
         /* Components */
         private Label lblLogin;
+
         private Label lblUsername;
         private TextBox txtUsername;
+
         private Label lblPassword;
         private TextBox txtPassword;
+
         private Button btnLogin;
+
         private PictureBox dsnBox;
         private PictureBox dsnLine;
         private PictureBox dsnLine1;

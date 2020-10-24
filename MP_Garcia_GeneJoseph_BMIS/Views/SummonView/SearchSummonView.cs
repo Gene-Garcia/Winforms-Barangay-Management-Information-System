@@ -1,4 +1,5 @@
-﻿using MP_Garcia_GeneJoseph_BMIS.Models;
+﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
+using MP_Garcia_GeneJoseph_BMIS.Models;
 using MP_Garcia_GeneJoseph_BMIS.Presenters;
 using System;
 using System.Collections.Generic;
@@ -45,30 +46,32 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
         private void InitComponents()
         {
             // Init components
-            this.dsnLlbl = new Label();
-            this.dsnBox = new PictureBox();
             this.lblSearchSummon = new Label();
-            this.dsnLine = new PictureBox();
-            this.txtSummonId = new TextBox();
+
             this.lblSearchId = new Label();
+            this.txtSummonId = new TextBox();
             this.btnSearch = new Button();
 
+            this.dsnLine = new PictureBox();
+            this.dsnLlbl = new Label();
+            this.dsnBox = new PictureBox();
+
             // Label : Search
-            this.lblSearchSummon.AutoSize = true;
             this.lblSearchSummon.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchSummon.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
             this.lblSearchSummon.Location = new Point(73, 83);
-            this.lblSearchSummon.Name = "lblSearchSummon";
             this.lblSearchSummon.Size = new Size(144, 24);
+            this.lblSearchSummon.AutoSize = true;
+            this.lblSearchSummon.Name = "lblSearchSummon";
             this.lblSearchSummon.Text = "Search Summon";
 
             // Lable : Summon id
-            this.lblSearchId.AutoSize = true;
             this.lblSearchId.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchId.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
             this.lblSearchId.Location = new Point(73, 154);
-            this.lblSearchId.Name = "lblSearchId";
             this.lblSearchId.Size = new Size(88, 22);
+            this.lblSearchId.AutoSize = true;
+            this.lblSearchId.Name = "lblSearchId";
             this.lblSearchId.Text = "Summon ID";
 
             // TextBox : Summon id
@@ -76,21 +79,21 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.txtSummonId.BorderStyle = BorderStyle.None;
             this.txtSummonId.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
             this.txtSummonId.Location = new Point(76, 190);
-            this.txtSummonId.Name = "txtFirstName";
             this.txtSummonId.Size = new Size(344, 24);
+            this.txtSummonId.Name = "txtFirstName";
             this.txtSummonId.TabIndex = 1;
 
-            // Button : Seaerch
+            // Button : Search
             this.btnSearch.BackColor = Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
             this.btnSearch.FlatStyle = FlatStyle.Flat;
             this.btnSearch.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.btnSearch.Location = new Point(323, 276);
-            this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new Size(97, 37);
             this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Text = "Search";
             this.btnSearch.Click += new EventHandler(this.SearchOnClick);
 
             // Design
@@ -99,17 +102,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.dsnLlbl.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.dsnLlbl.Location = new Point(13, 12);
-            this.dsnLlbl.Name = "dsnLlbl";
             this.dsnLlbl.Size = new Size(372, 24);
+            this.dsnLlbl.Name = "dsnLlbl";
             this.dsnLlbl.Text = "Barangay Management Information System";
             this.dsnLine.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
             this.dsnLine.Location = new Point(75, 217);
-            this.dsnLine.Name = "dsnLine";
             this.dsnLine.Size = new Size(344, 3);
+            this.dsnLine.Name = "dsnLine";
             this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
             this.dsnBox.Location = new Point(1, -1);
-            this.dsnBox.Name = "dsnBox";
             this.dsnBox.Size = new Size(504, 51);
+            this.dsnBox.Name = "dsnBox";
 
             // Form
             this.AutoScaleDimensions = new SizeF(6F, 13F);
@@ -117,28 +120,33 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.ClientSize = new Size(500, 350);            
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false;
             this.Name = "SearchSummonView";
-            this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "Search Summon";
+            this.FormClosed += new FormClosedEventHandler(ViewContext.FormOnClose);
 
             // Load Controls
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.dsnLine);
+            this.Controls.Add(this.lblSearchSummon);
+
             this.Controls.Add(this.txtSummonId);
             this.Controls.Add(this.lblSearchId);
-            this.Controls.Add(this.lblSearchSummon);
+            this.Controls.Add(this.btnSearch);
+
+            this.Controls.Add(this.dsnLine);
             this.Controls.Add(this.dsnLlbl);
             this.Controls.Add(this.dsnBox);
         }
 
-
-        private Label dsnLlbl;
-        private PictureBox dsnBox;
+        /* Components */
         private Label lblSearchSummon;
-        private PictureBox dsnLine;
+
         private TextBox txtSummonId;
         private Label lblSearchId;
         private Button btnSearch;
+
+        private PictureBox dsnLine;
+        private Label dsnLlbl;
+        private PictureBox dsnBox;
     }
 }
