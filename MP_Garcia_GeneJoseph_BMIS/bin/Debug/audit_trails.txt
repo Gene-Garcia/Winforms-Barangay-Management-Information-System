@@ -1,5 +1,12 @@
-1%20User logged in.%2010/24/2020 7:32:05 PM%204
-2%20User logged in.%2010/24/2020 8:49:37 PM%204
-3%20User logged in.%2010/24/2020 8:50:06 PM%204
-4%20User logged in.%2010/24/2020 8:50:49 PM%204
-5%20User logged in.%2010/24/2020 8:51:21 PM%204
+1%20User logged in.%2010/24/2020 9:01:46 PM%201
+2%20User logged in.%2010/24/2020 9:02:16 PM%201
+3%20New resident record with name: V33nus Dlar%2010/24/2020 9:03:35 PM%201
+4%20New resident record with name: Ribo Lusty%2010/24/2020 9:04:22 PM%201
+5%20Resident information updated with name: Ribo Lusty%2010/24/2020 9:04:39 PM%201
+6%20Resident information updated with name: V33nus Dlar%2010/24/2020 9:04:57 PM%201
+7%20Resident information updated with name: Ribo Lusty%2010/24/2020 9:05:10 PM%201
+8%20New family recorded.%2010/24/2020 9:05:29 PM%201
+9%20Family record's family size change with primary parent Ribo Lusty%2010/24/2020 9:05:45 PM%201
+10%20Registered new account with username: v33nus_dlar%2010/24/2020 9:06:15 PM%201
+11%20Account was deleted with username: v33nus_dlar%2010/24/2020 9:06:38 PM%201
+12%20New summon created with Id 1%2010/24/2020 9:06:57 PM%201

@@ -1,4 +1,5 @@
-﻿using MP_Garcia_GeneJoseph_BMIS.Models;
+﻿using MP_Garcia_GeneJoseph_BMIS.Helpers;
+using MP_Garcia_GeneJoseph_BMIS.Models;
 using MP_Garcia_GeneJoseph_BMIS.Presenters;
 using System;
 using System.Collections.Generic;
@@ -157,6 +158,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.MaximizeBox = false;
             this.Name = "LoginView";
             this.Text = "Login";
+            this.FormClosed += new FormClosedEventHandler(this.EndProgram);
 
             // Load Components to Form
             this.Controls.Add(this.lblLogin);
@@ -172,6 +174,13 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.Controls.Add(this.dsnLine);
             this.Controls.Add(this.dsnLine1);
             this.Controls.Add(this.dsnBox);
+        }
+
+        private void EndProgram(object sender, FormClosedEventArgs e)
+        {
+            // terminate program
+            ViewContext.Dispose();
+            Environment.Exit(1);
         }
 
         /* Components */
