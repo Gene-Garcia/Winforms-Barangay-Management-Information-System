@@ -53,15 +53,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
         private void InitComponents()
         {
             // Instantiate components
-            this.lblLogin       = new Label();
-            this.lblUsername    = new Label();
-            this.txtUsername    = new TextBox();
-            this.lblPassword    = new Label();
-            this.txtPassword    = new TextBox();
-            this.btnLogin       = new Button();
-            this.dsnBox         = new PictureBox();
-            this.dsnLine        = new PictureBox();
-            this.dsnLine1       = new PictureBox();
+            this.lblLogin = new Label();
+            this.lblUsername = new Label();
+            this.txtUsername = new TextBox();
+            this.lblPassword = new Label();
+            this.txtPassword = new TextBox();
+            this.btnLogin = new Button();
+            this.dsnBox = new PictureBox();
+            this.dsnLine = new PictureBox();
+            this.dsnLine1 = new PictureBox();
 
             // Main Label
             this.lblLogin.AutoSize = true;

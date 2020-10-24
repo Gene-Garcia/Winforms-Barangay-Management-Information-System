@@ -61,12 +61,13 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
         private void InitComponents()
         {
             // init            
-            this.lblResidents   = new Label();
-            this.dataList       = new DataGridView();
-            this.dsnBox         = new PictureBox();
-            this.dsnLlbl        = new Label();
+            this.lblResidents = new Label();
+            this.dataList = new DataGridView();
+            this.dsnBox = new PictureBox();
+            this.dsnLlbl = new Label();
 
             // Label for Accounts
+            this.lblResidents.AutoSize = true;
             this.lblResidents.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.lblResidents.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
             this.lblResidents.Location = new Point(18, 79);
@@ -131,7 +132,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.dataList.AllowUserToDeleteRows = false;
             this.dataList.AllowUserToResizeColumns = false;
             this.dataList.AllowUserToResizeRows = false;
-            this.dataList.TabIndex = 1;
             this.dataList.CellClick += new DataGridViewCellEventHandler(this.RegisterResidentClick);
             this.dataList.Name = "dataList";
 
@@ -163,8 +163,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             // Load Components to Form
             this.Controls.Add(this.lblResidents);
             this.Controls.Add(this.dataList);
-            this.Controls.Add(this.dsnBox);
             this.Controls.Add(this.dsnLlbl);
+            this.Controls.Add(this.dsnBox);
         }
         
         private Label lblResidents;

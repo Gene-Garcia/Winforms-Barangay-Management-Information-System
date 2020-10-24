@@ -59,10 +59,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
         private void InitComponents()
         {
             // Initialize Components            
-            this.lblAccounts    = new Label();
-            this.dataList       = new DataGridView();
-            this.dsnBox         = new PictureBox();
-            this.dsnLlbl        = new Label();
+            this.lblAccounts = new Label();
+            this.dataList = new DataGridView();
+            this.dsnBox = new PictureBox();
+            this.dsnLlbl = new Label();
 
             // Label for Accounts
             this.lblAccounts.AutoSize = true;
@@ -111,7 +111,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.dataList.RowTemplate.Height = 40;
             this.dataList.RowTemplate.Resizable = DataGridViewTriState.False;
             this.dataList.Size = new Size(857, 436);
-            this.dataList.TabIndex = 4;
             this.dataList.DefaultCellStyle = dgvcs3;
             this.dataList.GridColor = Color.Black;
             this.dataList.Location = new Point(15, 125);
@@ -145,6 +144,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.dsnLlbl.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
             this.dsnLlbl.Location = new Point(10, 13);
             this.dsnLlbl.Size = new Size(372, 24);
+            this.dsnLlbl.AutoSize = true;
             this.dsnLlbl.Text = "Barangay Management Information System";
             this.dsnLlbl.Name = "dsnLlbl";
 
@@ -162,8 +162,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             // Load Components to Form
             this.Controls.Add(this.lblAccounts);
             this.Controls.Add(this.dataList);
-            this.Controls.Add(this.dsnBox);
             this.Controls.Add(this.dsnLlbl);
+            this.Controls.Add(this.dsnBox);
         }
 
         private Label lblAccounts;

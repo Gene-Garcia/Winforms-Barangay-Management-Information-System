@@ -439,6 +439,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.DashboardView
             this.boxFamCateg4.Size = new Size(175, 111);
 
             // Design Components
+            this.dsnLlbl.AutoSize = true;
             this.dsnLlbl.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
             this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             this.dsnLlbl.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
