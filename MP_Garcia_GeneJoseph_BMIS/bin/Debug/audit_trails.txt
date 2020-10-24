@@ -10,3 +10,9 @@
 10%20User logged in.%2010/23/2020 10:13:45 PM%202
 11%20User logged in.%2010/23/2020 10:15:26 PM%202
 12%20User logged in.%2010/23/2020 10:19:07 PM%202
+13%20User logged in.%2010/24/2020 2:15:32 PM%202
+14%20User logged in.%2010/24/2020 2:17:55 PM%202
+15%20User logged in.%2010/24/2020 2:19:26 PM%202
+16%20User logged in.%2010/24/2020 2:21:15 PM%202
+17%20Registered new account with username: john_doe%2010/24/2020 2:21:46 PM%202
+18%20Resident information updated with name: John Doe%2010/24/2020 2:22:28 PM%202

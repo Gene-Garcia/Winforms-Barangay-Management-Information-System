@@ -72,11 +72,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             // filter resilts
             // legal age and not deceased
             DateTime legalAge = new DateTime(DateTime.Now.Year - 18, DateTime.Now.Month, DateTime.Now.Day);
-            residents = residents.Where(m => m.Status == SystemConstants.RESIDENT_STATUS_ALIVE && m.Birthdate >= legalAge).ToList();
+            residents = residents.Where(m => m.Status == SystemConstants.RESIDENT_STATUS_ALIVE && m.Birthdate <= legalAge).ToList();
             // not registered already
             List<int> existingResidentIds = dbEnt.Account.Accounts().Select(m => m.ResidentId).ToList();
             // the residents must NOT CONTAIN any id in the existingResidentIds
-            residents = residents.Where(m => !existingResidentIds.Contains(m.ResidentId) ).ToList();
+            residents = residents.Where(m => !existingResidentIds.Contains(m.ResidentId) && m.ResidentId != UserSession.User.ResidentId ).ToList();
 
             view.Residents = residents;
             view.PopulateDataList();
