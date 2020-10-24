@@ -49,35 +49,41 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
         {
             // Initialize Components
             this.lblMyAccount = new Label();
-            this.dsnLlbl = new Label();
-            this.dsnBox = new PictureBox();
+
             this.lblFirstName = new Label();
             this.txtFirstName = new TextBox();
-            this.dsnLine = new PictureBox();
-            this.dsnLine1 = new PictureBox();
-            this.txtMiddleName = new TextBox();
+
             this.lblMiddleName = new Label();
-            this.dsnLine2 = new PictureBox();
-            this.txtLastName = new TextBox();
+            this.txtMiddleName = new TextBox();
+
             this.lblLastName = new Label();
-            this.dsnLine3 = new PictureBox();
-            this.txtUsername = new TextBox();
+            this.txtLastName = new TextBox();
+
             this.lblUsername = new Label();
-            this.btnChangePassword = new Button();
-            this.dsnLine4 = new PictureBox();
+            this.txtUsername = new TextBox();
+
             this.txtOldPassword = new TextBox();
             this.lblOldPassword = new Label();
-            this.dsnLine5 = new PictureBox();
             this.txtNewPassword = new TextBox();
             this.lblNewPassword = new Label();
+            this.btnChangePassword = new Button();
+
+            this.dsnLine = new PictureBox();
+            this.dsnLine1 = new PictureBox();
+            this.dsnLine2 = new PictureBox();
+            this.dsnLine3 = new PictureBox();
+            this.dsnLine4 = new PictureBox();
+            this.dsnLine5 = new PictureBox();
+            this.dsnLlbl = new Label();
+            this.dsnBox = new PictureBox();
 
             // Label My Account
-            this.lblMyAccount.AutoSize = true;
             this.lblMyAccount.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.lblMyAccount.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblMyAccount.Location = new Point(59, 83);
-            this.lblMyAccount.Name = "lblMyAccount";
             this.lblMyAccount.Size = new Size(105, 24);
+            this.lblMyAccount.AutoSize = true;
+            this.lblMyAccount.Name = "lblMyAccount";
             this.lblMyAccount.Text = "My Account";
 
             // Label First Name
@@ -85,8 +91,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.lblFirstName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.lblFirstName.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblFirstName.Location = new Point(60, 146);
-            this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new Size(86, 22);
+            this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Text = "First Name";
 
             // Textbox First Name
@@ -94,35 +100,35 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtFirstName.BorderStyle = BorderStyle.None;
             this.txtFirstName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.txtFirstName.Location = new Point(60, 182);
-            this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new Size(175, 21);
             this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.Name = "txtFirstName";
 
             // Label Middle Name
             this.txtMiddleName.BackColor = Color.FromArgb(250, 250, 250);
             this.txtMiddleName.BorderStyle = BorderStyle.None;
             this.txtMiddleName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.txtMiddleName.Location = new Point(256, 182);
-            this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new Size(175, 21);
+            this.txtMiddleName.Name = "txtMiddleName";
 
             // Textbox Middle Name
             this.lblMiddleName.AutoSize = true;
             this.lblMiddleName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.lblMiddleName.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblMiddleName.Location = new Point(256, 146);
-            this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Size = new Size(102, 22);
             this.lblMiddleName.TabIndex = 2;
             this.lblMiddleName.Text = "Middle Name";
+            this.lblMiddleName.Name = "lblMiddleName";
 
             // Label Last Name
-            this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.lblLastName.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblLastName.Location = new Point(451, 146);
-            this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new Size(83, 22);
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Name = "lblLastName";
             this.lblLastName.Text = "Last Name";
 
             // Textbox Last Name
@@ -130,17 +136,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtLastName.BorderStyle = BorderStyle.None;
             this.txtLastName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.txtLastName.Location = new Point(451, 182);
-            this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new Size(175, 21);
+            this.txtLastName.Name = "txtLastName";
             this.txtLastName.TabIndex = 3;
 
             // Label Username
-            this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.lblUsername.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblUsername.Location = new Point(60, 258);
-            this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new Size(79, 22);
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Name = "lblUsername";
             this.lblUsername.Text = "Username";
 
             // Textbox Username
@@ -148,17 +154,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtUsername.BorderStyle = BorderStyle.None;
             this.txtUsername.Font = new Font("Calibri", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.txtUsername.Location = new Point(60, 294);
-            this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new Size(566, 21);
             this.txtUsername.TabIndex = 4;
+            this.txtUsername.Name = "txtUsername";
 
             // Label Old Pass
-            this.lblOldPassword.AutoSize = true;
             this.lblOldPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.lblOldPassword.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblOldPassword.Location = new Point(56, 388);
-            this.lblOldPassword.Name = "lblOldPassword";
             this.lblOldPassword.Size = new Size(104, 22);
+            this.lblOldPassword.AutoSize = true;
+            this.lblOldPassword.Name = "lblOldPassword";
             this.lblOldPassword.Text = "Old Password";
 
             // Textbox Old Pass
@@ -166,18 +172,18 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtOldPassword.BorderStyle = BorderStyle.None;
             this.txtOldPassword.Font = new Font("Calibri", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.txtOldPassword.Location = new Point(60, 424);
-            this.txtOldPassword.Name = "txtOldPassword";
-            this.txtOldPassword.PasswordChar = '•';
             this.txtOldPassword.Size = new Size(263, 21);
             this.txtOldPassword.TabIndex = 5;
+            this.txtOldPassword.Name = "txtOldPassword";
+            this.txtOldPassword.PasswordChar = '•';
 
             // Label New Pass
-            this.lblNewPassword.AutoSize = true;
             this.lblNewPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.lblNewPassword.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblNewPassword.Location = new Point(359, 388);
-            this.lblNewPassword.Name = "lblNewPassword";
             this.lblNewPassword.Size = new Size(112, 22);
+            this.lblNewPassword.AutoSize = true;
+            this.lblNewPassword.Name = "lblNewPassword";
             this.lblNewPassword.Text = "New Password";
 
             // Textbox New Pass
@@ -185,10 +191,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtNewPassword.BorderStyle = BorderStyle.None;
             this.txtNewPassword.Font = new Font("Calibri", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.txtNewPassword.Location = new Point(363, 424);
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.PasswordChar = '•';
             this.txtNewPassword.Size = new Size(263, 21);
             this.txtNewPassword.TabIndex = 6;
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.PasswordChar = '•';
 
             // Button Change Pass
             this.btnChangePassword.BackColor = Color.FromArgb(2, 117, 216);
@@ -196,50 +202,50 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.btnChangePassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.btnChangePassword.ForeColor = Color.FromArgb(247, 247, 247);
             this.btnChangePassword.Location = new Point(455, 501);
-            this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new Size(171, 37);
             this.btnChangePassword.TabIndex = 7;
-            this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Click += new EventHandler(this.ChangePasswordOnclick);
 
             // Design Components
-            this.dsnLlbl.AutoSize = true;
             this.dsnLlbl.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.dsnLlbl.ForeColor = Color.FromArgb(241, 246, 249);
             this.dsnLlbl.Location = new Point(10, 11);
-            this.dsnLlbl.Name = "dsnLlbl";
             this.dsnLlbl.Size = new Size(372, 24);
+            this.dsnLlbl.Name = "dsnLlbl";
+            this.dsnLlbl.AutoSize = true;
             this.dsnLlbl.Text = "Barangay Management Information System";
             this.dsnBox.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnBox.Location = new Point(-2, -2);
-            this.dsnBox.Name = "dsnBox";
             this.dsnBox.Size = new Size(678, 51);
+            this.dsnBox.Name = "dsnBox";
             this.dsnLine.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine.Location = new Point(60, 207);
-            this.dsnLine.Name = "dsnLine";
             this.dsnLine.Size = new Size(175, 3);
+            this.dsnLine.Name = "dsnLine";
             this.dsnLine1.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine1.Location = new Point(256, 207);
-            this.dsnLine1.Name = "dsnLine1";
             this.dsnLine1.Size = new Size(175, 3);
+            this.dsnLine1.Name = "dsnLine1";
             this.dsnLine2.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine2.Location = new Point(451, 207);
-            this.dsnLine2.Name = "dsnLine2";
             this.dsnLine2.Size = new Size(175, 3);
+            this.dsnLine2.Name = "dsnLine2";
             this.dsnLine3.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine3.Location = new Point(60, 319);
-            this.dsnLine3.Name = "dsnLine3";
             this.dsnLine3.Size = new Size(566, 3);
+            this.dsnLine3.Name = "dsnLine3";
             this.dsnLine4.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine4.Location = new Point(60, 449);
-            this.dsnLine4.Name = "dsnLine4";
             this.dsnLine4.Size = new Size(263, 3);
+            this.dsnLine4.Name = "dsnLine4";
             this.dsnLine5.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine5.Location = new Point(363, 449);
-            this.dsnLine5.Name = "dsnLine5";
             this.dsnLine5.Size = new Size(263, 3);
+            this.dsnLine5.Name = "dsnLine5";
 
             // Forms
             this.AutoScaleDimensions = new SizeF(6F, 13F);
@@ -247,8 +253,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.BackColor = Color.FromArgb(241, 246, 249);
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.MaximizeBox = false;
             this.ClientSize = new Size(672, 569);
+            this.MaximizeBox = false;
             this.Name = "MyAccountView";
             this.Text = "My Account";
             this.FormClosed += new FormClosedEventHandler(ViewContext.FormOnClose);

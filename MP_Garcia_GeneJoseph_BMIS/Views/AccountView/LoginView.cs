@@ -96,7 +96,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtUsername.TextAlign = HorizontalAlignment.Center;
             this.txtUsername.TabIndex = 1;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Text = "gene_garcia";
 
             // Label for Password
             this.lblPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -118,7 +117,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtPassword.TextAlign = HorizontalAlignment.Center;
             this.txtPassword.TabIndex = 2;
             this.txtPassword.PasswordChar = '•';
-            this.txtPassword.Text = "qwertypad360";
             this.txtPassword.Name = "txtPassword";
 
 
