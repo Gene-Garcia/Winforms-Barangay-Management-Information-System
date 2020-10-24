@@ -57,8 +57,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.dsnBox = new PictureBox();
 
             // Label : Search
-            this.lblSearchSummon.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchSummon.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblSearchSummon.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblSearchSummon.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblSearchSummon.Location = new Point(73, 83);
             this.lblSearchSummon.Size = new Size(144, 24);
             this.lblSearchSummon.AutoSize = true;
@@ -66,8 +66,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.lblSearchSummon.Text = "Search Summon";
 
             // Lable : Summon id
-            this.lblSearchId.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchId.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblSearchId.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblSearchId.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblSearchId.Location = new Point(73, 154);
             this.lblSearchId.Size = new Size(88, 22);
             this.lblSearchId.AutoSize = true;
@@ -75,19 +75,19 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.lblSearchId.Text = "Summon ID";
 
             // TextBox : Summon id
-            this.txtSummonId.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtSummonId.BackColor = Color.FromArgb(250, 250, 250);
             this.txtSummonId.BorderStyle = BorderStyle.None;
-            this.txtSummonId.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            this.txtSummonId.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.txtSummonId.Location = new Point(76, 190);
             this.txtSummonId.Size = new Size(344, 24);
             this.txtSummonId.Name = "txtFirstName";
             this.txtSummonId.TabIndex = 1;
 
             // Button : Search
-            this.btnSearch.BackColor = Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
+            this.btnSearch.BackColor = Color.FromArgb(2, 117, 216);
             this.btnSearch.FlatStyle = FlatStyle.Flat;
-            this.btnSearch.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnSearch.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            this.btnSearch.ForeColor = Color.FromArgb(247, 247, 247);
             this.btnSearch.Location = new Point(323, 276);
             this.btnSearch.Size = new Size(97, 37);
             this.btnSearch.TabIndex = 2;
@@ -98,18 +98,18 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
 
             // Design
             this.dsnLlbl.AutoSize = true;
-            this.dsnLlbl.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
-            this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.dsnLlbl.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.dsnLlbl.BackColor = Color.FromArgb(57, 72, 103);
+            this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.dsnLlbl.ForeColor = Color.FromArgb(241, 246, 249);
             this.dsnLlbl.Location = new Point(13, 12);
             this.dsnLlbl.Size = new Size(372, 24);
             this.dsnLlbl.Name = "dsnLlbl";
             this.dsnLlbl.Text = "Barangay Management Information System";
-            this.dsnLine.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine.Location = new Point(75, 217);
             this.dsnLine.Size = new Size(344, 3);
             this.dsnLine.Name = "dsnLine";
-            this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnBox.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnBox.Location = new Point(1, -1);
             this.dsnBox.Size = new Size(504, 51);
             this.dsnBox.Name = "dsnBox";
@@ -117,7 +117,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             // Form
             this.AutoScaleDimensions = new SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.BackColor = Color.FromArgb(241, 246, 249);
             this.ClientSize = new Size(500, 350);            
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.StartPosition = FormStartPosition.CenterScreen;

@@ -77,8 +77,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // Label : Search
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblSearch.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblSearch.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblSearch.Location = new Point(69, 97);
             this.lblSearch.Size = new Size(144, 24);
             this.lblSearch.Name = "lblSearch";
@@ -86,17 +86,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // Label : First name
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblFirstName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblFirstName.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblFirstName.Location = new Point(107, 153);
             this.lblFirstName.Size = new Size(86, 22);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Text = "First Name";
 
             // TextBox : First name
-            this.txtFirstName.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtFirstName.BackColor = Color.FromArgb(250, 250, 250);
             this.txtFirstName.BorderStyle = BorderStyle.None;
-            this.txtFirstName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.txtFirstName.Location = new Point(105, 188);
             this.txtFirstName.Size = new Size(275, 21);
             this.txtFirstName.TabIndex = 1;
@@ -104,17 +104,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // Label : Middle Name
             this.lblMiddleName.AutoSize = true;
-            this.lblMiddleName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblMiddleName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblMiddleName.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblMiddleName.Location = new Point(111, 265);
             this.lblMiddleName.Size = new Size(102, 22);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Text = "Middle Name";
 
             // TextBox : Middle name
-            this.txtMiddleName.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtMiddleName.BackColor = Color.FromArgb(250, 250, 250);
             this.txtMiddleName.BorderStyle = BorderStyle.None;
-            this.txtMiddleName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiddleName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.txtMiddleName.Location = new Point(109, 300);
             this.txtMiddleName.Size = new Size(275, 21);
             this.txtMiddleName.TabIndex = 2;
@@ -122,27 +122,27 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // Label : Last name
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblLastName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblLastName.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblLastName.Location = new Point(111, 374);
             this.lblLastName.Size = new Size(83, 22);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Text = "Last Name";
 
             // Textbox : Last name
-            this.txtLastName.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtLastName.BackColor = Color.FromArgb(250, 250, 250);
             this.txtLastName.BorderStyle = BorderStyle.None;
-            this.txtLastName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.txtLastName.Location = new Point(109, 409);
             this.txtLastName.Size = new Size(275, 21);
             this.txtLastName.TabIndex = 3;
             this.txtLastName.Name = "txtLastName";
 
             // Button
-            this.btnSearch.BackColor = Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
+            this.btnSearch.BackColor = Color.FromArgb(2, 117, 216);
             this.btnSearch.FlatStyle = FlatStyle.Flat;
-            this.btnSearch.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnSearch.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            this.btnSearch.ForeColor = Color.FromArgb(247, 247, 247);
             this.btnSearch.Location = new Point(111, 487);
             this.btnSearch.Size = new Size(97, 37);
             this.btnSearch.TabIndex = 4; 
@@ -152,27 +152,27 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.btnSearch.Click += new EventHandler(this.SearchOnClick);
 
             // Design components
-            this.dsnLlbl.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
-            this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.dsnLlbl.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.dsnLlbl.BackColor = Color.FromArgb(57, 72, 103);
+            this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.dsnLlbl.ForeColor = Color.FromArgb(241, 246, 249);
             this.dsnLlbl.Location = new Point(12, 13);
             this.dsnLlbl.Size = new Size(372, 24);
             this.dsnLlbl.AutoSize = true;
             this.dsnLlbl.Name = "dsnLlbl";
             this.dsnLlbl.Text = "Barangay Management Information System";
-            this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnBox.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnBox.Location = new Point(0, 0);
             this.dsnBox.Size = new Size(507, 51);
             this.dsnBox.Name = "dsnBox";
-            this.dsnLine.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine.Location = new Point(105, 213);
             this.dsnLine.Size = new Size(275, 3);
             this.dsnLine.Name = "dsnLine";
-            this.dsnLine1.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine1.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine1.Location = new Point(109, 325);
             this.dsnLine1.Size = new Size(275, 3);
             this.dsnLine1.Name = "dsnLine1";
-            this.dsnLine2.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine2.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine2.Location = new Point(109, 434);
             this.dsnLine2.Size = new Size(275, 3);
             this.dsnLine2.Name = "dsnLine2";
@@ -180,7 +180,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             // Actual form
             this.AutoScaleDimensions = new SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.BackColor = Color.FromArgb(241, 246, 249);
             this.ClientSize = new Size(506, 561);
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.StartPosition = FormStartPosition.CenterScreen;

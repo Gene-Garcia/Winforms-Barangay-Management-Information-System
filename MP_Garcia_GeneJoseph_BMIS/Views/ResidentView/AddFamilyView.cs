@@ -109,8 +109,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dsnBox = new PictureBox();
 
             // Label : Resident
-            this.lblResidents.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblResidents.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblResidents.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblResidents.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblResidents.Location = new Point(39, 80);
             this.lblResidents.Size = new Size(90, 24);
             this.lblResidents.AutoSize = true;
@@ -118,8 +118,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.lblResidents.Text = "Residents";
 
             // Label : First Parent
-            this.lblParent1.Font = new Font("Trebuchet MS", 11F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblParent1.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblParent1.Font = new Font("Trebuchet MS", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblParent1.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblParent1.Location = new Point(40, 136);
             this.lblParent1.Size = new Size(83, 20);
             this.lblParent1.AutoSize = true;
@@ -131,28 +131,28 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             DataGridViewCellStyle dgvcs2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dgvcs3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dgvcs4 = new DataGridViewCellStyle();
-            dgvcs1.BackColor = Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dgvcs1.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            dgvcs1.BackColor = Color.FromArgb(244, 244, 244);
+            dgvcs1.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgvcs1.ForeColor = Color.Black;
             dgvcs2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvcs2.BackColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
-            dgvcs2.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            dgvcs2.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            dgvcs2.SelectionBackColor = Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            dgvcs2.BackColor = Color.FromArgb(20, 39, 78);
+            dgvcs2.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvcs2.ForeColor = Color.FromArgb(241, 246, 249);
+            dgvcs2.SelectionBackColor = Color.FromArgb(217, 236, 242);
             dgvcs2.SelectionForeColor = SystemColors.Desktop;
             dgvcs2.WrapMode = DataGridViewTriState.True;
             dgvcs3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvcs3.BackColor = Color.White;
-            dgvcs3.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            dgvcs3.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgvcs3.ForeColor = Color.Black;
-            dgvcs3.SelectionBackColor = Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(241)))));
+            dgvcs3.SelectionBackColor = Color.FromArgb(235, 236, 241);
             dgvcs3.SelectionForeColor = Color.Black;
             dgvcs3.WrapMode = DataGridViewTriState.False;         
             dgvcs4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvcs4.BackColor = Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(164)))), ((int)(((byte)(180)))));
-            dgvcs4.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            dgvcs4.BackColor = Color.FromArgb(155, 164, 180);
+            dgvcs4.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgvcs4.ForeColor = SystemColors.WindowText;
-            dgvcs4.SelectionBackColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            dgvcs4.SelectionBackColor = Color.FromArgb(20, 39, 78);
             dgvcs4.SelectionForeColor = SystemColors.HighlightText;
             dgvcs4.WrapMode = DataGridViewTriState.True;
             this.dataListPrnt1.RowHeadersDefaultCellStyle = dgvcs4;
@@ -169,7 +169,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dataListPrnt1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataListPrnt1.AlternatingRowsDefaultCellStyle = dgvcs1;
             this.dataListPrnt1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataListPrnt1.BackgroundColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.dataListPrnt1.BackgroundColor = Color.FromArgb(241, 246, 249);
             this.dataListPrnt1.BorderStyle = BorderStyle.None;
             this.dataListPrnt1.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dataListPrnt1.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
@@ -185,8 +185,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dataListPrnt1.SelectionChanged += new EventHandler(this.DataListOnSelectionChanged);
 
             // Label : Second Parent
-            this.lblParent2.Font = new Font("Trebuchet MS", 11F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblParent2.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblParent2.Font = new Font("Trebuchet MS", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblParent2.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblParent2.Location = new Point(466, 136);
             this.lblParent2.Size = new Size(173, 20);
             this.lblParent2.AutoSize = true;
@@ -198,28 +198,28 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             DataGridViewCellStyle dgvcs6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dgvcs7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dgvcs8 = new DataGridViewCellStyle();
-            dgvcs5.BackColor = Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dgvcs5.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            dgvcs5.BackColor = Color.FromArgb(244, 244, 244);
+            dgvcs5.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgvcs5.ForeColor = Color.Black;
             dgvcs6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvcs6.BackColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
-            dgvcs6.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            dgvcs6.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
-            dgvcs6.SelectionBackColor = Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(242)))));
+            dgvcs6.BackColor = Color.FromArgb(20, 39, 78);
+            dgvcs6.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvcs6.ForeColor = Color.FromArgb(241, 246, 249);
+            dgvcs6.SelectionBackColor = Color.FromArgb(217, 236, 242);
             dgvcs6.SelectionForeColor = SystemColors.Desktop;
             dgvcs6.WrapMode = DataGridViewTriState.True;
             dgvcs7.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvcs7.BackColor = Color.White;
-            dgvcs7.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            dgvcs7.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgvcs7.ForeColor = Color.Black;
-            dgvcs7.SelectionBackColor = Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(241)))));
+            dgvcs7.SelectionBackColor = Color.FromArgb(235, 236, 241);
             dgvcs7.SelectionForeColor = Color.Black;
             dgvcs7.WrapMode = DataGridViewTriState.False;
             dgvcs8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvcs8.BackColor = Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(164)))), ((int)(((byte)(180)))));
-            dgvcs8.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            dgvcs8.BackColor = Color.FromArgb(155, 164, 180);
+            dgvcs8.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgvcs8.ForeColor = SystemColors.WindowText;
-            dgvcs8.SelectionBackColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            dgvcs8.SelectionBackColor = Color.FromArgb(20, 39, 78);
             dgvcs8.SelectionForeColor = SystemColors.HighlightText;
             dgvcs8.WrapMode = DataGridViewTriState.True;
             this.dataListPrnt2.RowHeadersDefaultCellStyle = dgvcs8;
@@ -233,7 +233,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dataListPrnt2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataListPrnt2.AlternatingRowsDefaultCellStyle = dgvcs5;
             this.dataListPrnt2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataListPrnt2.BackgroundColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.dataListPrnt2.BackgroundColor = Color.FromArgb(241, 246, 249);
             this.dataListPrnt2.BorderStyle = BorderStyle.None;
             this.dataListPrnt2.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dataListPrnt2.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
@@ -251,8 +251,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dataListPrnt2.Name = "dataListPrnt2";
 
             // Label : Family Members
-            this.lblFamilyMembers.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblFamilyMembers.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblFamilyMembers.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblFamilyMembers.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblFamilyMembers.Location = new Point(49, 626);
             this.lblFamilyMembers.Size = new Size(124, 22);
             this.lblFamilyMembers.AutoSize = true;
@@ -260,7 +260,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.lblFamilyMembers.Text = "Family Members";
 
             // Number : Family Members 
-            this.numFamilyMember.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.numFamilyMember.BackColor = Color.FromArgb(250, 250, 250);
             this.numFamilyMember.BorderStyle = BorderStyle.None;
             this.numFamilyMember.Font = new Font("Calibri", 12.75F, FontStyle.Bold);
             this.numFamilyMember.Location = new Point(183, 627);
@@ -270,10 +270,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.numFamilyMember.Name = "numFamilyMember";
 
             // Button
-            this.btnCreate.BackColor = Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
+            this.btnCreate.BackColor = Color.FromArgb(2, 117, 216);
             this.btnCreate.FlatStyle = FlatStyle.Flat;
-            this.btnCreate.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.ForeColor = Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnCreate.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            this.btnCreate.ForeColor = Color.FromArgb(247, 247, 247);
             this.btnCreate.Location = new Point(745, 618);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new Size(97, 37);
@@ -284,18 +284,18 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // Design Components
             this.dsnLlbl.AutoSize = true;
-            this.dsnLlbl.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
-            this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.dsnLlbl.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.dsnLlbl.BackColor = Color.FromArgb(57, 72, 103);
+            this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.dsnLlbl.ForeColor = Color.FromArgb(241, 246, 249);
             this.dsnLlbl.Location = new Point(9, 12);
             this.dsnLlbl.Name = "dsnLlbl";
             this.dsnLlbl.Size = new Size(372, 24);
             this.dsnLlbl.Text = "Barangay Management Information System";
-            this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnBox.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnBox.Location = new Point(-3, -1);
             this.dsnBox.Name = "dsnBox";
             this.dsnBox.Size = new Size(888, 51);
-            this.dsnLine.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine.Location = new Point(183, 652);
             this.dsnLine.Name = "dsnLine";
             this.dsnLine.Size = new Size(156, 3);
@@ -303,7 +303,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             // Actual Form
             this.AutoScaleDimensions = new SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.BackColor = Color.FromArgb(241, 246, 249);
             this.ClientSize = new Size(884, 713);
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.StartPosition = FormStartPosition.CenterScreen;

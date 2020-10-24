@@ -161,8 +161,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // Label Residents
             this.lblResidents.AutoSize = true;
-            this.lblResidents.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblResidents.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblResidents.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblResidents.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblResidents.Location = new Point(54, 83);
             this.lblResidents.Size = new Size(173, 24);
             this.lblResidents.Name = "lblResidents";
@@ -170,17 +170,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // Label : First name
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblFirstName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblFirstName.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblFirstName.Location = new Point(70, 146);
             this.lblFirstName.Size = new Size(86, 22);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Text = "First Name";
 
             // Textbox : First Name
-            this.txtFirstName.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtFirstName.BackColor = Color.FromArgb(250, 250, 250);
             this.txtFirstName.BorderStyle = BorderStyle.None;
-            this.txtFirstName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.txtFirstName.Location = new Point(70, 182);
             this.txtFirstName.TabIndex = 1;
             this.txtFirstName.Size = new Size(237, 21);
@@ -188,17 +188,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // Label : Middle name
             this.lblMiddleName.AutoSize = true;
-            this.lblMiddleName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblMiddleName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblMiddleName.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblMiddleName.Location = new Point(361, 146);
             this.lblMiddleName.Size = new Size(102, 22);
             this.lblMiddleName.Name = "lblMiddleName";
             this.lblMiddleName.Text = "Middle Name";
 
             // Textbox : Middle Name
-            this.txtMiddleName.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtMiddleName.BackColor = Color.FromArgb(250, 250, 250);
             this.txtMiddleName.BorderStyle = BorderStyle.None;
-            this.txtMiddleName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiddleName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.txtMiddleName.Location = new Point(361, 182);
             this.txtMiddleName.Size = new Size(237, 21);
             this.txtMiddleName.TabIndex = 2;
@@ -206,17 +206,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // Label : Last name
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblLastName.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblLastName.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblLastName.Location = new Point(70, 249);
             this.lblLastName.Size = new Size(83, 22);
             this.lblLastName.Name = "lblLastName";    
             this.lblLastName.Text = "Last Name";
 
             // Textbox : Last Name
-            this.txtLastName.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtLastName.BackColor = Color.FromArgb(250, 250, 250);
             this.txtLastName.BorderStyle = BorderStyle.None;
-            this.txtLastName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Font = new Font("Calibri", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.txtLastName.Location = new Point(70, 285);
             this.txtLastName.Size = new Size(528, 21);
             this.txtLastName.TabIndex = 3;
@@ -224,17 +224,17 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // Label : Birthday
             this.lblBirthdate.AutoSize = true;
-            this.lblBirthdate.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblBirthdate.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblBirthdate.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblBirthdate.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblBirthdate.Location = new Point(73, 363);
             this.lblBirthdate.Size = new Size(77, 22);
             this.lblBirthdate.Name = "lblBirthdate";
             this.lblBirthdate.Text = "Birthdate";
 
             // DatePicker : Birthday
-            this.pickerBirthdate.CalendarMonthBackground = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.pickerBirthdate.CalendarMonthBackground = Color.FromArgb(250, 250, 250);
             this.pickerBirthdate.DropDownAlign = LeftRightAlignment.Right;
-            this.pickerBirthdate.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.pickerBirthdate.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.pickerBirthdate.Location = new Point(70, 397);
             this.pickerBirthdate.MaxDate = DateTime.Now;
             this.pickerBirthdate.Size = new Size(175, 27);
@@ -244,8 +244,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.pickerBirthdate.Value = new DateTime(2020, 10, 19, 0, 0, 0, 0);
 
             // Label : Status
-            this.lblStatus.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblStatus.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblStatus.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblStatus.Location = new Point(264, 363);
             this.lblStatus.Size = new Size(52, 22);
             this.lblStatus.AutoSize = true;
@@ -253,9 +253,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.lblStatus.Text = "Status";
 
             // ComboBox : Status
-            this.comboStatus.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.comboStatus.BackColor = Color.FromArgb(250, 250, 250);
             this.comboStatus.FlatStyle = FlatStyle.Flat;
-            this.comboStatus.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.comboStatus.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.comboStatus.Items.AddRange(new object[] {
                                                     "ALIVE",
                                                     "DECEASED"});
@@ -267,8 +267,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.comboStatus.Text = "Select status...";
 
             // Label : Sex
-            this.lblSex.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblSex.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblSex.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblSex.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblSex.Location = new Point(457, 363);
             this.lblSex.Size = new Size(35, 22);
             this.lblSex.AutoSize = true;
@@ -276,9 +276,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.lblSex.Text = "Sex";
 
             // ComboBox : Sex
-            this.comboSex.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.comboSex.BackColor = Color.FromArgb(250, 250, 250);
             this.comboSex.FlatStyle = FlatStyle.Flat;
-            this.comboSex.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.comboSex.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.comboSex.Items.AddRange(new object[] {
             "Male",
             "Female"});
@@ -290,8 +290,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.comboSex.Text = "Select sex...";
 
             // Label : Address
-            this.lblAddress.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblAddress.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblAddress.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblAddress.Location = new Point(74, 468);
             this.lblAddress.Size = new Size(83, 22);
             this.lblAddress.AutoSize = true;
@@ -299,19 +299,19 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.lblAddress.Name = "lblAddress";
 
             // Textbox : Address
-            this.txtAddress.BackColor = Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtAddress.BackColor = Color.FromArgb(250, 250, 250);
             this.txtAddress.BorderStyle = BorderStyle.None;
-            this.txtAddress.Font = new Font("Calibri", 12.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Font = new Font("Calibri", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.txtAddress.Size = new Size(528, 21);
             this.txtAddress.Location = new Point(74, 504);
             this.txtAddress.TabIndex = 7;
             this.txtAddress.Name = "txtAddress";
 
             // Button
-            this.btnAction.BackColor = Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
+            this.btnAction.BackColor = Color.FromArgb(2, 117, 216);
             this.btnAction.FlatStyle = FlatStyle.Flat;
-            this.btnAction.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
-            this.btnAction.ForeColor = Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnAction.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            this.btnAction.ForeColor = Color.FromArgb(247, 247, 247);
             this.btnAction.Location = new Point(501, 575);
             this.btnAction.Size = new Size(97, 37);
             this.btnAction.TabIndex = 8;
@@ -322,49 +322,49 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
 
             // designs
             this.dsnLlbl.AutoSize = true;
-            this.dsnLlbl.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
-            this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.dsnLlbl.ForeColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.dsnLlbl.BackColor = Color.FromArgb(57, 72, 103);
+            this.dsnLlbl.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.dsnLlbl.ForeColor = Color.FromArgb(241, 246, 249);
             this.dsnLlbl.Location = new Point(10, 11);
             this.dsnLlbl.Name = "dsnLlbl";
             this.dsnLlbl.Size = new Size(372, 24);
             this.dsnLlbl.Text = "Barangay Management Information System";
-            this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnBox.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnBox.Location = new Point(-2, -2);
             this.dsnBox.Name = "dsnBox";
             this.dsnBox.Size = new Size(678, 51);
             this.dsnBox.TabStop = false;
-            this.dsnLine.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine.Location = new Point(70, 207);
             this.dsnLine.Name = "dsnLine";
             this.dsnLine.Size = new Size(237, 3);
             this.dsnLine.TabStop = false;
-            this.dsnLine1.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine1.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine1.Location = new Point(361, 207);
             this.dsnLine1.Name = "dsnLine1";
             this.dsnLine1.Size = new Size(237, 3);
             this.dsnLine1.TabStop = false;
-            this.dsnLine2.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine2.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine2.Location = new Point(70, 310);
             this.dsnLine2.Name = "dsnLine2";
             this.dsnLine2.Size = new Size(528, 3);
             this.dsnLine2.TabStop = false;
-            this.dnsLine3.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dnsLine3.BackColor = Color.FromArgb(57, 72, 103);
             this.dnsLine3.Location = new Point(70, 423);
             this.dnsLine3.Name = "dnsLine3";
             this.dnsLine3.Size = new Size(175, 3);
             this.dnsLine3.TabStop = false;
-            this.dsnLine4.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine4.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine4.Location = new Point(268, 423);
             this.dsnLine4.Name = "dsnLine4";
             this.dsnLine4.Size = new Size(170, 3);
             this.dsnLine4.TabStop = false;
-            this.dsnLine5.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine5.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine5.Location = new Point(74, 529);
             this.dsnLine5.Name = "dsnLine5";
             this.dsnLine5.Size = new Size(528, 3);
             this.dsnLine5.TabStop = false;
-            this.dsnLine6.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine6.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine6.Location = new Point(461, 423);
             this.dsnLine6.Name = "dsnLine6";
             this.dsnLine6.Size = new Size(137, 3);
@@ -374,7 +374,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             // Actual Form
             this.AutoScaleDimensions = new SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(246)))), ((int)(((byte)(249)))));
+            this.BackColor = Color.FromArgb(241, 246, 249);
             this.BackgroundImageLayout = ImageLayout.None;
             this.ClientSize = new Size(672, 651);
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;

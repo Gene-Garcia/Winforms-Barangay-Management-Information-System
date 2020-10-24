@@ -68,8 +68,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.dsnLine1 = new PictureBox();
 
             // Main Label
-            this.lblLogin.Font = new Font("Trebuchet MS", 16F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblLogin.Font = new Font("Trebuchet MS", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblLogin.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblLogin.Location = new Point(126, 31);
             this.lblLogin.Size = new Size(115, 27);
             this.lblLogin.AutoSize = true;
@@ -77,8 +77,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.lblLogin.Name = "lblLogin";
 
             // Label for Username
-            this.lblUsername.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblUsername.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblUsername.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblUsername.Location = new Point(33, 123);
             this.lblUsername.Size = new Size(84, 22);
             this.lblUsername.AutoSize = true;
@@ -86,9 +86,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.lblUsername.Name = "lblUsername";
 
             // Textbox for Username
-            this.txtUsername.BackColor = Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.txtUsername.BackColor = Color.FromArgb(234, 245, 255);
             this.txtUsername.BorderStyle = BorderStyle.None;
-            this.txtUsername.Font = new Font("Trebuchet MS", 12.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Font = new Font("Trebuchet MS", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.txtUsername.ForeColor = Color.Black;
             this.txtUsername.Location = new Point(32, 158);
             this.txtUsername.Margin = new Padding(5);
@@ -99,8 +99,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.txtUsername.Text = "gene_garcia";
 
             // Label for Password
-            this.lblPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(39)))), ((int)(((byte)(78)))));
+            this.lblPassword.Font = new Font("Trebuchet MS", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.lblPassword.ForeColor = Color.FromArgb(20, 39, 78);
             this.lblPassword.Location = new Point(33, 242);
             this.lblPassword.Size = new Size(75, 22);
             this.lblPassword.AutoSize = true;
@@ -108,9 +108,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.lblPassword.Text = "Password";
 
             // Textbox for Password
-            this.txtPassword.BackColor = Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.txtPassword.BackColor = Color.FromArgb(234, 245, 255);
             this.txtPassword.BorderStyle = BorderStyle.None;
-            this.txtPassword.Font = new Font("Trebuchet MS", 12.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new Font("Trebuchet MS", 12.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             this.txtPassword.ForeColor = Color.Black;
             this.txtPassword.Location = new Point(32, 277);
             this.txtPassword.Margin = new Padding(5);
@@ -123,10 +123,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
 
 
             // Button for Login
-            this.btnLogin.BackColor = Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(117)))), ((int)(((byte)(216)))));
+            this.btnLogin.BackColor = Color.FromArgb(2, 117, 216);
             this.btnLogin.FlatStyle = FlatStyle.Flat;
-            this.btnLogin.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnLogin.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            this.btnLogin.ForeColor = Color.FromArgb(247, 247, 247);
             this.btnLogin.Location = new Point(32, 355);
             this.btnLogin.Size = new Size(97, 37);
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -136,15 +136,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.btnLogin.Click += new EventHandler(this.LoginClick);
 
             // Design
-            this.dsnBox.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnBox.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnBox.Location = new Point(384, 1);
             this.dsnBox.Size = new Size(400, 460);
             this.dsnBox.Name = "dsnBox";
-            this.dsnLine.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine.Location = new Point(32, 182);
             this.dsnLine.Size = new Size(320, 3);
             this.dsnLine.Name = "dsnLine";
-            this.dsnLine1.BackColor = Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(72)))), ((int)(((byte)(103)))));
+            this.dsnLine1.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine1.Location = new Point(32, 301);
             this.dsnLine1.Size = new Size(320, 3);
             this.dsnLine1.Name = "dsnLine1";
@@ -152,7 +152,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             // Actual Form
             this.AutoScaleDimensions = new SizeF(6F, 13F);
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.BackColor = Color.FromArgb(234, 245, 255);
             this.ClientSize = new Size(784, 461);
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
             this.StartPosition = FormStartPosition.CenterScreen;
