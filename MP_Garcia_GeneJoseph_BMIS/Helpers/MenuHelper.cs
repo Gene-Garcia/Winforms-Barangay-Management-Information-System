@@ -38,7 +38,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 
             if (input == "M")
             {
-                //
+                new AccountPresenter().GetDisplayMyAccount();
             }
             else if (input == "R")
             {

@@ -174,7 +174,14 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// </summary>
         public void GetDisplayMyAccount()
         {
+            ViewContext.Dispose();
 
+            MyAccountView view = new MyAccountView();
+            view.Account = UserSession.User;
+            view.ModelToFields();
+
+            ViewContext.ActiveForm = view;
+            ViewContext.ActiveForm.ShowDialog();
         }
 
         /// <summary>
@@ -206,7 +213,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             {
                 MessageBox.Show("Your password cannot be changed.", "My Account", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ViewContext.Dispose();
-                // reload resident selection for register
                 new AccountPresenter().GetDisplayMyAccount();
             }
         }
