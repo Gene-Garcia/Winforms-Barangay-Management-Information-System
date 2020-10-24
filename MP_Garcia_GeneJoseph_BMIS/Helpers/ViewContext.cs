@@ -13,7 +13,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
         public static Form ActiveForm { get; set; }
         public static void Dispose()
         {
-            ViewContext.ActiveForm.Dispose();
+            if (ViewContext.ActiveForm != null)
+                ViewContext.ActiveForm.Dispose();
         }
+
+        private static void FormOnClose(object sender, FormClosedEventArgs e)
+        {
+            ViewContext.Dispose();
+            MenuHelper.MenuInput();
+        }
+
     }
 }
