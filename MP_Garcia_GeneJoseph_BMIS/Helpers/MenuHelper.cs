@@ -27,14 +27,16 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 Console.WriteLine("\t D. Dashboard");
                 Console.WriteLine("\t L. Logout");
                 Console.Write("\tSelection >>");
-                input = Console.ReadLine().Trim();
+                input = Console.ReadLine().Trim().ToUpper();
 
                 if (options.Contains(input))
                     break;
                 Console.WriteLine("\tInvalid input selection.");
 
-            } while (true);   
-            
+            } while (true);
+
+            Console.Clear();
+
             if (input == "R")
             {
                 ResidentMenu();
