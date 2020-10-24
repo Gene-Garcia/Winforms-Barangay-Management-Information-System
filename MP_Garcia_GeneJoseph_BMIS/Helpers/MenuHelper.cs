@@ -35,8 +35,6 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 
             } while (true);
 
-            Console.Clear();
-
             if (input == "R")
             {
                 ResidentMenu();
@@ -55,6 +53,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
             }
             else if (input == "D")
             {
+                Console.Clear();
                 new DashboardPresenter().Index();
             }
             else if (input == "L")
@@ -84,12 +83,14 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 Console.WriteLine("\tR5. Create New Family Record");
 
                 Console.Write("\tSelection >>");
-                input = Console.ReadLine().Trim();
+                input = Console.ReadLine().Trim().ToUpper();
 
                 if (options.Contains(input))
                     break;
                 Console.WriteLine("\tInvalid input selection.");
             } while (true);
+
+            Console.Clear();
 
             if (input == "R1")
             {
