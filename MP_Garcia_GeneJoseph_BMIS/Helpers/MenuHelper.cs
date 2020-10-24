@@ -126,12 +126,14 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 Console.WriteLine("\tA2. Register New Account");
 
                 Console.Write("\tSelection >>");
-                input = Console.ReadLine().Trim();
+                input = Console.ReadLine().Trim().ToUpper();
 
                 if (options.Contains(input))
                     break;
                 Console.WriteLine("\tInvalid input selection.");
             } while (true);
+
+            Console.Clear();
 
             if (input == "A1")
             {
@@ -156,12 +158,14 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 Console.WriteLine("\tS3. Search Summon Reports");
 
                 Console.Write("\tSelection >>");
-                input = Console.ReadLine().Trim();
+                input = Console.ReadLine().Trim().ToUpper();
 
                 if (options.Contains(input))
                     break;
                 Console.WriteLine("\tInvalid input selection.");
             } while (true);
+
+            Console.Clear();
 
             if (input == "S1")
             {
@@ -188,12 +192,14 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
                 Console.WriteLine("\tA1. Display Audit Trail");
 
                 Console.Write("\tSelection >>");
-                input = Console.ReadLine().Trim();
+                input = Console.ReadLine().Trim().ToUpper();
 
                 if (options.Contains(input))
                     break;
                 Console.WriteLine("\tInvalid input selection.");
             } while (true);
+
+            Console.Clear();
 
             if (input == "A1")
             {
