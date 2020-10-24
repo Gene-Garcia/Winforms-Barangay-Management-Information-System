@@ -71,7 +71,8 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             var residents = dbEnt.Resident.Residents();
             // filter resilts
             // legal age and not deceased
-            residents = residents.Where(m => m.Status == SystemConstants.RESIDENT_STATUS_ALIVE).ToList();
+            DateTime legalAge = new DateTime(DateTime.Now.Year - 18, DateTime.Now.Month, DateTime.Now.Day);
+            residents = residents.Where(m => m.Status == SystemConstants.RESIDENT_STATUS_ALIVE && m.Birthdate >= legalAge).ToList();
             // not registered already
             List<int> existingResidentIds = dbEnt.Account.Accounts().Select(m => m.ResidentId).ToList();
             // the residents must NOT CONTAIN any id in the existingResidentIds
