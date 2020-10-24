@@ -29,10 +29,24 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             data.AliveResidents = residents.Where(m => m.Status.ToLower() == SystemConstants.RESIDENT_STATUS_ALIVE.ToLower()).Count();
             data.DeceasedResidents = residents.Where(m => m.Status.ToLower() == SystemConstants.RESIDENT_STATUS_DECEASED.ToLower()).Count();
 
-            data.AgeRangeCateg1 = 1;
-            data.AgeRangeCateg2 = 2;
-            data.AgeRangeCateg3 = 3;
-            data.AgeRangeCateg4 = 2;
+            // Categ 1 0 to 16
+            DateTime below16 = new DateTime(DateTime.Now.Year - 16, DateTime.Now.Month, DateTime.Now.Day);
+
+            // Categ 2 17 to 21
+            DateTime fifteen = new DateTime(DateTime.Now.Year - 17, DateTime.Now.Month, DateTime.Now.Day);
+            DateTime twentyone = new DateTime(DateTime.Now.Year - 21, DateTime.Now.Month, DateTime.Now.Day);
+
+            // Categ 3 22 to 59
+            DateTime twenttwo = new DateTime(DateTime.Now.Year - 22, DateTime.Now.Month, DateTime.Now.Day);
+            DateTime fiftynine = new DateTime(DateTime.Now.Year - 59, DateTime.Now.Month, DateTime.Now.Day);
+
+            // CAteg 4 Above 60
+            DateTime over60 = new DateTime(DateTime.Now.Year - 60, DateTime.Now.Month, DateTime.Now.Day);
+
+            data.AgeRangeCateg1 = residents.Where(m=>m.Birthdate <= below16).Count();
+            data.AgeRangeCateg2 = residents.Where(m => m.Birthdate >= fifteen && m.Birthdate <= twentyone).Count();
+            data.AgeRangeCateg3 = residents.Where(m => m.Birthdate >= twentyone && m.Birthdate <= fiftynine).Count();
+            data.AgeRangeCateg4 = residents.Where(m => m.Birthdate >= over60).Count();
             data.AverageAge = (data.AgeRangeCateg4 + data.AgeRangeCateg3 + data.AgeRangeCateg2 + data.AgeRangeCateg1) / (residents.Count() != 0 ? residents.Count() : 1);
 
             List<Family> families = new Entities().Family.Families();
