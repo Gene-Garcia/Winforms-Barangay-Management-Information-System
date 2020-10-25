@@ -44,9 +44,15 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
             data.AgeRangeCateg2 = residents.Where(m => m.Birthdate <= seventeen && m.Birthdate >= twentyone).Count();
             data.AgeRangeCateg3 = residents.Where(m => m.Birthdate <= twentytwo && m.Birthdate >= fiftynine).Count();
             data.AgeRangeCateg4 = residents.Where(m => m.Birthdate <= over60).Count();
-            data.AverageAge = (residents.Count() != 0 ? 
-                ((data.AgeRangeCateg1 + data.AgeRangeCateg2 + data.AgeRangeCateg3 + data.AgeRangeCateg4) / residents.Count)
-                : 0);
+
+            data.AverageAge = 0;
+            foreach (DateTime date in residents.Select(m => m.Birthdate).ToList())
+            {
+                int age = DateTime.Now.Year - date.Year;
+                if (DateTime.Now.DayOfYear < date.DayOfYear) age--;
+                data.AverageAge += age;
+            }
+            data.AverageAge = residents.Count > 0 ? data.AverageAge / residents.Count : 0;
 
             List<Family> families = new Entities().Family.Families();
 

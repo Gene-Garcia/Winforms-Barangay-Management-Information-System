@@ -133,6 +133,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.DashboardView
             this.boxTotalResidents.Location = new Point(31, 172);
             this.boxTotalResidents.Size = new Size(175, 111);
             this.boxTotalResidents.Name = "boxTotalResidents";
+            this.lblTotalResData.AutoSize = true;
             this.lblTotalResData.BackColor = Color.FromArgb(208, 239, 255);
             this.lblTotalResData.Font = new Font("Trebuchet MS", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             this.lblTotalResData.ForeColor = Color.FromArgb(32, 64, 81);

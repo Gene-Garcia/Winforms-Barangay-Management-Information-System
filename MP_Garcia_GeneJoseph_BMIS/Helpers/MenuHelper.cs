@@ -54,6 +54,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
             }
             else if (input == "AT")
             {
+                Console.Clear();
                 new AuditTrailPresenter().DisplayAuditTrails();
             }
             else if (input == "D")

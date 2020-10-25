@@ -39,9 +39,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             string newPass = this.txtNewPassword.Text;
 
             if (oldPass != null && oldPass != "" && newPass != null && newPass != "")
-                if (oldPass == newPass)
-                    new AccountPresenter().PostUpdatePassword(newPass);
-                else MessageBox.Show("Old password and new password does not match.", "My Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (oldPass != newPass)
+                    new AccountPresenter().PostUpdatePassword(oldPass, newPass);
+                else MessageBox.Show("Old password and new password are the same.", "My Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else MessageBox.Show("Fill out password fields.", "My Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 

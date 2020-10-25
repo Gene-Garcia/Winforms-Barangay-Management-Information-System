@@ -29,6 +29,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AuditTrailView
             this.dataList.Columns[1].Name = "Action";
             this.dataList.Columns[2].Name = "Date Action";
 
+            this.dataList.Columns[0].Width = 100;
+            this.dataList.Columns[2].Width = 200;
+
             string[] row;
             foreach (var trail in this.auditTrails)
             {
@@ -36,7 +39,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AuditTrailView
                 {
                     trail.Account.Username,
                     trail.Message,
-                    trail.ActionDate.ToShortDateString()
+                    trail.ActionDate.ToString()
                 };
                 this.dataList.Rows.Add(row);
             }
