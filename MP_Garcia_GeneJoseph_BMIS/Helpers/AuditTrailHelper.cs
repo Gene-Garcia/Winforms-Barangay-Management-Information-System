@@ -9,7 +9,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 {
     class AuditTrailHelper
     {
-
+        /// <summary>
+        /// A static method that will be called throughout the program to record certain actions of the user
+        /// </summary>
+        /// <param name="message">The message to be stored</param>
         public static void RecordAction(string message)
         {
             Entities dbEnt = new Entities();

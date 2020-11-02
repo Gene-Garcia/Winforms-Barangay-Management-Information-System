@@ -37,6 +37,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.dataListPrnt1.Columns["Status"].Visible = false;
         }
 
+        // Used by the on cell click listener, excludes the selected cell
         public void PopulateSecondDataList(int toExclude)
         {
 
@@ -194,51 +195,23 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.lblParent2.Text = "Second Parent (optional)";
 
             // DataGridView : Second set of residents
-            DataGridViewCellStyle dgvcs5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dgvcs6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dgvcs7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dgvcs8 = new DataGridViewCellStyle();
-            dgvcs5.BackColor = Color.FromArgb(244, 244, 244);
-            dgvcs5.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvcs5.ForeColor = Color.Black;
-            dgvcs6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvcs6.BackColor = Color.FromArgb(20, 39, 78);
-            dgvcs6.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvcs6.ForeColor = Color.FromArgb(241, 246, 249);
-            dgvcs6.SelectionBackColor = Color.FromArgb(217, 236, 242);
-            dgvcs6.SelectionForeColor = SystemColors.Desktop;
-            dgvcs6.WrapMode = DataGridViewTriState.True;
-            dgvcs7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvcs7.BackColor = Color.White;
-            dgvcs7.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvcs7.ForeColor = Color.Black;
-            dgvcs7.SelectionBackColor = Color.FromArgb(235, 236, 241);
-            dgvcs7.SelectionForeColor = Color.Black;
-            dgvcs7.WrapMode = DataGridViewTriState.False;
-            dgvcs8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvcs8.BackColor = Color.FromArgb(155, 164, 180);
-            dgvcs8.Font = new Font("Calibri", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvcs8.ForeColor = SystemColors.WindowText;
-            dgvcs8.SelectionBackColor = Color.FromArgb(20, 39, 78);
-            dgvcs8.SelectionForeColor = SystemColors.HighlightText;
-            dgvcs8.WrapMode = DataGridViewTriState.True;
-            this.dataListPrnt2.RowHeadersDefaultCellStyle = dgvcs8;
+            this.dataListPrnt2.RowHeadersDefaultCellStyle = dgvcs4;
             this.dataListPrnt2.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataListPrnt2.RowTemplate.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataListPrnt2.RowTemplate.Height = 40;
             this.dataListPrnt2.RowTemplate.Resizable = DataGridViewTriState.False;
             this.dataListPrnt2.Size = new Size(376, 423);
-            this.dataListPrnt2.ColumnHeadersDefaultCellStyle = dgvcs6;
+            this.dataListPrnt2.ColumnHeadersDefaultCellStyle = dgvcs2;
             this.dataListPrnt2.ColumnHeadersHeight = 40;
             this.dataListPrnt2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataListPrnt2.AlternatingRowsDefaultCellStyle = dgvcs5;
+            this.dataListPrnt2.AlternatingRowsDefaultCellStyle = dgvcs1;
             this.dataListPrnt2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.dataListPrnt2.BackgroundColor = Color.FromArgb(241, 246, 249);
             this.dataListPrnt2.BorderStyle = BorderStyle.None;
             this.dataListPrnt2.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
             this.dataListPrnt2.ClipboardCopyMode = DataGridViewClipboardCopyMode.Disable;
             this.dataListPrnt2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            this.dataListPrnt2.DefaultCellStyle = dgvcs7;
+            this.dataListPrnt2.DefaultCellStyle = dgvcs3;
             this.dataListPrnt2.GridColor = Color.Black;
             this.dataListPrnt2.Location = new Point(466, 162);
             this.dataListPrnt2.RowTemplate.ReadOnly = true;

@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace MP_Garcia_GeneJoseph_BMIS.Models
 {
+    /// <summary>
+    /// A class that will hold all of the models
+    /// A class can simply instantiate Entities to access records
+    /// Similar to the Database Entities of the Entity Framework
+    /// </summary>
     class Entities
     {
         public Account Account          = new Account();

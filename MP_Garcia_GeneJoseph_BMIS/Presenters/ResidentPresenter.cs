@@ -257,7 +257,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Presenters
         /// </summary>
         /// <param name="parentOneId"></param>
         /// <param name="parentTwoId">Optional</param>
-        /// <param name="familyMembers"></param>
+        /// <param name="familyMembers">Number of family members</param>
         public void PostSaveFamily(int parentOneId, int parentTwoId, int familyMembers)
         {
             List<Family> families = dbEnt.Family.Families();

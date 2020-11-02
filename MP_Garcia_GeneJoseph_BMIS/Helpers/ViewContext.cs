@@ -7,7 +7,10 @@ using System.Windows.Forms;
 
 namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 {
-    // Handles the disposing of the current running form
+    /// <summary>
+    /// Handles the disposing of the current running form, and
+    /// holds the listner for the form close
+    /// </summary>
     class ViewContext
     {
         public static Form ActiveForm { get; set; }

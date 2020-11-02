@@ -12,7 +12,6 @@ using System.Windows.Forms;
 namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
 {
     class CreateSummonView : Form, ISummon
-
     {
         public CreateSummonView()
         {
@@ -65,7 +64,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.btnCreate = new Button();
 
             this.dsnLine1 = new PictureBox();
-            this.dsnLine3 = new PictureBox();
+            this.dsnLine2 = new PictureBox();
             this.dsnLlbl = new Label();
             this.dsnBox = new PictureBox();
 
@@ -143,10 +142,10 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.dsnBox.Location = new Point(-4, 0);
             this.dsnBox.Name = "dsnBox";
             this.dsnBox.Size = new Size(888, 51);
-            this.dsnLine3.BackColor = Color.FromArgb(57, 72, 103);
-            this.dsnLine3.Location = new Point(64, 206);
-            this.dsnLine3.Name = "dnsLine3";
-            this.dsnLine3.Size = new Size(235, 3);
+            this.dsnLine2.BackColor = Color.FromArgb(57, 72, 103);
+            this.dsnLine2.Location = new Point(64, 206);
+            this.dsnLine2.Name = "dnsLine3";
+            this.dsnLine2.Size = new Size(235, 3);
             this.dsnLine1.BackColor = Color.FromArgb(57, 72, 103);
             this.dsnLine1.Location = new Point(64, 455);
             this.dsnLine1.Name = "dsnLine1";
@@ -176,7 +175,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.Controls.Add(this.btnCreate);
 
             this.Controls.Add(this.dsnLine1);
-            this.Controls.Add(this.dsnLine3);
+            this.Controls.Add(this.dsnLine2);
             this.Controls.Add(this.dsnLlbl);
             this.Controls.Add(this.dsnBox);
         }
@@ -193,7 +192,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
         private Button btnCreate;
 
         private PictureBox dsnLine1;
-        private PictureBox dsnLine3;
+        private PictureBox dsnLine2;
         private Label dsnLlbl;
         private PictureBox dsnBox;
 

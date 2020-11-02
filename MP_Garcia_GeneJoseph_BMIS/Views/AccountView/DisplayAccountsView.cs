@@ -168,6 +168,7 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.AccountView
             this.Controls.Add(this.dsnBox);
         }
 
+        /* Components */
         private Label lblAccounts;
         private DataGridView dataList;
 

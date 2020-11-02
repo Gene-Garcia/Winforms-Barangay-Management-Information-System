@@ -413,30 +413,38 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.ResidentView
             this.Controls.Add(this.dsnBox);
         }
 
+        /* Components */
         private Label lblResidents;
-        private Label dsnLlbl;
-        private PictureBox dsnBox;
+        
         private Label lblFirstName;
         private TextBox txtFirstName;
-        private PictureBox dsnLine;
-        private PictureBox dsnLine1;
-        private TextBox txtMiddleName;
         private Label lblMiddleName;
-        private PictureBox dsnLine2;
-        private TextBox txtLastName;
+        private TextBox txtMiddleName;
         private Label lblLastName;
-        private DateTimePicker pickerBirthdate;
+        private TextBox txtLastName;
+
         private Label lblBirthdate;
-        private PictureBox dnsLine3;
-        private ComboBox comboStatus;
+        private DateTimePicker pickerBirthdate;
+
         private Label lblStatus;
-        private PictureBox dsnLine4;
-        private PictureBox dsnLine5;
-        private TextBox txtAddress;
+        private ComboBox comboStatus;
+
         private Label lblAddress;
-        private Button btnAction;
-        private PictureBox dsnLine6;
+        private TextBox txtAddress;
+
         private Label lblSex;
         private ComboBox comboSex;
+
+        private Button btnAction;
+
+        private PictureBox dsnLine;
+        private PictureBox dsnLine1;
+        private PictureBox dsnLine2;
+        private PictureBox dnsLine3;
+        private PictureBox dsnLine4;
+        private PictureBox dsnLine5;
+        private PictureBox dsnLine6;
+        private PictureBox dsnBox;
+        private Label dsnLlbl;
     }
 }

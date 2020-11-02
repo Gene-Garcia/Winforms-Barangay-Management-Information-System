@@ -14,9 +14,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
     {
         private const int KEY = 5;
         /// <summary>
-        /// 
+        /// Each character of the password is shifted by KEY times.
         /// </summary>
-        /// <param name="password"></param>
+        /// <param name="password">The password from the login</param>
         /// <returns>Encrypted password</returns>
         public string Encrypt(string password)
         {
@@ -30,9 +30,9 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
         }
 
         /// <summary>
-        /// 
+        /// Each character of the hashpassword is shifted backward by KEY times
         /// </summary>
-        /// <param name="hashedPassword"></param>
+        /// <param name="hashedPassword">The hashed password from the text fule</param>
         /// <returns>Returns the original text of the hashed password</returns>
         public string Decrypt(string hashedPassword)
         {

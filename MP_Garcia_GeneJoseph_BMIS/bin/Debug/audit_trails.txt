@@ -48,3 +48,23 @@
 48%20Resident Minato Namikaze is set to deceased.%2010/25/2020 4:48:03 PM%201
 49%20Account was deleted with username: hinata_uzumaki%2010/25/2020 4:49:03 PM%201
 50%20Registered new account with username: sheldon_cooper%2010/25/2020 4:49:14 PM%201
+51%20User logged in.%2010/26/2020 6:16:56 PM%201
+52%20User logged in.%2010/26/2020 7:24:43 PM%201
+53%20User logged in.%2010/26/2020 7:24:54 PM%201
+54%20User logged in.%2010/26/2020 7:26:02 PM%201
+55%20User logged in.%2010/26/2020 7:33:07 PM%201
+56%20User logged in.%2010/31/2020 10:01:11 PM%201
+57%20New resident record with name: Dogie Akosie%2010/31/2020 10:01:41 PM%201
+58%20New family recorded.%2010/31/2020 10:02:18 PM%201
+59%20New summon created with Id 3%2010/31/2020 10:02:51 PM%201
+60%20User logged in.%2011/2/2020 10:40:35 PM%201
+61%20User logged in.%2011/2/2020 10:46:59 PM%201
+62%20New resident record with name: Test Test%2011/2/2020 10:47:25 PM%201
+63%20Registered new account with username: test_test%2011/2/2020 10:47:37 PM%201
+64%20User logged in.%2011/2/2020 10:47:45 PM%204
+65%20User logged in.%2011/2/2020 10:48:46 PM%204
+66%20Resident information updated with name: Gene Garcia%2011/2/2020 10:49:10 PM%204
+67%20Resident Sheldon Cooper is set to deceased.%2011/2/2020 10:49:18 PM%204
+68%20Resident information updated with name: Test Test%2011/2/2020 10:49:36 PM%204
+69%20Family record's family size change with primary parent Leonard Hofstadter%2011/2/2020 10:49:49 PM%204
+70%20New summon created with Id 4%2011/2/2020 10:50:20 PM%204

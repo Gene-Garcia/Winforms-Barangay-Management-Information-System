@@ -159,11 +159,11 @@ namespace MP_Garcia_GeneJoseph_BMIS.Views.SummonView
             this.Controls.Add(this.txtIncidentDate);
             this.Controls.Add(this.lblIncidentDate);
 
+            this.Controls.Add(this.dsnLine);
+            this.Controls.Add(this.dsnLine1);
+            this.Controls.Add(this.dsnLine2);
             this.Controls.Add(this.dsnLlbl);
             this.Controls.Add(this.dsnBox);
-            this.Controls.Add(this.dsnLine1);
-            this.Controls.Add(this.dsnLine);
-            this.Controls.Add(this.dsnLine2);
         }
 
         /* Components */

@@ -10,6 +10,12 @@ namespace MP_Garcia_GeneJoseph_BMIS.Helpers
 {
     class LoginHelper
     {
+        /// <summary>
+        /// Static function that handles validating the login credentials, if password and username is correct
+        /// the method will create a UserSession that will be used throughout the program.
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="activeAccounts"></param>
         public static void LoginUser(IAccount credentials, List<Account> activeAccounts)
         {
             Cryptography ceasar = new Cryptography();
